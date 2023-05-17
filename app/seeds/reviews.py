@@ -24,7 +24,7 @@ def seed_reviews():
     )
 
     review3 = Review(
-        user_id=4,
+        user_id=1,
         book_id=3,
         review="The Joy of Cooking is a classic for a reason. It's my go-to guide whenever I want to explore new recipes. Highly comprehensive and reliable.",
         rating=4.5,
@@ -33,7 +33,7 @@ def seed_reviews():
     )
 
     review4 = Review(
-        user_id=5,
+        user_id=2,
         book_id=4,
         review="Cooking for Geeks is a fascinating read. It combines science and cooking in a fun way. The recipes are unique and push the boundaries of traditional cooking.",
         rating=4.5,
@@ -42,7 +42,7 @@ def seed_reviews():
     )
 
     review5 = Review(
-        user_id=6,
+        user_id=3,
         book_id=5,
         review="The Flavor Bible is a treasure trove for flavor inspiration. I love exploring different ingredient pairings and experimenting with new flavors. A must-have for creative cooks.",
         rating=4,
@@ -51,7 +51,7 @@ def seed_reviews():
     )
 
     review6 = Review(
-        user_id=7,
+        user_id=1,
         book_id=6,
         review="Plenty is a beautiful cookbook that celebrates the wonders of vegetarian cooking. The recipes are bursting with flavor and creativity. A must-try for vegetable lovers.",
         rating=5,
@@ -60,7 +60,7 @@ def seed_reviews():
     )
 
     review7 = Review(
-        user_id=8,
+        user_id=2,
         book_id=7,
         review="Bread Baking for Beginners helped me overcome my fear of baking bread. The instructions are clear, and the recipes turn out amazing. I'm now a confident bread baker!",
         rating=4.5,
@@ -69,7 +69,7 @@ def seed_reviews():
     )
 
     review8 = Review(
-        user_id=9,
+        user_id=3,
         book_id=8,
         review="The Pioneer Woman Cooks captures the essence of comfort cooking. Ree's recipes are hearty and delicious, perfect for satisfying cravings. I love her storytelling too!",
         rating=4,
@@ -78,13 +78,13 @@ def seed_reviews():
     )
 
     review9 = Review(
-        user_id=10,
+        user_id=1,
         book_id=9,
         review="Cravings is a fun and relatable cookbook. Chrissy Teigen's recipes are flavorful and accessible. It's like cooking with a friend in the kitchen!",
         rating=4.5
     )
     review10 = Review(
-        user_id=12,
+        user_id=2,
         book_id=10,
         review="I'm blown away by the flavors in Jerusalem. The recipes are approachable yet exciting. It's become one of my favorite cookbooks in my collection.",
         rating=5,
