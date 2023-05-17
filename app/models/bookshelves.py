@@ -10,7 +10,7 @@ class BookShelf(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('users.id')))
-    name = db.Column(db.String(50), nullable=False)
+    name = db.Column(db.Text, nullable=False)
     created_at = db.Column(db.DateTime, default=datetime.now)
     updated_at = db.Column(db.DateTime, default=datetime.now)
 

@@ -9,12 +9,11 @@ class Book(db.Model):
         __table_args__ = {'schema': SCHEMA}
 
     id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(1000), nullable=False)
-    author = db.Column(db.String(1000), nullable=False)
-    description = db.Column(db.String(1000), nullable=False)
+    title = db.Column(db.String(500), nullable=False)
+    author = db.Column(db.String(500), nullable=False)
+    description = db.Column(db.String(500), nullable=False)
     price = db.Column(db.Integer, nullable=False)
     published = db.Column(db.Date, nullable=False)
-
     reviews = db.relationship('Review', back_populates="book")
     shelf = db.relationship('BookShelfItem', back_populates="book")
 
