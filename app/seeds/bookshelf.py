@@ -21,7 +21,8 @@ def seed_bookshelf():
         created_at=date.today(),
         updated_at=date.today()
     )
-
+    all_bookshelf = [bookshelf1, bookshelf2, bookshelf3]
+    add_bookshelf = [db.session.add(bookshelf) for bookshelf in all_bookshelf]
     db.session.commit()
 
 def undo_bookshelf():

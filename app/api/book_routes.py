@@ -12,10 +12,10 @@ def books():
     books = Book.query.all()
     return {book.to_dict() for book in books}
 
-@book_routes.route('/')
-def book(id):
-    """
-    Query for all books
-    """
-    book = Book.query.get(id)
-    return book.to_dict()
+# @book_routes.route('/')
+# def book(id):
+#     """
+#     Query for all books
+#     """
+#     book = Book.query.get(id)
+#     return book.to_dict()

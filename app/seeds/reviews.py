@@ -1,5 +1,6 @@
 from app.models import db, Review, environment, SCHEMA
-from sqlalchemy.sql import text, date
+from sqlalchemy.sql import text
+from datetime import date
 
 
 
@@ -8,7 +9,8 @@ def seed_reviews():
         user_id=2,
         book_id=1,
         review="This cookbook completely transformed my cooking skills! The science-based approach helped me understand the 'why' behind techniques. Highly recommend it!",
-        rating=5,created_at=date.today(),
+        rating=5,
+        created_at=date.today(),
         updated_at=date.today()
     )
 

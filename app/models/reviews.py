@@ -1,4 +1,4 @@
-from db import db, environment, SCHEMA, add_prefix_for_prod
+from .db import db, environment, SCHEMA, add_prefix_for_prod
 from datetime import datetime
 
 
@@ -16,8 +16,9 @@ class Review(db.Model):
     created_at = db.Column(db.DateTime, default=datetime.now)
     updated_at = db.Column(db.DateTime, default=datetime.now)
 
-    user_review = db.relationship("User", back_populates="review_user")
-    book_review = db.relationship("Book", back_populates="review")
+
+    user= db.relationship("User", back_populates="reviews")
+    book = db.relationship("Book", back_populates="reviews")
 
     def to_dict(self):
         return {

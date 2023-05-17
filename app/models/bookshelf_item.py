@@ -1,4 +1,4 @@
-from db import db, environment, SCHEMA, add_prefix_for_prod
+from .db import db, environment, SCHEMA, add_prefix_for_prod
 from datetime import datetime
 
 
@@ -14,7 +14,7 @@ class BookShelfItem(db.Model):
     created_at = db.Column(db.DateTime, default=datetime.now)
     updated_at = db.Column(db.DateTime, default=datetime.now)
 
-    bookshelf = db.relationship("User", back_populates="item")
+    bookshelf = db.relationship("BookShelf", back_populates="item")
     book = db.relationship("Book", back_populates="shelf", )
 
     def to_dict(self):
