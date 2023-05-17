@@ -20,16 +20,16 @@ def seed():
         # the schema name (see comment in users.py undo_users function).
         # Make sure to add all your other model's undo functions below
         undo_users()
+        undo_books()
         undo_bookshelf()
         undo_bookshelf_items()
-        undo_books()
         undo_reviews()
-
     seed_users()
+    seed_books()
     seed_bookshelf()
     seed_bookshelf_items()
     seed_reviews()
-    seed_books()
+
 
     # Add other seed functions here
 
