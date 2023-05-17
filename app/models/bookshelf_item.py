@@ -15,7 +15,7 @@ class BookShelfItem(db.Model):
     updated_at = db.Column(db.DateTime, default=datetime.now)
 
     bookshelf = db.relationship("BookShelf", back_populates="item")
-    book = db.relationship("Book", back_populates="shelf", )
+    book = db.relationship("Book", back_populates="shelf")
 
     def to_dict(self):
         return {
