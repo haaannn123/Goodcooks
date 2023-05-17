@@ -1,3 +1,13 @@
+/* index.js */
+.navbar-container{
+  
+}
+
+.home-link{
+  text-decoration: none;
+}
+
+/* ProfileButton.js */
 .profile-dropdown {
   position: absolute;
 }
