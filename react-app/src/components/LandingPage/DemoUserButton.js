@@ -17,9 +17,7 @@ function DemoUserButton(){
               setErrors(["The provided credentials were invalid."]);
             }
           });
-
       }
-
     return (
         <button onClick={demoUser}>Sign In as a Demo User</button>
     )

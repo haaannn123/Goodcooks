@@ -10,7 +10,9 @@ def books():
     Query for all books
     """
     books = Book.query.all()
-    return {book.to_dict() for book in books}
+    response = [book.to_dict() for book in books]
+    print("RESPONSE", response)
+    return response
 
 # @book_routes.route('/')
 # def book(id):

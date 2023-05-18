@@ -14,6 +14,8 @@ class Book(db.Model):
     description = db.Column(db.String(500), nullable=False)
     price = db.Column(db.Integer, nullable=False)
     published = db.Column(db.Date, nullable=False)
+    preview_img= db.Column(db.String)
+
     reviews = db.relationship('Review', back_populates="book")
     shelf = db.relationship('BookShelfItem', back_populates="book")
 
@@ -25,4 +27,5 @@ class Book(db.Model):
             'description': self.description,
             'price': self.price,
             'published': self.published,
+            'preview_img': self.preview_img
         }
