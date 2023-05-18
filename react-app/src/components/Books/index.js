@@ -15,7 +15,6 @@ function Books(){
     return (
         <div>
             {booksArr.map((book) => {
-                console.log('IMAGES', book.preview_img)
                 return (
                     <>
                         <h1>{book.title}</h1>
