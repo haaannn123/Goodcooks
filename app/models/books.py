@@ -12,8 +12,8 @@ class Book(db.Model):
     title = db.Column(db.Text, nullable=False)
     author = db.Column(db.Text, nullable=False)
     description = db.Column(db.Text, nullable=False)
-    price = db.Column(db.Integer, nullable=False)
-    published = db.Column(db.Integer, nullable=False)
+    price = db.Column(db.Float, nullable=False)
+    published = db.Column(db.Date)
     preview_img= db.Column(db.String, nullable=False)
 
     reviews = db.relationship('Review', back_populates="book")
