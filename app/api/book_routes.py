@@ -1,4 +1,4 @@
-from flask import Blueprint, jsonify
+from flask import Blueprint, jsonify, request
 from flask_login import login_required
 from app.models import Book, db
 from app.forms import BookForm
@@ -24,10 +24,10 @@ def book(id):
     return book.to_dict()
 
 @book_routes.route('/new', methods=['POST'])
+@login_required
 def create_book():
     form = BookForm()
-    print('BOOK FORM:', form)
-
+    form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
         new_book = Book(
             title = form.data['title'],
@@ -39,8 +39,8 @@ def create_book():
             created_at = date.today(),
             updated_at = date.today()
         )
+        print('BACKEnd', new_book)
         db.session.add(new_book)
         db.session.commit()
         return new_book.to_dict()
-    return "BAD DATA :("
-
+    return form.errors

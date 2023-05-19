@@ -7,6 +7,8 @@ import { authenticate } from "./store/session";
 import Navigation from "./components/Navigation";
 import Books from "./components/Books";
 import Book from "./components/Book";
+import BookForm from "./components/BookForm";
+import BookFormUpdate from "./components/BookFormUpdate";
 
 function App() {
   const dispatch = useDispatch();
@@ -27,10 +29,16 @@ function App() {
           <Route path="/signup">
             <SignupFormPage />
           </Route>
+          <Route path="/books/new">
+            <BookForm />
+          </Route>
+          <Route path="/books/:bookId/edit">
+            <BookFormUpdate />
+          </Route>
           <Route path="/books/:bookId">
             <Book />
           </Route>
-          <Route path="/books">
+          <Route path="/">
             <Books />
           </Route>
         </Switch>
