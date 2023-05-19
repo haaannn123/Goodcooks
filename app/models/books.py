@@ -9,11 +9,13 @@ class Book(db.Model):
         __table_args__ = {'schema': SCHEMA}
 
     id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(500), nullable=False)
-    author = db.Column(db.String(500), nullable=False)
-    description = db.Column(db.String(500), nullable=False)
+    title = db.Column(db.Text, nullable=False)
+    author = db.Column(db.Text, nullable=False)
+    description = db.Column(db.Text, nullable=False)
     price = db.Column(db.Integer, nullable=False)
-    published = db.Column(db.Date, nullable=False)
+    published = db.Column(db.Integer, nullable=False)
+    preview_img= db.Column(db.String, nullable=False)
+
     reviews = db.relationship('Review', back_populates="book")
     shelf = db.relationship('BookShelfItem', back_populates="book")
 
@@ -25,4 +27,5 @@ class Book(db.Model):
             'description': self.description,
             'price': self.price,
             'published': self.published,
+            'preview_img': self.preview_img
         }
