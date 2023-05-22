@@ -15,7 +15,7 @@ def seed_reviews():
     )
 
     review2 = Review(
-        user_id=3,
+        user_id=1,
         book_id=2,
         review="Salt, Fat, Acid, Heat is a game-changer! Samin Nosrat's explanations are so insightful, and the recipes are delicious. A must-have for any cook.",
         rating=4,
@@ -42,7 +42,7 @@ def seed_reviews():
     )
 
     review5 = Review(
-        user_id=3,
+        user_id=2,
         book_id=5,
         review="The Flavor Bible is a treasure trove for flavor inspiration. I love exploring different ingredient pairings and experimenting with new flavors. A must-have for creative cooks.",
         rating=4,
@@ -69,7 +69,7 @@ def seed_reviews():
     )
 
     review8 = Review(
-        user_id=3,
+        user_id=1,
         book_id=8,
         review="The Pioneer Woman Cooks captures the essence of comfort cooking. Ree's recipes are hearty and delicious, perfect for satisfying cravings. I love her storytelling too!",
         rating=4,
