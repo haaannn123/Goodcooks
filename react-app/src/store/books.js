@@ -75,11 +75,9 @@ export const thunkCreateBook = (book) => async (dispatch) => {
     method: "POST",
     body: JSON.stringify(book),
   });
-  console.log("RESPONSE", res);
 
   if (res.ok) {
     const new_book = await res.json();
-    console.log("BOOOOOK!!:", new_book);
     dispatch(actionPostBook(new_book));
   }
 };
@@ -90,11 +88,9 @@ export const thunkEditBook = (book, bookId) => async (dispatch) => {
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(book)
     })
-
-    console.log('RESPONSE', res)
+    
     if (res.ok){
         const edited_book = await res.json();
-        console.log('EDITED BOOK', edited_book)
         dispatch(actionUpdateBook(edited_book))
         return edited_book
     }

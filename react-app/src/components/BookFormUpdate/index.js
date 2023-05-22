@@ -10,65 +10,13 @@ function BookFormUpdate() {
   const history = useHistory();
 
   const book = useSelector((state) => state.booksReducer.book);
-  console.log("BOOK STATE", book);
 
   useEffect(() => {
     dispatch(thunkGetBookById(bookId));
   }, [dispatch, bookId]);
 
-  // const [title, setTitle] = useState(book.title);
-  // const [author, setAuthor] = useState(book.author);
-  // const [description, setDescription] = useState(book.description);
-  // const [price, setPrice] = useState(book.price);
-  // const [published, setPublished] = useState(book.published);
-  // const [image, setImage] = useState(book.preview_img);
   const [errors, setErrors] = useState({});
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-
-  //   let err = {};
-  //   if (!title.length) {
-  //     err.title = "Title is required";
-  //   } else if (title.length < 2) {
-  //     err.title = "Title must be at least 2 characters";
-  //   }
-
-  //   if (!author.length) {
-  //     err.author = "Author is required";
-  //   } else if (author.length < 2) {
-  //     err.author = "Author must be at least 2 characters";
-  //   }
-
-  //   if (description.length < 3) {
-  //     err.description = "Description must be at least 3 characters";
-  //   }
-
-  //   if (price < 1) {
-  //     err.price = "Please enter a valid price";
-  //   }
-
-  //   if (image.length < 1) {
-  //     err.image = "Image is required";
-  //   } else if (!image.endsWith(".png") && !image.endsWith(".jpg") && !image.endsWith(".jpeg")) {
-  //     err.image = "Image URL must end in .png, .jpg, or .jpeg";
-  //   }
-  //   if (Object.keys(err).length > 0) {
-  //     setErrors(err);
-  //   } else {
-  //     const new_book = {
-  //       title,
-  //       author,
-  //       description,
-  //       price,
-  //       published,
-  //       preview_img: image,
-  //     };
-  //     console.log("NEW_BOOK", new_book);
-  //     dispatch(thunkCreateBook(new_book));
-  //     history.push("/");
-  //   }
-  // };
 
   const dateOnChangeHandler = (e) => {
     console.log(e.target.value);

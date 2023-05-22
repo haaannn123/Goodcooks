@@ -1,0 +1,32 @@
+.bookshelf-items {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+}
+
+.bookshelf-item {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.bookshelf-item > * {
+}
+
+.bookshelf-item > h1 {
+  font-size: 20px;
+  font-weight: lighter;
+}
+
+.bookshelf-item.header > h1 {
+  font-weight: bold;
+}
+
+.dropdown {
+  position: relative;
+  top: 10px;
+  left: 20px;
+  width: 200px;
+  background-color: white;
+  border: 1px solid black;
+}

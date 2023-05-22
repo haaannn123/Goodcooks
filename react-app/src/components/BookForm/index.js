@@ -54,7 +54,6 @@ function BookForm(){
                 published,
                 preview_img: image
             }
-            console.log('NEW BOOK')
             dispatch(thunkCreateBook(new_book))
             history.push('/')
         }
