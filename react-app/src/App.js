@@ -9,6 +9,7 @@ import Books from "./components/Books";
 import Book from "./components/Book";
 import BookForm from "./components/BookForm";
 import BookFormUpdate from "./components/BookFormUpdate";
+import ProfilePage from "./components/ProfilePage";
 
 function App() {
   const dispatch = useDispatch();
@@ -38,8 +39,11 @@ function App() {
           <Route path="/books/:bookId">
             <Book />
           </Route>
-          <Route path="/">
+          <Route path="/books">
             <Books />
+          </Route>
+          <Route path="/user">
+            <ProfilePage />
           </Route>
         </Switch>
       )}

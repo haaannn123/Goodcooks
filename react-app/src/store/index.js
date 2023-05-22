@@ -2,9 +2,14 @@ import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import session from './session'
 import booksReducer from './books';
+import bookshelvesReducer from './bookshelf';
+import bookshelfItemReducer from './bookshelf_items';
+
 const rootReducer = combineReducers({
   session,
-  booksReducer
+  booksReducer,
+  bookshelvesReducer,
+  bookshelfItemReducer
 });
 
 let enhancer;
