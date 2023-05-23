@@ -39,7 +39,6 @@ def create_book():
             published = form.data['published'],
             preview_img = form.data['preview_img'],
         )
-        print('BACKEnd', new_book)
         db.session.add(new_book)
         db.session.commit()
         return new_book.to_dict()

@@ -1,0 +1,10 @@
+.bookcover-img{
+    width: 120px;
+    height: 185px;
+}
+
+.book-card{
+    display: flex;
+    background-color: lightgray;
+    width: 25%;
+}

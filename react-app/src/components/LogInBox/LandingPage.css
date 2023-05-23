@@ -1,6 +1,10 @@
 .account-box{
+    display: flex;
+    flex-direction: column;
     width: 250px;
     margin: 14px 6px 0 0;
     border: 1px solid #D8D8D8;
     font-family: "Merriweather", "Georgia", serif;
+    background-color: white;
+    border-radius: 4%;
 }

@@ -1,10 +1,10 @@
-/* index.js */
-.navbar-container{
-  
-}
+.login-container{
+  display: flex;
 
+}
 .home-link{
   text-decoration: none;
+  font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
 }
 
 /* ProfileButton.js */
@@ -14,4 +14,15 @@
 
 .hidden {
   display: none;
+}
+
+.splash-page-image{
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.login-landing-page-box{
+  z-index: 1;
+  transform: translate(-60%, 60%);
 }
