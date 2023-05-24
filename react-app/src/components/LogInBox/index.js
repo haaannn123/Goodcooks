@@ -29,16 +29,18 @@ function LandingPage() {
     <div className="account-box">
       <h2>Discover & cook more</h2>
       <OpenModalButton
-        buttonText="Log In"
+        buttonText="Sign in"
         onItemClick={closeMenu}
+        className="log-in-box-button"
         modalComponent={<LoginFormModal />} />
       <OpenModalButton
-        buttonText="Sign Up"
+        buttonText="Register"
+        className="sign-up-box-button"
         onItemClick={closeMenu}
         modalComponent={<SignupFormModal />} />
-      <div>
-        Want a look around?
-        <DemoUserButton />
+        <div className="legal-message">By creating an account, you agree to the Greatcooks Terms of Service and Privacy Policy.</div>
+      <div className="demo-input">
+        Sign in as a  <DemoUserButton />
       </div>
     </div>
   );

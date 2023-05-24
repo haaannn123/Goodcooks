@@ -2,8 +2,8 @@ import "./Books.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { thunkGetAllBooks } from "../../store/books";
-import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
-
+import { NavLink } from "react-router-dom";
+import UsersCurrentlyReading from "./UsersCurrentlyReading";
 
 function Books() {
   const dispatch = useDispatch();
@@ -18,23 +18,23 @@ function Books() {
   return (
     <div>
       {user ? (
-        <div>
-          {booksArr.map((book) => {
-            return (
-              <div className="book-card">
-                <NavLink to={`/books/${book.id}`}>
-                  <img className="bookcover-img" src={book.preview_img} alt="cookbooks" />
-                  <div>
-                    <h1>{book.title}</h1>
-                    <h2>By {book.author}</h2>
-                  </div>
-                </NavLink>
-              </div>
-            );
-          })}
+        <div className="entire-books-container">
+          <UsersCurrentlyReading />
+          <div className="books-page-container">
+            {booksArr.map((book) => {
+              return (
+                <div className="books-card" key={book.id}>
+                  <NavLink to={`/books/${book.id}`}>
+                    <img className="bookcover-img" src={book.preview_img} alt="cookbooks" />
+                  </NavLink>
+                </div>
+              );
+            })}
+          </div>
         </div>
       ) : null}
     </div>
   );
 }
+
 export default Books;

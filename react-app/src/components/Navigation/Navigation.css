@@ -1,15 +1,30 @@
-.login-container{
-  display: flex;
-
+.navbar-container{
+  padding: .2rem 1rem 1rem 1.2rem;
 }
+
 .home-link{
   text-decoration: none;
-  font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+}
+
+.great{
+  font-size: 50px;
+  font-weight: 200;
+  color: rgba(80, 72, 72, 0.91);
+  font-family: Lato, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.great .cooks{
+  font-weight:600;
 }
 
 /* ProfileButton.js */
 .profile-dropdown {
   position: absolute;
+}
+
+.profile-button-container{
+  display: flex;
+  justify-self: flex-end;
 }
 
 .hidden {
@@ -18,8 +33,9 @@
 
 .splash-page-image{
   width: 100%;
+  object-fit: contain;
   position: relative;
-  z-index: 2;
+  z-index: 1;
 }
 
 .login-landing-page-box{
