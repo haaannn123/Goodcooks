@@ -12,7 +12,6 @@ const AddToShelfModal = ({ bookId }) => {
   const { closeModal } = useModal();
   const userBookshelves = useSelector((state) => state.bookshelvesReducer.bookshelves);
   const backendError = useSelector((state) => state.bookshelfItemReducer.error);
-  console.log("ERROR HERE", backendError);
 
   useEffect(() => {
     dispatch(thunkGetUserBookShelf());

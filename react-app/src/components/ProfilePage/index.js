@@ -1,13 +1,12 @@
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import BookShelf from "./BookShelf";
-import EditShelf from './EditShelf'
 import './ProfilePage.css'
 
 const ProfilePage = () => {
   const user = useSelector((state) => state.session.user);
   if (!user.profile_img) return null;
-  console.log(user);
+
   return (
     <>
       <img src={user.profile_img} alt="user-profile" />

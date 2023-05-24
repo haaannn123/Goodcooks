@@ -1,3 +1,5 @@
+import { thunkGetUserBookShelf } from "./bookshelf";
+
 const GET_BOOKSHELF_ITEMS_BOOKS = "bookshelf_item/item/GET_BOOKSHELF_ITEMS_BOOKS";
 const ADD_TO_SHELF = "bookshelf_item/ADD_TO_SHELF";
 const ADD_TO_SHELF_ERROR = "bookshelf_item/ADD_TO_SHELF_ERROR";
@@ -40,9 +42,7 @@ const normalizedBookShelfItem = (bookshelfDatas) => {
 };
 
 export const thunkGetBookshelfItemBooks = (shelfId) => async (dispatch) => {
-  console.log("BOOKSHELF ID FRONT:", shelfId);
   const res = await fetch(`/api/bookshelf_item/${shelfId}`);
-  console.log("BOOK RES", res);
   if (res.ok) {
     const bookshelfItemBooks = await res.json();
     const normalizedBooks = normalizedBookShelfItem(bookshelfItemBooks);
@@ -74,6 +74,7 @@ export const thunkRemoveShelfItem = (bookshelfId, bookId) => async (dispatch) =>
   })
   if (res.ok){
     dispatch(actionRemoveFromShelf(bookshelfId, bookId))
+    dispatch(thunkGetUserBookShelf())
   }
 }
 

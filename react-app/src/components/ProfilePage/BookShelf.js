@@ -7,7 +7,7 @@ import DeleteShelfButton from "./DeleteShelfButton";
 
 const BookShelf = ({ firstName, lastName }) => {
   const dispatch = useDispatch();
-  const [shelf, setShelf] = useState("currently_reading");
+  const [shelf, setShelf] = useState();
   const [shelfId, setShelfId] = useState();
   const bookshelves = useSelector((state) => state.bookshelvesReducer.bookshelves);
   const bookshelvesArr = Object.values(bookshelves);

@@ -18,7 +18,8 @@ const Book = () => {
 
   const book = useSelector((state) => state.booksReducer.book);
   const userBookshelf = useSelector(state => state.bookshelvesReducer.bookshelves)
-  console.log("USER BOOKSHELF", userBookshelf)
+  const user = useSelector(state => state.session.user.id)
+  console.log('CURRENT USER', user)
   dateParser(book.published);
 
   useEffect(() => {
@@ -38,12 +39,16 @@ const Book = () => {
           onItemClick={closeModal}
           modalComponent={<AddToShelfModal bookId={parseInt(bookId)}/>}
       />
-      <OpenModalButton
+
+      {user === book.owner_id?
+        (<OpenModalButton
           buttonText="Delete Book"
           onItemClick={closeModal}
           modalComponent={<BookDelete bookId={bookId}/>}
-      />
-
+      />): (
+        null
+      )
+    }
     </>
   );
 };

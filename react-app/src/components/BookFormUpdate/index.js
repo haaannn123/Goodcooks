@@ -69,7 +69,6 @@ function BookFormUpdate() {
         published,
         preview_img: image,
       };
-      console.log("NEW_BOOK", new_book);
       dispatch(thunkEditBook(new_book, bookId));
       history.push(`/books/${bookId}`);
     }
