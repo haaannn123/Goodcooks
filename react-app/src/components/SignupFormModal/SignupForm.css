@@ -1,0 +1,26 @@
+.sign-up-form-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 90px 50px 90px;
+    font-family: "Merriweather", Georgia, "Times New Roman", serif;
+    color: rgba(0, 0, 0, 0.885)
+}
+
+.sign-up-form-input{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+    font-size: 20px;
+}
+
+.sign-up-button{
+    width: 25rem;
+    height: 2rem;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(101, 119, 101);
+    color: white;
+}

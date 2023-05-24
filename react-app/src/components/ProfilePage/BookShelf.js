@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { thunkGetUserBookShelf } from "../../store/bookshelf";
 import DisplayBooks from "./DisplayBooks";
+import AddToShelfButton from "./AddToShelfButton";
+import DeleteShelfButton from "./DeleteShelfButton";
 
 const BookShelf = ({ firstName, lastName }) => {
   const dispatch = useDispatch();
@@ -10,9 +12,11 @@ const BookShelf = ({ firstName, lastName }) => {
   const bookshelves = useSelector((state) => state.bookshelvesReducer.bookshelves);
   const bookshelvesArr = Object.values(bookshelves);
 
+
   useEffect(() => {
     dispatch(thunkGetUserBookShelf());
   }, [dispatch]);
+
 
   useEffect(() => {
     let currentReadingShelf;
@@ -29,12 +33,12 @@ const BookShelf = ({ firstName, lastName }) => {
     }
   }, [bookshelves]);
 
-  const displayShelf = (bookshelfName, bookshelfId) => {
-    setShelf(bookshelfName);
-    setShelfId(bookshelfId);
-  };
+  const displayShelf = (name, id) => {
+    setShelf(name)
+    setShelfId(id)
+  }
 
-  const shelfDisplayHeader = (shelf, firstName) => {
+  const shelfDisplayHeader = (shelf, firstName ) => {
     if (shelf === "currently_reading") {
       return `${firstName.toUpperCase()} IS CURRENTLY READING`;
     } else if (shelf === "read") {
@@ -42,7 +46,7 @@ const BookShelf = ({ firstName, lastName }) => {
     } else if (shelf === "to_read") {
       return `${firstName.toUpperCase()} WANTS TO READ`;
     } else {
-      return `${firstName.toUpperCase()}'s ${shelf.toUpperCase()}`;
+      return `${firstName.toUpperCase()}'S ${shelf.toUpperCase()}`;
     }
   };
 
@@ -57,12 +61,13 @@ const BookShelf = ({ firstName, lastName }) => {
             </>
           );
         })}
+      <AddToShelfButton />
       </div>
       {/* when clicked will display books in bookshelves */}
       <div>
         {shelf && (
           <div>
-            <h3>{shelfDisplayHeader(shelf, firstName)}</h3>
+            <h3>{shelfDisplayHeader(shelf, firstName, DeleteShelfButton)}</h3>
             <DisplayBooks shelfId={shelfId} />
           </div>
         )}

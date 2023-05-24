@@ -10,7 +10,7 @@ class User(db.Model, UserMixin):
         __table_args__ = {'schema': SCHEMA}
 
     id = db.Column(db.Integer, primary_key=True)
-    profile_img = db.Column(db.String)
+    profile_img = db.Column(db.String, nullable=True)
     first_name = db.Column(db.String(50), nullable=False)
     last_name = db.Column(db.String)
     username = db.Column(db.String(40), nullable=False, unique=True)

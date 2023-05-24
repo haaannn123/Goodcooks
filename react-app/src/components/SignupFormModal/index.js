@@ -5,79 +5,93 @@ import { signUp } from "../../store/session";
 import "./SignupForm.css";
 
 function SignupFormModal() {
-	const dispatch = useDispatch();
-	const [email, setEmail] = useState("");
-	const [username, setUsername] = useState("");
-	const [password, setPassword] = useState("");
-	const [confirmPassword, setConfirmPassword] = useState("");
-	const [errors, setErrors] = useState([]);
-	const { closeModal } = useModal();
+  const dispatch = useDispatch();
+  const [email, setEmail] = useState("");
+  const [first_name, setFirstName] = useState('');
+  const [last_name, setLastname] = useState("");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [errors, setErrors] = useState([]);
+  const { closeModal } = useModal();
 
-	const handleSubmit = async (e) => {
-		e.preventDefault();
-		if (password === confirmPassword) {
-			const data = await dispatch(signUp(username, email, password));
-			if (data) {
-				setErrors(data);
-			} else {
-				closeModal();
-			}
-		} else {
-			setErrors([
-				"Confirm Password field must be the same as the Password field",
-			]);
-		}
-	};
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (password === confirmPassword) {
+      const data = await dispatch(signUp(first_name, last_name, username, email, password));
+      if (data) {
+        setErrors(data);
+      } else {
+        closeModal();
+      }
+    } else {
+      setErrors(["Confirm Password field must be the same as the Password field"]);
+    }
+  };
 
-	return (
-		<>
-			<h1>Sign Up</h1>
-			<form onSubmit={handleSubmit}>
-				<ul>
-					{errors.map((error, idx) => (
-						<li key={idx}>{error}</li>
-					))}
-				</ul>
-				<label>
-					Email
-					<input
-						type="text"
-						value={email}
-						onChange={(e) => setEmail(e.target.value)}
-						required
-					/>
-				</label>
-				<label>
-					Username
-					<input
-						type="text"
-						value={username}
-						onChange={(e) => setUsername(e.target.value)}
-						required
-					/>
-				</label>
-				<label>
-					Password
-					<input
-						type="password"
-						value={password}
-						onChange={(e) => setPassword(e.target.value)}
-						required
-					/>
-				</label>
-				<label>
-					Confirm Password
-					<input
-						type="password"
-						value={confirmPassword}
-						onChange={(e) => setConfirmPassword(e.target.value)}
-						required
-					/>
-				</label>
-				<button type="submit">Sign Up</button>
-			</form>
-		</>
-	);
+  return (
+    <div className="sign-up-form-container">
+      <h1>Sign up for Greatcooks</h1>
+        <form onSubmit={handleSubmit}>
+          <div className="errors" >
+            {errors.map((error, idx) => (
+				<p key={idx}>{error}</p>
+            ))}
+          </div>
+      <div className="sign-up-form-input">
+	  	  <label>First name</label>
+          <input
+		  	type="text"
+			value={first_name}
+			placeholder="John"
+			className="borderless-inputs"
+			onChange={(e) => setFirstName(e.target.value)}
+			required />
+		  <label>Last name</label>
+          <input
+		  	type="text"
+			value={last_name}
+			placeholder="Doe"
+			className="borderless-inputs"
+			onChange={(e) => setLastname(e.target.value)}
+			required />
+          <label>Email</label>
+          <input
+		  	type="text"
+			value={email}
+			placeholder="johndoe@gmail.com"
+			className="borderless-inputs"
+			onChange={(e) => setEmail(e.target.value)}
+			required />
+          <label>Username</label>
+          <input
+		  	type="text"
+			className="borderless-inputs"
+			value={username}
+			placeholder="JohnDoe"
+			onChange={(e) => setUsername(e.target.value)}
+			required />
+          <label>Password</label>
+          <input
+		  	type="password"
+			className="borderless-inputs"
+			value={password}
+			placeholder="Password"
+			onChange={(e) => setPassword(e.target.value)}
+			required />
+          <label>Confirm Password</label>
+          <input
+		  	type="password"
+			  className="borderless-inputs"
+			value={confirmPassword}
+			placeholder="Confirm password"
+			onChange={(e) => setConfirmPassword(e.target.value)}
+			required />
+          <button className="sign-up-button" type="submit">Sign Up</button>
+      </div>
+        </form>
+    </div>
+  );
 }
 
 export default SignupFormModal;

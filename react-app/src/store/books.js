@@ -88,7 +88,7 @@ export const thunkEditBook = (book, bookId) => async (dispatch) => {
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(book)
     })
-    
+
     if (res.ok){
         const edited_book = await res.json();
         dispatch(actionUpdateBook(edited_book))

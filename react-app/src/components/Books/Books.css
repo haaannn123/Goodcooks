@@ -1,0 +1,25 @@
+.entire-books-container{
+    display: flex;
+    padding: 5rem;
+}
+
+.books-page-container{
+    display: flex;
+    justify-content: center;
+}
+
+.books-card{
+    display: flex;
+    width: 25%;
+}
+
+.bookcover-img{
+    width: 120px;
+    height: 185px;
+}
+
+.currently-reading-container{
+    display: flex;
+    flex-direction: column;
+    width: 1000px;
+}

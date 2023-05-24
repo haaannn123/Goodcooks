@@ -1,10 +1,20 @@
-/* index.js */
 .navbar-container{
-  
+  padding: .2rem 1rem 1rem 1.2rem;
 }
 
 .home-link{
   text-decoration: none;
+}
+
+.great{
+  font-size: 50px;
+  font-weight: 200;
+  color: rgba(80, 72, 72, 0.91);
+  font-family: Lato, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.great .cooks{
+  font-weight:600;
 }
 
 /* ProfileButton.js */
@@ -12,6 +22,23 @@
   position: absolute;
 }
 
+.profile-button-container{
+  display: flex;
+  justify-self: flex-end;
+}
+
 .hidden {
   display: none;
+}
+
+.splash-page-image{
+  width: 100%;
+  object-fit: contain;
+  position: relative;
+  z-index: 1;
+}
+
+.login-landing-page-box{
+  z-index: 1;
+  transform: translate(-60%, 60%);
 }
