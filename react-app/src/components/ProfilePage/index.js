@@ -5,11 +5,14 @@ import './ProfilePage.css'
 
 const ProfilePage = () => {
   const user = useSelector((state) => state.session.user);
-  if (!user.profile_img) return null;
 
   return (
     <>
+     {user.profile_img ? (
       <img src={user.profile_img} alt="user-profile" />
+     ): (
+      <img src="https://i.imgur.com/nqak9tT.png" alt="user-profile"/>
+     )}
       <h1>
         {user.first_name} {user.last_name}
       </h1>
