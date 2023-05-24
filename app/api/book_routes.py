@@ -1,6 +1,6 @@
-from flask import Blueprint, jsonify, request
+from flask import Blueprint, jsonify, request, session
 from flask_login import login_required
-from app.models import Book, db
+from app.models import Book, db, User
 from app.forms import BookForm
 from datetime import date, datetime
 
@@ -13,7 +13,15 @@ def books():
     """
     books = Book.query.all()
     response = [book.to_dict() for book in books]
+
+    # Add owner to response
+    for book in response:
+        owner_id = book.get('owner_id')
+        owner = User.query.get(owner_id)
+        if owner:
+            book['owner_info'] = owner.to_dict()['username']
     return response
+
 
 @book_routes.route('/<int:id>')
 def book(id):
@@ -21,7 +29,13 @@ def book(id):
     Query for a book by its id
     """
     book = Book.query.get(id)
-    return book.to_dict()
+    response = book.to_dict()
+    owner_id = book.owner_id
+    owner = User.query.get(owner_id)
+    if owner:
+        response['owner_info'] = owner.to_dict()['username']
+    return response
+
 
 @book_routes.route('/new', methods=['POST'])
 def create_book():
@@ -29,9 +43,11 @@ def create_book():
     Create a new book
     """
     form = BookForm()
+    owner_id = session.get('_user_id')
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
         new_book = Book(
+            owner_id = owner_id,
             title = form.data['title'],
             author = form.data['author'],
             description = form.data['description'],

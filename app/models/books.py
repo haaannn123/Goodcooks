@@ -9,6 +9,7 @@ class Book(db.Model):
         __table_args__ = {'schema': SCHEMA}
 
     id = db.Column(db.Integer, primary_key=True)
+    owner_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('users.id')))
     title = db.Column(db.Text, nullable=False)
     author = db.Column(db.Text, nullable=False)
     description = db.Column(db.Text, nullable=False)
@@ -16,12 +17,14 @@ class Book(db.Model):
     published = db.Column(db.Date)
     preview_img= db.Column(db.String, nullable=False)
 
+    owner = db.relationship("User", back_populates="books")
     reviews = db.relationship('Review', back_populates="book")
     shelf = db.relationship('BookShelfItem', back_populates="book")
 
     def to_dict(self):
         return {
             'id': self.id,
+            'owner_id': self.owner_id,
             'title': self.title,
             'author': self.author,
             'description': self.description,

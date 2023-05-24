@@ -4,9 +4,15 @@ import { useSelector } from "react-redux";
 import ProfileButton from "./ProfileButton";
 import LandingPage from "../LogInBox";
 import "./Navigation.css";
+import { useHistory } from "react-router-dom"
 
 function Navigation({ isLoaded }) {
   const user = useSelector((state) => state.session.user);
+  const history = useHistory()
+
+  const handleClick = () => {
+    history.push("/books/new")
+  }
 
   return (
     <div className="navbar-container">
@@ -17,7 +23,8 @@ function Navigation({ isLoaded }) {
       </NavLink>
       {isLoaded ? (
         user ? (
-          <div className="profile-button-container">
+          <div>
+            <button className="Create a book button" onClick={() => handleClick()}>Create a book!</button>
             <ProfileButton user={user} />
           </div>
         ) : (
