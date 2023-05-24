@@ -16,13 +16,12 @@ const UsersCurrentlyReading = () => {
 
     return (
         <div className="currently-reading-container">
-            <h3>CURRENTLY READING</h3>
+            <NavLink className="navlink currently-reading"to="/user">CURRENTLY READING</NavLink>
            {Object.values(usersBooks).map((book) => {
                 return(
                 <NavLink to={`/books/${book.id}`}>
                     <img className="bookcover-img" src={book.preview_img} alt="book- cover"/>
                 </NavLink>
-
                 )
            })}
         </div>
