@@ -62,6 +62,7 @@ export const thunkAddToShelf = (bookshelf) => async (dispatch) => {
     if (res.ok){
         const new_shelf = await res.json();
         dispatch(actionAddBookshelf(new_shelf));
+        dispatch(thunkGetUserBookShelf())
     }
 }
 

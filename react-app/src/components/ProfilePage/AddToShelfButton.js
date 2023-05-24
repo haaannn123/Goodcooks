@@ -14,7 +14,6 @@ const AddToShelfButton = () => {
             name: shelf
         }
         dispatch(thunkAddToShelf(new_shelf))
-        window.location.reload()
     }
 
     return (

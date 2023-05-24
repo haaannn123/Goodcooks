@@ -13,6 +13,7 @@ import RemoveFromShelf from "../RemoveFromShelves";
 
 const Book = () => {
   const { bookId }  = useParams();
+  console.log('BOOK ID HERE', bookId)
   const dispatch = useDispatch();
   const {closeModal } = useModal();
 
@@ -23,7 +24,7 @@ const Book = () => {
   dateParser(book.published);
 
   useEffect(() => {
-    dispatch(thunkGetBookById(parseInt(bookId)));
+    dispatch(thunkGetBookById(bookId));
     dispatch(thunkGetUserBookShelf())
   }, [dispatch, bookId]);
 
@@ -37,7 +38,7 @@ const Book = () => {
       <OpenModalButton
           buttonText="Add to shelf"
           onItemClick={closeModal}
-          modalComponent={<AddToShelfModal bookId={parseInt(bookId)}/>}
+          modalComponent={<AddToShelfModal bookId={bookId}/>}
       />
 
       {user === book.owner_id?
