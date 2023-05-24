@@ -24,6 +24,7 @@ def add_shelf():
     """
     form = BookshelfForm()
     user_id = session.get('_user_id')
+    print('CURRENT USER ID:', user_id)
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
         new_shelf = BookShelf(

@@ -26,9 +26,7 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
-          <Route path="/">
-            <Books />
-          </Route>
+
           <Route path="/login" >
             <LoginFormPage />
           </Route>
@@ -49,6 +47,9 @@ function App() {
           </Route>
           <Route path='/bookshelves/edit'>
               <EditShelf />
+          </Route>
+          <Route path="/">
+            <Books />
           </Route>
         </Switch>
       )}
