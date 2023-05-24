@@ -20,8 +20,8 @@ class BookShelfItem(db.Model):
     def to_dict(self):
         return {
             'id': self.id,
-            'name': self.bookshelf_id,
-            'user_id': self.book_id,
+            'bookshelf_id': self.bookshelf_id,
+            'book_id': self.book_id,
             'created_at': self.created_at,
             'updated_at': self.updated_at
         }
