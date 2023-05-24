@@ -34,8 +34,7 @@
 .splash-page-image{
   width: 100%;
   object-fit: contain;
-  position: relative;
-  z-index: 1;
+  z-index: -1;
 }
 
 .login-landing-page-box{
