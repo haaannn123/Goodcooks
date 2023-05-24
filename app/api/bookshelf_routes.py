@@ -16,6 +16,7 @@ def bookshelf():
     response = [bookshelf.to_dict() for bookshelf in bookshelves]
     return response
 
+
 @bookshelf_routes.route('/new', methods=['POST'])
 def add_shelf():
     """

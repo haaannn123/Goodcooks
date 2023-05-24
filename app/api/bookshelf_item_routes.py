@@ -10,7 +10,6 @@ def bookshelf_item(bookshelfId):
     """
     Query for all the books in the bookshelf
     """
-    print('BOOKSHELF ID:', bookshelfId)
     books = Book.query.join(BookShelfItem).filter(BookShelfItem.bookshelf_id == bookshelfId).all()
     books_data = [item.to_dict() for item in books]
     return books_data
@@ -22,7 +21,12 @@ def add_to_shelf(bookId):
     Add a book to the bookshelf item
     """
     bookshelf_id = request.json.get('bookshelf_id')
-    print('BACKEND BOOKID', bookId, "bookshelf id HERE!!", bookshelf_id)
+
+    #Check if book exists in data
+    existing_book = BookShelfItem.query.filter_by(bookshelf_id=bookshelf_id,book_id=bookId).first()
+    print("\n", existing_book, "\n")
+    if existing_book:
+        return ("Book already belongs to this shelf"), 400
     new_bookshelf_item = BookShelfItem(
         bookshelf_id=bookshelf_id,
         book_id=bookId
@@ -30,3 +34,13 @@ def add_to_shelf(bookId):
     db.session.add(new_bookshelf_item)
     db.session.commit()
     return new_bookshelf_item.to_dict()
+
+
+@bookshelf_item_routes.route('/<int:bookshelfId>/<int:bookId>', methods=['DELETE'])
+def delete_item(bookshelf_id, book_id):
+    bookshelf_item = BookShelfItem.query.filter_by(bookshelf_id=bookshelf_id, book_id=book_id).first()
+    if (not bookshelf_item):
+        return ('No Item Found'), 404
+    db.session.delete(bookshelf_item)
+    db.session.commit()
+    return {"Item was sucessfully deleted": bookshelfId}

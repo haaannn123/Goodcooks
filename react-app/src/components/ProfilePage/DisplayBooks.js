@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { thunkGetBookshelfItemBooks } from "../../store/bookshelf_items";
-import Dropdown from "./bookDropdown";
+import RemoveFromShelves from "../RemoveFromShelves";
 
 const DisplayBooks = ({ shelfId }) => {
   const dispatch = useDispatch();
@@ -11,14 +11,9 @@ const DisplayBooks = ({ shelfId }) => {
 
   useEffect(() => {
     dispatch(thunkGetBookshelfItemBooks(shelfId));
-    setDropdown(null);
   }, [dispatch, shelfId]);
 
-  const [dropdown, setDropdown] = useState(null);
 
-  const handleDropdownSelect = (id) => {
-    setDropdown(id);
-  };
 
   return (
     <div className="bookshelf-items">
@@ -27,8 +22,7 @@ const DisplayBooks = ({ shelfId }) => {
           <div className="bookshelf-item">
             <img src={book.preview_img} alt="" style={{ width: "50px" }} />
             <h1>{book.title}</h1>
-            <button onClick={() => handleDropdownSelect(book.id)}>Dropdown</button>
-            <Dropdown id={book.id} dropdown={dropdown} />
+            <RemoveFromShelves shelfId={shelfId} bookId={book.id}/>
           </div>
         );
       })}

@@ -1,5 +1,7 @@
 const GET_BOOKSHELF_ITEMS_BOOKS = "bookshelf_item/item/GET_BOOKSHELF_ITEMS_BOOKS";
 const ADD_TO_SHELF = "bookshelf_item/ADD_TO_SHELF";
+const ADD_TO_SHELF_ERROR = "bookshelf_item/ADD_TO_SHELF_ERROR";
+const REMOVE_FROM_SHELF = "bookshelf_item/REMOVE_FROM_SHELF"
 
 export const actionGetBookshelfItemBooks = (bookshelfItemBook) => {
   return {
@@ -15,6 +17,20 @@ export const actionAddToShelf = (bookshelfItem) => {
   };
 };
 
+export const actionAddToShelfError = (error) => {
+  return {
+    type: ADD_TO_SHELF_ERROR,
+    error,
+  };
+};
+
+export const actionRemoveFromShelf = (bookshelfItem) => {
+  return {
+    type: REMOVE_FROM_SHELF,
+    bookshelfItem
+  }
+}
+
 const normalizedBookShelfItem = (bookshelfDatas) => {
   let normalizedData = {};
   bookshelfDatas.forEach((bookshelf) => {
@@ -24,7 +40,7 @@ const normalizedBookShelfItem = (bookshelfDatas) => {
 };
 
 export const thunkGetBookshelfItemBooks = (shelfId) => async (dispatch) => {
-    console.log('BOOKSHELF ID FRONT:', shelfId)
+  console.log("BOOKSHELF ID FRONT:", shelfId);
   const res = await fetch(`/api/bookshelf_item/${shelfId}`);
   console.log("BOOK RES", res);
   if (res.ok) {
@@ -35,20 +51,33 @@ export const thunkGetBookshelfItemBooks = (shelfId) => async (dispatch) => {
 };
 
 export const thunkAddToShelf = (bookId, bookshelfId) => async (dispatch) => {
-  console.log('BOOK ID', bookId)
-  console.log("BOOKSHELF ID", bookshelfId)
   const res = await fetch(`/api/bookshelf_item/${bookId}`, {
     method: "POST",
-    headers: {"Content-Type": "application/json"},
-    body: JSON.stringify({bookshelf_id: bookshelfId}),
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ bookshelf_id: bookshelfId }),
   });
-  if (res.ok){
+  console.log(res.ok);
+  if (res.ok) {
     const book = await res.json();
-    dispatch(actionAddToShelf(book))
+    dispatch(actionAddToShelf(book));
+    dispatch(actionAddToShelfError(null))
+  } else {
+    const error = await res.text();
+    dispatch(actionAddToShelfError(error));
+    throw new Error()
   }
 };
 
-const initialState = { bookshelfItems: {} };
+export const thunkRemoveShelfItem = (bookshelfId, bookId) => async (dispatch) => {
+  const res = await fetch(`/api/books/${bookshelfId}/${bookId}`, {
+      method: 'DELETE'
+  })
+  if (res.ok){
+    dispatch(actionRemoveFromShelf(bookshelfId, bookId))
+  }
+}
+
+const initialState = { bookshelfItems: {}, error: null };
 const bookshelfItemReducer = (state = initialState, action) => {
   let newState;
   switch (action.type) {
@@ -57,10 +86,21 @@ const bookshelfItemReducer = (state = initialState, action) => {
       newState.bookshelfItems = action.bookshelfItemBook;
       return newState;
     }
-    case ADD_TO_SHELF:{
-        newState = {...state};
-        newState.bookshelfItems = action.bookshelfItem;
-        return newState;
+    case ADD_TO_SHELF: {
+      newState = { ...state };
+      newState.bookshelfItems = action.bookshelfItem;
+      newState.error = null; // Clears the error when successful
+      return newState;
+    }
+    case ADD_TO_SHELF_ERROR: {
+      newState = { ...state };
+      newState.error = action.error;
+      return newState;
+    }
+    case REMOVE_FROM_SHELF: {
+      newState = {...state}
+      delete newState.bookshelfItems[action.bookshelfItem]
+      return newState;
     }
     default:
       return state;

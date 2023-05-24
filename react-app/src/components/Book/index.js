@@ -9,7 +9,7 @@ import OpenModalButton from "../OpenModalButton";
 import BookDelete from "../BookDelete";
 import AddToShelfModal from "../AddToShelfModal";
 import { thunkGetUserBookShelf } from "../../store/bookshelf";
-import { thunkGetBookshelfItemBooks } from "../../store/bookshelf_items";
+import RemoveFromShelf from "../RemoveFromShelves";
 
 const Book = () => {
   const { bookId }  = useParams();
@@ -43,6 +43,7 @@ const Book = () => {
           onItemClick={closeModal}
           modalComponent={<BookDelete bookId={bookId}/>}
       />
+
     </>
   );
 };
