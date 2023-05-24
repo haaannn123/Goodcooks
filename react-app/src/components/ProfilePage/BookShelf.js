@@ -67,7 +67,7 @@ const BookShelf = ({ firstName, lastName }) => {
       <div>
         {shelf && (
           <div>
-            <h3>{shelfDisplayHeader(shelf, firstName, DeleteShelfButton)}</h3>
+            <h3>{shelfDisplayHeader(shelf, firstName)}</h3>
             <DisplayBooks shelfId={shelfId} />
           </div>
         )}

@@ -1,5 +1,8 @@
 .navbar-container{
   padding: .2rem 1rem 1rem 1.2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .home-link{
@@ -20,6 +23,9 @@
 /* ProfileButton.js */
 .profile-dropdown {
   position: absolute;
+  border: 1px solid rgb(192, 192, 192);
+  padding: 1rem;
+  border-radius: 10px;
 }
 
 .profile-button-container{

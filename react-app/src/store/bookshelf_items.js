@@ -74,7 +74,7 @@ export const thunkRemoveShelfItem = (bookshelfId, bookId) => async (dispatch) =>
   })
   if (res.ok){
     dispatch(actionRemoveFromShelf(bookshelfId, bookId))
-    dispatch(thunkGetUserBookShelf())
+    dispatch(thunkGetBookshelfItemBooks(bookshelfId))
   }
 }
 
