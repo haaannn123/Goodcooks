@@ -70,7 +70,7 @@ function BookForm(){
 
     return (
         <form onSubmit={handleSubmit}>
-            <h1>Don't see a book? Add a book!</h1>
+            <h1>Don't see your favorite cookbook! Add it!</h1>
             {errors.title ? <p>{errors.title}</p>: null}
             <label>Title</label>
             <input

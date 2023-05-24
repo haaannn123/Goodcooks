@@ -17,6 +17,7 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(255), nullable=False, unique=True)
     hashed_password = db.Column(db.String(255), nullable=False)
 
+    books = db.relationship("Book", back_populates='owner', cascade='all, delete-orphan')
     bookshelf = db.relationship('BookShelf', back_populates='user',cascade="all, delete-orphan" )
     reviews = db.relationship('Review', back_populates='user', cascade="all, delete-orphan")
 
