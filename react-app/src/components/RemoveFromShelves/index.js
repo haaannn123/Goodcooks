@@ -8,6 +8,7 @@ const RemoveFromShelves = ({shelfId, bookId}) => {
     const handleClick = (e) => {
         e.preventDefault();
         dispatch(thunkRemoveShelfItem(shelfId, bookId))
+        window.location.reload()
     }
     return (
         <button onClick={handleClick}>Remove from shelf</button>

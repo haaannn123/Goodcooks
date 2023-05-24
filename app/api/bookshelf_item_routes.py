@@ -37,10 +37,10 @@ def add_to_shelf(bookId):
 
 
 @bookshelf_item_routes.route('/<int:bookshelfId>/<int:bookId>', methods=['DELETE'])
-def delete_item(bookshelf_id, book_id):
-    bookshelf_item = BookShelfItem.query.filter_by(bookshelf_id=bookshelf_id, book_id=book_id).first()
+def delete_item(bookshelfId, bookId):
+    bookshelf_item = BookShelfItem.query.filter_by(bookshelf_id=bookshelfId, book_id=bookId).first()
     if (not bookshelf_item):
         return ('No Item Found'), 404
     db.session.delete(bookshelf_item)
     db.session.commit()
-    return {"Item was sucessfully deleted": bookshelfId}
+    return {"Item was sucessfully deleted": bookId}

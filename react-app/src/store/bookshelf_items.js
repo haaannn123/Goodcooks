@@ -69,7 +69,7 @@ export const thunkAddToShelf = (bookId, bookshelfId) => async (dispatch) => {
 };
 
 export const thunkRemoveShelfItem = (bookshelfId, bookId) => async (dispatch) => {
-  const res = await fetch(`/api/books/${bookshelfId}/${bookId}`, {
+  const res = await fetch(`/api/bookshelf_item/${bookshelfId}/${bookId}`, {
       method: 'DELETE'
   })
   if (res.ok){
