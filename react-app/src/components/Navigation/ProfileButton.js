@@ -1,11 +1,12 @@
-import React, { useState, useEffect, useRef } from "react";
+import { NavLink, useHistory } from "react-router-dom"
 import { useDispatch } from "react-redux";
+import React, { useState, useEffect, useRef } from "react";
 import { logout } from "../../store/session";
-import { useHistory } from "react-router-dom";
 import OpenModalButton from "../OpenModalButton";
 import LoginFormModal from "../LoginFormModal";
 import SignupFormModal from "../SignupFormModal";
-import { NavLink } from "react-router-dom"
+
+
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
@@ -42,32 +43,35 @@ function ProfileButton({ user }) {
 
   return (
     <>
-      <button onClick={openMenu}>
-        <i className="fas fa-user-circle" />
+      <button
+        onClick={openMenu}
+        className="navbar-profile-button">
+        {user.profile_img ? (
+          <img
+            src={user.profile_img}
+            alt="profile"
+            className="profile-img-navbar"
+          />
+        ) : (
+          <img
+            src="https://i.imgur.com/nqak9tT.png"
+            alt="profile-filler"
+            className="profile-img-navbar"/>
+        )}
       </button>
+
       <ul className={ulClassName} ref={ulRef}>
         {user ? (
           <>
-            <div>{user.username}</div>
+            <div>{user.first_name.toUpperCase()} {user.last_name.toUpperCase()}</div>
             <NavLink to='/user'>Profile</NavLink>
             <div>
               <button onClick={handleLogout}>Log Out</button>
             </div>
           </>
-        ) : (
-          <>
-            <OpenModalButton
-              buttonText="Log In"
-              onItemClick={closeMenu}
-              modalComponent={<LoginFormModal />}
-            />
 
-            <OpenModalButton
-              buttonText="Sign Up"
-              onItemClick={closeMenu}
-              modalComponent={<SignupFormModal />}
-            />
-          </>
+        ) : (
+          null
         )}
       </ul>
     </>

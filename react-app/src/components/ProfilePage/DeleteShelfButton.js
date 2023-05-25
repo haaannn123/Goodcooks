@@ -11,17 +11,20 @@ const DeleteShelfButton = ({bookshelfId}) => {
         e.preventDefault();
         dispatch(thunkDeleteShelf(bookshelfId));
         closeModal();
-        window.location.reload()
+    }
+
+    const handleClick = () => {
+      closeModal()
     }
 
     return (
         <>
         <h1>Are you sure you want to delete this shelf?</h1>
         <button id="yes-delete" onClick={handleSubmit}>
-          Yes, Delete Product
+          I'M SURE
         </button>
-        <button id="no-keep" >
-          Cancel
+        <button onClick={handleClick} id="no-keep" >
+          NOT SURE
         </button>
       </>
     )

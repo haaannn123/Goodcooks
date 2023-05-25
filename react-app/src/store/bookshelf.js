@@ -72,6 +72,7 @@ export const thunkDeleteShelf = (shelfId) => async (dispatch) => {
     })
     if (res.ok){
         dispatch(actionDeleteBookShelf(shelfId))
+        dispatch(thunkGetUserBookShelf())
     }
 }
 
@@ -84,11 +85,12 @@ export const thunkUpdateShelf = (shelf, shelfId) => async (dispatch) => {
     if (res.ok){
         const edited_shelf = await res.json();
         dispatch(actionUpdateShelf(edited_shelf))
+        dispatch(thunkGetUserBookShelf())
     }
 }
 
 const initialState = {
-    bookshelves: {}
+    bookshelves : {}
 }
 
 const bookshelvesReducer = (state = initialState, action) => {
@@ -111,7 +113,7 @@ const bookshelvesReducer = (state = initialState, action) => {
         }
         case UPDATE_BOOKSHELF: {
             newState = {...state}
-            newState.bookshelves = action.bookshelf;
+            newState.bookshelves[action.bookshelf.id] = action.bookshelf;
             return newState;
         }
         default: return state

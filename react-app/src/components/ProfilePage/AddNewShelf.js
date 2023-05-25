@@ -2,10 +2,12 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { thunkAddToShelf } from "../../store/bookshelf";
 
-const AddToShelfButton = () => {
-    const user = useSelector(state => state.session.user)
-    const dispatch = useDispatch();
+const AddNewShelf = () => {
     const [shelf, setShelf] = useState();
+    const dispatch = useDispatch();
+
+    const user = useSelector(state => state.session.user)
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -14,25 +16,31 @@ const AddToShelfButton = () => {
             name: shelf
         }
         dispatch(thunkAddToShelf(new_shelf))
+        setShelf('')
     }
 
     return (
         <form onSubmit={handleSubmit}>
             {user ? (
                 <>
-                    <button>Add shelf</button>
-                    <input
+                    <div className="add-shelf-container">
+                      <input
+                        className="add-shelf-input"
                         type='text'
                         value={shelf}
                         onChange={(e) => setShelf(e.target.value)}
-                        placeholder="shelf name"
+                        placeholder="Add new shelf here"
                         name='name'
-                    />
-                    <button type="submit">Add</button>
+                        required
+                      />
+                      <button
+                        className="add"
+                        type="submit">Add</button>
+                      </div>
                 </>
             ):( null)}
         </form>
     )
 }
 
-export default AddToShelfButton;
+export default AddNewShelf;

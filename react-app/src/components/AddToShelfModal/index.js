@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { thunkAddToShelf } from "../../store/bookshelf_items";
+import { thunkAddBookToShelf } from "../../store/bookshelf_items";
 import { thunkGetUserBookShelf } from "../../store/bookshelf";
 import { useModal } from "../../context/Modal";
 import RemoveFromShelves from "../RemoveFromShelves";
@@ -19,7 +19,7 @@ const AddToShelfModal = ({ bookId }) => {
 
   const handleClick = (shelfName, shelfId) => {
     setShelf(shelfName);
-    dispatch(thunkAddToShelf(bookId, shelfId))
+    dispatch(thunkAddBookToShelf(bookId, shelfId))
       .then(() => {
         closeModal();
       })

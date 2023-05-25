@@ -6,7 +6,7 @@ import DemoUserButton from "./DemoUserButton";
 
 import "./LandingPage.css";
 
-function LandingPage() {
+function AccountBox() {
   const [showMenu, setShowMenu] = useState(false);
   const ulRef = useRef();
 
@@ -45,4 +45,4 @@ function LandingPage() {
     </div>
   );
 }
-export default LandingPage;
+export default AccountBox;

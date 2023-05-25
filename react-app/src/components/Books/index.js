@@ -19,13 +19,21 @@ function Books() {
     <div>
       {user ? (
         <div className="entire-books-container">
-          <UsersCurrentlyReading />
-          <div className="books-page-container">
+
+            <h1>Currently Reading</h1>
+              <UsersCurrentlyReading />
+
+            <h1>Explore cookbooks</h1>
+            <div className="all-books-container">
             {booksArr.map((book) => {
               return (
                 <div className="books-card" key={book.id}>
                   <NavLink to={`/books/${book.id}`}>
-                    <img className="bookcover-img" src={book.preview_img} alt="cookbooks" />
+                    <img
+                      className="bookcover-img"
+                      src={book.preview_img}
+                      alt="cookbooks"
+                    />
                   </NavLink>
                 </div>
               );

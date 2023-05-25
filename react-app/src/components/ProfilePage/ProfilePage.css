@@ -1,3 +1,21 @@
+/* index.js */
+.profile-page-container{
+  padding: 1rem 23.5rem 0rem 23rem
+}
+
+.profile-info{
+  display: flex;
+  align-items: center;
+}
+
+.profile-img{
+  border: 1px solid gray;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+}
+
 .bookshelf-items {
   display: flex;
   flex-direction: column;
@@ -10,9 +28,6 @@
   width: 100%;
 }
 
-.bookshelf-item > * {
-}
-
 .bookshelf-item > h1 {
   font-size: 20px;
   font-weight: lighter;
@@ -22,16 +37,97 @@
   font-weight: bold;
 }
 
-.dropdown {
-  position: relative;
-  top: 10px;
-  left: 20px;
-  width: 200px;
-  background-color: white;
-  border: 1px solid black;
+.add{
+  border: 1px solid olive;
+  background-color: white
+}
+
+.add-shelf-container{
+  border: 1px solid rgba(80, 72, 72, 0.91);
+  display: flex;
+  justify-content: space-evenly;
+  padding: .75rem;
+  background-color: rgba(80, 72, 72, 0.91);
+}
+
+.edit-shelves-buttons{
+  display: flex;
+}
+.add-shelf-input{
+  background-color: rgb(231, 231, 231);
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 1px solid gray;
+  width: 80%
+}
+
+.see-all-button {
+  padding: 0.5rem 1rem;
+  color: black;
+  text-decoration: none;
+  transition: 0.3s ease;
+  border-radius: 10%;
+}
+
+.arrow {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.see-all-button:hover .arrow {
+  transform: translateX(5px);
 }
 
 
 .hidden {
   display: none;
+}
+
+.user-bookshelf-info{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* BookShelf.js */
+.user-bookshelf{
+  display: flex;
+  flex-direction: column;
+}
+
+.user-all-shelves{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/* EditShelf.js */
+
+.edit-shelves-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+
+
+
+@media (max-width: 1200px) {
+  .profile-page-container,.edit-shelves-container {
+    padding: 1rem 15rem 0rem 15rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .profile-page-container, .edit-shelves-container {
+    padding: 1rem 10rem 0rem 10rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-page-container, .edit-shelves-container {
+    padding: 1rem 2rem 0rem 2rem;
+  }
 }

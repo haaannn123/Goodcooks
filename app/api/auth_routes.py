@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify, session, request
-from app.models import User, db
+from app.models import User, db, BookShelf
 from app.forms import LoginForm
 from app.forms import SignUpForm
 from flask_login import current_user, login_user, logout_user, login_required
@@ -71,6 +71,17 @@ def sign_up():
         )
         db.session.add(user)
         db.session.commit()
+
+        #Creates a new bookshelf
+        bookshelves = ["currently_reading"]
+        for shelf_name in bookshelves:
+            bookshelf = BookShelf(
+                user_id=user.id,
+                name=shelf_name)
+            print("bookshelf LOOK HERE!!", bookshelf)
+            db.session.add(bookshelf)
+            db.session.commit()
+
         login_user(user)
         return user.to_dict()
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401

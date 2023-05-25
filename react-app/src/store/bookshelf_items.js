@@ -43,6 +43,7 @@ const normalizedBookShelfItem = (bookshelfDatas) => {
 
 export const thunkGetBookshelfItemBooks = (shelfId) => async (dispatch) => {
   const res = await fetch(`/api/bookshelf_item/${shelfId}`);
+
   if (res.ok) {
     const bookshelfItemBooks = await res.json();
     const normalizedBooks = normalizedBookShelfItem(bookshelfItemBooks);
@@ -50,7 +51,7 @@ export const thunkGetBookshelfItemBooks = (shelfId) => async (dispatch) => {
   }
 };
 
-export const thunkAddToShelf = (bookId, bookshelfId) => async (dispatch) => {
+export const thunkAddBookToShelf = (bookId, bookshelfId) => async (dispatch) => {
   const res = await fetch(`/api/bookshelf_item/${bookId}`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },

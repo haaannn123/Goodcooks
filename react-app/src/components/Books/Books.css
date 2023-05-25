@@ -1,6 +1,14 @@
 .entire-books-container{
     display: flex;
-    padding: 5rem;
+    flex-direction: column;
+    /* padding: 0rem 23rem 0rem 23rem; */
+    color: rgba(0, 0, 0, 0.815)
+}
+
+.all-books-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
 }
 
 .books-page-container{
@@ -11,18 +19,22 @@
 
 .books-card{
     display: flex;
-    width: 25%;
 }
 
 .bookcover-img{
     width: 120px;
     height: 185px;
+    box-shadow: 0px 10px 10px -5px gray;
+    transition: transform 0.2s ease-in-out;
+}
+
+.bookcover-img:hover {
+  transform: scale(1.05);
 }
 
 .currently-reading-container{
     display: flex;
-    flex-direction: column;
-    width: 1000px;
+    gap: 3rem;
 }
 .navlink{
     text-decoration: none;

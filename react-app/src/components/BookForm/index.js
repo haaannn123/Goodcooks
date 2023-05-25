@@ -140,7 +140,7 @@ function BookForm(){
                 required
             />
             </div>
-            <button type="submit" className="create-book-button">Add book</button>
+            <button type="submit" className="create-book-button-submit">Add book</button>
             </div>
         </form>
     )

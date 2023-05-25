@@ -11,6 +11,7 @@ import BookForm from "./components/BookForm";
 import BookFormUpdate from "./components/BookFormUpdate";
 import ProfilePage from "./components/ProfilePage";
 import EditShelf from "./components/ProfilePage/EditShelf";
+import SplashPage from "./components/SplashPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -50,6 +51,7 @@ function App() {
           </Route>
           <Route path="/">
             <Books />
+            <SplashPage />
           </Route>
         </Switch>
       )}

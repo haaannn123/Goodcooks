@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { thunkGetUserBookShelf } from "../../store/bookshelf";
 import DisplayBooks from "./DisplayBooks";
-import AddToShelfButton from "./AddToShelfButton";
+import AddToShelfButton from "./AddNewShelf";
 import DeleteShelfButton from "./DeleteShelfButton";
 
 const BookShelf = ({ firstName, lastName }) => {
@@ -29,7 +29,9 @@ const BookShelf = ({ firstName, lastName }) => {
 
     if (currentReadingShelf) {
       setShelf(currentReadingShelf.name);
+      console.log('CURRENTLY READING NAME', currentReadingShelf.name)
       setShelfId(currentReadingShelf.id);
+      console.log('CURRENTLY READING ID', currentReadingShelf.id)
     }
   }, [bookshelves]);
 
@@ -51,28 +53,27 @@ const BookShelf = ({ firstName, lastName }) => {
   };
 
   return (
-    <>
-      {/* displays user's bookshelves */}
-      <div>
-        {bookshelvesArr.map((bookshelf) => {
-          return (
-            <>
-              <div onClick={() => displayShelf(bookshelf.name, bookshelf.id)}>{bookshelf.name}</div>
-            </>
-          );
-        })}
-      <AddToShelfButton />
+    <div className="user-bookshelf">
+      <div className="user-all-shelves">
+      
+          {bookshelvesArr.map((bookshelf) => {
+            return (
+                <div onClick={() => displayShelf(bookshelf.name, bookshelf.id)}>{bookshelf.name}</div>
+            );
+          })}
+
+
       </div>
-      {/* when clicked will display books in bookshelves */}
+
       <div>
-        {shelf && (
-          <div>
-            <h3>{shelfDisplayHeader(shelf, firstName)}</h3>
-            <DisplayBooks shelfId={shelfId} />
-          </div>
-        )}
+          {shelf && (
+            <div>
+              <h2>{shelfDisplayHeader(shelf, firstName)}</h2>
+              <DisplayBooks shelfId={shelfId} />
+            </div>
+          )}
       </div>
-    </>
+    </div>
   );
 };
 export default BookShelf;

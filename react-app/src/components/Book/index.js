@@ -18,7 +18,6 @@ const Book = () => {
   const {closeModal } = useModal();
 
   const book = useSelector((state) => state.booksReducer.book);
-  const userBookshelf = useSelector(state => state.bookshelvesReducer.bookshelves)
   const user = useSelector(state => state.session.user.id)
   console.log('CURRENT USER', user)
   dateParser(book.published);
