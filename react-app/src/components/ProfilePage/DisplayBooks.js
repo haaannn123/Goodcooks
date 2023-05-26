@@ -25,7 +25,15 @@ const DisplayBooks = ({ shelfId }) => {
             <RemoveFromShelves shelfId={shelfId} bookId={book.id}/>
           </div>
         );
-      }) : <p>To add cookbooks to this shelf, click on any book and click on the "Add to shelf" button</p>}
+      }) :
+      <>
+        <p>To add cookbooks to this shelf, click on any book and click on the "Add to shelf" button</p>
+        <img
+          className="empty-book"
+          src="https://i.imgur.com/lTpmNhy.png"
+          alt="empty book"/>
+      </>
+      }
     </div>
   );
 };

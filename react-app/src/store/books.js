@@ -3,6 +3,7 @@ const GET_BOOK_BY_ID = "books/GET_BOOK_BY_ID";
 const POST_BOOK = "books/POST_BOOK";
 const UPDATE_BOOK = "books/UPDATE_BOOK";
 const DELETE_BOOK = 'books/DELETE_BOOK';
+const RESET_BOOK = "books/RESET_BOOK";
 
 export const actionGetAllBooks = (books) => {
   return {
@@ -37,6 +38,12 @@ export const actionDeleteBook = (book) => {
         type: DELETE_BOOK,
         book
     }
+}
+
+export const actionResetBook = () => {
+  return {
+    type: RESET_BOOK
+  }
 }
 
 const normalizingBooksData = (books) => {
@@ -146,6 +153,11 @@ const booksReducer = (state = initialState, action) => {
     case DELETE_BOOK: {
         newState = {...state};
         delete newState.books[action.book]
+        return newState;
+    }
+    case RESET_BOOK: {
+        newState = {...state}
+        newState.book = {}
         return newState;
     }
     default:

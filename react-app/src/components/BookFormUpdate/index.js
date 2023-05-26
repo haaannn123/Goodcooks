@@ -1,19 +1,26 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-import { thunkEditBook } from "../../store/books";
+import { actionResetBook, thunkEditBook } from "../../store/books";
 import { thunkGetBookById } from "../../store/books";
 import { useParams } from "react-router-dom";
 import { useModal } from "../../context/Modal";
+import "./BookFormUpdate.css"
+
+
 function BookFormUpdate({bookId}) {
   const {closeModal} = useModal()
   const dispatch = useDispatch();
-  const history = useHistory();
+
 
   const book = useSelector((state) => state.booksReducer.book);
+  console.log("BOOK", book)
 
   useEffect(() => {
-    dispatch(thunkGetBookById(bookId));
+    dispatch(thunkGetBookById(bookId))
+    return(() => {
+      dispatch(actionResetBook())
+    })
   }, [dispatch, bookId]);
 
   const [errors, setErrors] = useState({});
@@ -76,13 +83,13 @@ function BookFormUpdate({bookId}) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="update-book-form">
       <h1>Don't see a book? Add a book!</h1>
       {errors.title ? <p>{errors.title}</p> : null}
       <label>Title</label>
       <input
         type="text"
-        // onChange={(e) => setTitle(e.target.value)}
+        className="create-book-inputs"
         defaultValue={book.title}
         placeholder="Title"
         name="title"
@@ -91,7 +98,7 @@ function BookFormUpdate({bookId}) {
       {errors.author ? <p>{errors.author}</p> : null}
       <input
         type="text"
-        // onChange={(e) => setAuthor(e.target.value)}
+        className="create-book-inputs"
         defaultValue={book.author}
         placeholder="Who was this book written by?"
         name="author"
@@ -101,7 +108,7 @@ function BookFormUpdate({bookId}) {
       {errors.description ? <p>{errors.description}</p> : null}
       <textarea
         type="textbox"
-        // onChange={(e) => setDescription(e.target.value)}
+        className="create-book-inputs"
         defaultValue={book.description}
         placeholder="Please describe the book with at least a few sentences"
         name="description"
@@ -111,7 +118,7 @@ function BookFormUpdate({bookId}) {
       <input
         name="price"
         type="number"
-        // onChange={(e) => setPrice(e.target.value)}
+        className="create-book-inputs"
         defaultValue={book.price}
         placeholder="Price"
       />
@@ -131,12 +138,15 @@ function BookFormUpdate({bookId}) {
       <input
         name="image"
         type="text"
-        // onChange={(e) => setImage(e.target.value)}
+        className="create-book-inputs"
         defaultValue={book.preview_img}
         placeholder="Please post book cover"
       />
 
-      <button type="submit" disabled={false}>
+      <button
+        type="submit"
+        className="create-book-button-submit"
+        disabled={false}>
         Update book!
       </button>
     </form>

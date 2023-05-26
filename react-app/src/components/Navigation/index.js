@@ -25,12 +25,12 @@ function Navigation({ isLoaded }) {
       {isLoaded ? (
         user ? (
           <>
-            <button
-              className="create-book-button"
-              onClick={() => handleClick()}>
-              Create a book!
-            </button>
-            <NavLink to="/review/list">My books</NavLink>
+            <NavLink
+              to="/books/new"
+              className="navlink">Create Book</NavLink>
+            <NavLink
+              to="/review/list"
+              className="navlink">My books</NavLink>
             <ProfileButton user={user} />
           </>
         ) : (

@@ -34,11 +34,13 @@ const UserBooks = () => {
                 <OpenModalButton
                   buttonText="Delete"
                   onButtonClick={closeModal}
+                  className="user-buttons"
                   modalComponent={<BookDelete bookId={book.id} />}
                 />
                 <OpenModalButton
                   buttonText="Update"
                   onButtonClick={closeModal}
+                  className="user-buttons"
                   modalComponent={<BookFormUpdate bookId={book.id}/>}
                 />
               </div>

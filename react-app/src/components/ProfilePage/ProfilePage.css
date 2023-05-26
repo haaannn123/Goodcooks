@@ -97,6 +97,11 @@
   align-items: center;
 }
 
+.empty-book{
+  height: 300px;
+  width: 500px;
+}
+
 /* BookShelf.js */
 .user-bookshelf{
   display: flex;
