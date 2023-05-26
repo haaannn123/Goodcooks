@@ -43,6 +43,7 @@ function ProfileButton({ user }) {
 
   return (
     <>
+      <div className="navbar-profile-container">
       <button
         onClick={openMenu}
         className="navbar-profile-button">
@@ -64,9 +65,13 @@ function ProfileButton({ user }) {
         {user ? (
           <>
             <div>{user.first_name.toUpperCase()} {user.last_name.toUpperCase()}</div>
-            <NavLink to='/user'>Profile</NavLink>
+            <NavLink
+              className="navlink"
+              to='/user'>Profile</NavLink>
             <div>
-              <button onClick={handleLogout}>Log Out</button>
+              <button
+                className="logout-button"
+                onClick={handleLogout}>Log Out</button>
             </div>
           </>
 
@@ -74,6 +79,7 @@ function ProfileButton({ user }) {
           null
         )}
       </ul>
+      </div>
     </>
   );
 }

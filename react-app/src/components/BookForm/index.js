@@ -57,7 +57,7 @@ function BookForm(){
                 preview_img: image
             }
             dispatch(thunkCreateBook(new_book))
-            history.push('/')
+            history.push('/review/list')
         }
 
     }
