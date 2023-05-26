@@ -19,6 +19,11 @@ const Book = () => {
 
   const book = useSelector((state) => state.booksReducer.book);
   dateParser(book.published);
+  const formattedPublishedDate = new Date(book.published).toLocaleDateString(undefined, {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
 
   useEffect(() => {
     dispatch(thunkGetBookById(bookId));
@@ -44,6 +49,7 @@ const Book = () => {
       <div className="cook-book-info">
         <h1>{book.title}</h1>
         <h2>By {book.author}</h2>
+        <h4>{formattedPublishedDate}</h4>
         <p className="book-description">{book.description}</p>
       </div>
     </div>

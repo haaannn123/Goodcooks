@@ -101,8 +101,53 @@ def seed_books():
         published=datetime.strptime('2012-01-01','%Y-%m-%d').date(),
         preview_img="https://i.imgur.com/qktu2mj.jpg"
     )
+    book11 = Book(
+        title='The Wok: Recipes and Techniques',
+        owner_id=2,
+        author="J. Kenji López-Alt",
+        description='J. Kenji López-Alt’s debut cookbook, The Food Lab, revolutionized home cooking, selling more than half a million copies with its science-based approach to everyday foods. And for fast, fresh cooking for his family, there’s one pan López-Alt reaches for more than any other: the wok.Whether stir-frying, deep frying, steaming, simmering, or braising, the wok is the most versatile pan in the kitchen. Once you master the basics—the mechanics of a stir-fry, and how to get smoky wok hei at home—you’re ready to cook home-style and restaurant-style dishes from across Asia and the United States, including Kung Pao Chicken, Pad Thai, and San Francisco–Style Garlic Noodles. López-Alt also breaks down the science behind beloved Beef Chow Fun, fried rice, dumplings, tempura vegetables or seafood, and dashi-simmered dishes.Featuring more than 200 recipes—including simple no-cook sides—explanations of knife skills and how to stock a pantry, and more than 1,000 color photographs, The Wok provides endless ideas for brightening up dinner.',
+        price=27.80,
+        published=datetime.strptime('2022-03-08','%Y-%m-%d').date(),
+        preview_img='https://i.imgur.com/gP6AJM3.jpg'
+    )
+    book12 = Book(
+        title='Binging With Babish: 100 Recipes Recreated from Your Favorite Movies and TV Shows',
+        owner_id=2,
+        author="Andrew Rea",
+        description='The internet cooking show Binging with Babish has taken YouTube by storm with an astounding 5 million fans and views as high as 12 million per episode. For each video, Andrew Rea, a self-proclaimed movie and TV buff, teaches a recipe based on a favorite TV show or film, such as the babka from the classic Seinfeld episode, the beef bourguignon from Julie & Julia, or the timpano from Big Night. This cookbook includes these and other fan-favorite recipes. Some are so delicious that you’ll want to make them for dinner right away, like Bubbas shrimp from Forrest Gump, while others can be saved for impressing a loved one—like the chocolate lava cake from Jon Favreau’s Chef, which the actor/director asked to make during a guest appearance on Rea’s show. Complete with behind-the-scenes stories and answers to frequently asked fan questions, Binging with Babish is a must-have companion to the wildly popular YouTube show.',
+        price=20.99,
+        published=datetime.strptime('2019-10-22','%Y-%m-%d').date(),
+        preview_img='https://i.imgur.com/msM1PTC.jpg'
+    )
+    book13 = Book(
+        title='An Unapologetic Cookbook',
+        owner_id=2,
+        author='Joshua Weissman',
+        description="As Weissman once said '...can we please stop with the barrage of 2.3 second meals that only need 1 ingredient? I get it… we’re busy. But let’s refocus on the fact that beautifully crafted burgers don't grow on trees.' Ironically this sounds a lot like he's trying to convince you to cook, but he's really not. Is this selling the cookbook? The point is that the food in this book is an invitation that speaks for itself. Great cooking does, and should, take time. Now is the time to double down and get your head in the cooking game. Or you know, don't. Maybe get someone else to cook this stuff for you...that works too. How can you know if something is your favorite if 50 to 80 percent of the stuff you've been eating was made by someone else? Butter, condiments, cheese, pickles, patties, and buns. For a superior and potentially even life-changing experience, you can (and should, to be honest) make these from scratch. Create the building blocks necessary to make the greatest meal of your life. While you're at it, give it the Joshua Weissman—or your own—twist. As Joshua would say, “If you don’t like blue cheese, then don’t use blue cheese.” From simple staples to to gourmet to deep-fried, you are the master of your own kitchen, and you'll make it all, on your terms. With no regrets, excuses, or apologies, Joshua Weissman will instruct you how with his irreverent humor, a little bit of light razzing, and over 100 perfectly delectable recipes. If you love to host and entertain; if you like a good project; if you crave control of your food; if fast food or the frozen aisle or the super-fast-super-easy cookbook keeps letting your tastebuds down; then Joshua Weissman: An Unapologetic Cookbook is your ideal kitchen companion.",
+        price=12.99,
+        published=datetime.strptime('2021-09-14','%Y-%m-%d').date(),
+        preview_img="https://i.imgur.com/GJV1xXZ.jpg"
+    )
+    book14 = Book(
+        title="That Sounds So Good: 100 Real-Life Recipes for Every Day of the Week: A Cookbook",
+        owner_id=2,
+        author="Carla Lalli Music",
+        description='Great food is an achievable part of every day, no matter how busy you are; the key is to have go-to recipes for every situation and for whatever you have on hand. The recipes in That Sounds So Good are split between weekday and weekend cooking. When time is short, turn to quick stovetop suppers, one-pot meals, and dinner salads. And for the weekend, lean into lazy lunches, simmered stews, and hands-off roasts. Carlas dishes are as inviting and get-your-attention-good as ever. All the recipes--such as Fat Noodles with Pan-Roasted Mushrooms and Crushed Herb Sauce or Chicken Legs with Warm Spices--come with multiple ingredient swaps and suggestions, so you can make eachone your own. That Sounds So Good shows Carla at her effortless best, and shows how you can be, too.',
+        price=5.99,
+        published=datetime.strptime('2021-10-12','%Y-%m-%d').date(),
+        preview_img='https://i.imgur.com/S6IaWUj.jpg'
+    )
+    book15 = Book(
+        title='Mi Cocina: Recipes and Rapture from My Kitchen in México',
+        owner_id=2,
+        author='Rick Martinez',
+        description='Join Rick Martínez on a once-in-a-lifetime culinary journey throughout México that begins in Mexico City and continues through 32 states, in 156 cities, and across 20,000 incredibly delicious miles. In Mi Cocina, Rick shares deeply personal recipes as he re-creates the dishes and specialties he tasted throughout his journey. Inspired by his travels, the recipes are based on his taste memories and experiences. True to his spirit and reflective of his deep connections with people and places, these dishes will revitalize your pantry and transform your cooking repertoire. Highlighting the diversity, richness, and complexity of Mexican cuisine, he includes recipes like herb and cheese meatballs bathed in a smoky, spicy chipotle sauce from Oaxaca called Albóndigas en Chipotle; northern Méxicos grilled Carne Asada that he stuffs into a grilled quesadilla for full-on cheesy-meaty food euphoria; and tender sweet corn tamales packed with succulent shrimp, chiles, and roasted tomatoes from Sinaloa on the west coast. Ricks poignant essays throughout lend context--both personal and cultural--to quilt together a story that is rich and beautiful, touching and insightful.',
+        price=14.99,
+        published=datetime.strptime('2022-05-03','%Y-%m-%d').date(),
+        preview_img='https://i.imgur.com/au1q62H.jpg'
+    )
 
-    all_books = [book1, book2, book3, book4, book5, book6, book7, book8, book9, book10]
+    all_books = [book1, book2, book3, book4, book5, book6, book7, book8, book9, book10, book11, book12, book13, book14, book15]
     add_books = [db.session.add(book) for book in all_books]
 
     db.session.commit()

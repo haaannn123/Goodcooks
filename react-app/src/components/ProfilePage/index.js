@@ -7,6 +7,8 @@ import "./ProfilePage.css";
 const ProfilePage = () => {
   const user = useSelector((state) => state.session.user);
 
+  if (!user) return null;
+
   return (
     <div className="profile-page-container">
       <div className="profile-info">
