@@ -21,10 +21,14 @@
     gap: 1rem;
 }
 
-/* .book-description{
-    font: 400 1.6rem/1.4375 "Proxima Nova",Montserrat,Arial,sans-serif;
-} */
+.bookshelf-item{
+    display: flex;
+}
 
+.book-display{
+    display: flex;
+    justify-content: space-between;
+}
 .cook-book-info{
     display: flex;
     flex-direction: column;

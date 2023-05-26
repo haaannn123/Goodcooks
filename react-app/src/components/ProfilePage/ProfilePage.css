@@ -16,15 +16,13 @@
   object-fit: cover;
 }
 
-.bookshelf-items {
+.bookshelf-items{
   display: flex;
-  flex-direction: column;
-  width: 100vw;
 }
 
 .bookshelf-item {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 100%;
 }
 

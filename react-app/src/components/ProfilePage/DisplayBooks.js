@@ -20,8 +20,11 @@ const DisplayBooks = ({ shelfId }) => {
       {bookArr.length > 0 ? bookArr.map((book) => {
         return (
           <div className="bookshelf-item">
-            <img src={book.preview_img} alt="" style={{ width: "50px" }} />
-            <h1>{book.title}</h1>
+              <img
+                className="bookcover-img"
+                src={book.preview_img}
+                alt=""
+              />
             <RemoveFromShelves shelfId={shelfId} bookId={book.id}/>
           </div>
         );

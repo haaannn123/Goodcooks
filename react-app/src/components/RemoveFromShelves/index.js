@@ -9,7 +9,9 @@ const RemoveFromShelves = ({shelfId, bookId}) => {
         dispatch(thunkRemoveShelfItem(shelfId, bookId))
     }
     return (
-        <button onClick={handleClick}>Remove from shelf</button>
+        <button
+            className="remove-from-shelf"
+            onClick={handleClick}>Remove</button>
     )
 }
 
