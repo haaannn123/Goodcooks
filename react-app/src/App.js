@@ -12,6 +12,7 @@ import BookFormUpdate from "./components/BookFormUpdate";
 import ProfilePage from "./components/ProfilePage";
 import EditShelf from "./components/ProfilePage/EditShelf";
 import SplashPage from "./components/SplashPage";
+import UserBooks from "./components/UserBooks/UserBooks";
 
 function App() {
   const dispatch = useDispatch();
@@ -27,7 +28,9 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
-
+          <Route path="/review/list">
+            <UserBooks />
+          </Route>
           <Route path="/login" >
             <LoginFormPage />
           </Route>

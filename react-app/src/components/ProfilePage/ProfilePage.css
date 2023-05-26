@@ -46,12 +46,19 @@
   border: 1px solid rgba(80, 72, 72, 0.91);
   display: flex;
   justify-content: space-evenly;
-  padding: .75rem;
+  padding: 1rem;
   background-color: rgba(80, 72, 72, 0.91);
+}
+
+.add-shelf-error{
+  display: flex;
+  flex-direction: column;
 }
 
 .edit-shelves-buttons{
   display: flex;
+  justify-content: space-between;
+
 }
 .add-shelf-input{
   background-color: rgb(231, 231, 231);
@@ -110,8 +117,10 @@
 }
 
 
-
-
+.button{
+  background-color: rgb(101, 119, 101);
+  color: white;
+}
 
 
 @media (max-width: 1200px) {

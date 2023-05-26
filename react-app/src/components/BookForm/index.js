@@ -135,7 +135,7 @@ function BookForm(){
                 className="create-book-inputs"
                 onChange={(e) => setImage(e.target.value)}
                 value={image}
-                placeholder="Please post book cover"
+                placeholder="Please post book cover. URL must end in '.png', '.jpg', or '.jpeg'"
                 name="image"
                 required
             />

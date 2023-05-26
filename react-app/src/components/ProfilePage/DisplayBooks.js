@@ -17,7 +17,7 @@ const DisplayBooks = ({ shelfId }) => {
 
   return (
     <div className="bookshelf-items">
-      {bookArr.map((book) => {
+      {bookArr.length > 0 ? bookArr.map((book) => {
         return (
           <div className="bookshelf-item">
             <img src={book.preview_img} alt="" style={{ width: "50px" }} />
@@ -25,7 +25,7 @@ const DisplayBooks = ({ shelfId }) => {
             <RemoveFromShelves shelfId={shelfId} bookId={book.id}/>
           </div>
         );
-      })}
+      }) : <p>To add cookbooks to this shelf, click on any book and click on the "Add to shelf" button</p>}
     </div>
   );
 };

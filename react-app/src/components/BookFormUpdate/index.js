@@ -4,8 +4,9 @@ import { useHistory } from "react-router-dom";
 import { thunkEditBook } from "../../store/books";
 import { thunkGetBookById } from "../../store/books";
 import { useParams } from "react-router-dom";
-function BookFormUpdate() {
-  const { bookId } = useParams();
+import { useModal } from "../../context/Modal";
+function BookFormUpdate({bookId}) {
+  const {closeModal} = useModal()
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -70,17 +71,9 @@ function BookFormUpdate() {
         preview_img: image,
       };
       dispatch(thunkEditBook(new_book, bookId));
-      history.push(`/books/${bookId}`);
+      closeModal()
     }
   };
-
-  // const disableButton = () => {
-  //   if (title.length === 0 || author.length === 0 || description.length === 0 || image.length === 0) {
-  //     return true;
-  //   } else {
-  //     return false;
-  //   }
-  // };
 
   return (
     <form onSubmit={handleSubmit}>
@@ -144,7 +137,7 @@ function BookFormUpdate() {
       />
 
       <button type="submit" disabled={false}>
-        Add book!
+        Update book!
       </button>
     </form>
   );

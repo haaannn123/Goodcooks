@@ -11,7 +11,6 @@ const BookDelete = ({bookId}) => {
   const handleSubmit = () => {
     dispatch(thunkDeleteBook(bookId));
     closeModal();
-    history.push('/books')
   };
 
 

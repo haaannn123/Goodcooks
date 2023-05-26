@@ -18,8 +18,6 @@ const Book = () => {
   const {closeModal } = useModal();
 
   const book = useSelector((state) => state.booksReducer.book);
-  const user = useSelector(state => state.session.user.id)
-  console.log('CURRENT USER', user)
   dateParser(book.published);
 
   useEffect(() => {
@@ -28,28 +26,27 @@ const Book = () => {
   }, [dispatch, bookId]);
 
   return (
-    <>
-      <img src={book.preview_img} alt="cookbook" />
-      <h1>{book.title}</h1>
-      <h2>{book.author}</h2>
-      <h1>{book.price}</h1>
-
+    <div className="book-details-page">
+      <div className="book-img-add-to-shelf">
+      <img
+        className="cook-book-img"
+        src={book.preview_img}
+        alt="cookbook"
+      />
       <OpenModalButton
           buttonText="Add to shelf"
+          className="add-to-shelf-button"
           onItemClick={closeModal}
           modalComponent={<AddToShelfModal bookId={bookId}/>}
       />
-
-      {user === book.owner_id?
-        (<OpenModalButton
-          buttonText="Delete Book"
-          onItemClick={closeModal}
-          modalComponent={<BookDelete bookId={bookId}/>}
-      />): (
-        null
-      )
-    }
-    </>
+      <button className="book-price-button">Kindle ${book.price}</button>
+      </div>
+      <div className="cook-book-info">
+        <h1>{book.title}</h1>
+        <h2>By {book.author}</h2>
+        <p className="book-description">{book.description}</p>
+      </div>
+    </div>
   );
 };
 

@@ -11,6 +11,18 @@ function Books() {
   const books = useSelector((state) => state.booksReducer.books);
   const booksArr = Object.values(books);
 
+  const shuffleBooks = () => {
+    const shuffledBooksArr = [...booksArr];
+    for (let i = shuffledBooksArr.length -1; i > 0; i--){
+      let randomIdx = Math.floor(Math.random() * (i + 1));
+      [shuffledBooksArr[i], shuffledBooksArr[randomIdx]] = [shuffledBooksArr[randomIdx], shuffledBooksArr[i]]
+    }
+    return shuffledBooksArr
+  }
+
+  const shuffledBookArr = shuffleBooks(booksArr)
+
+
   useEffect(() => {
     dispatch(thunkGetAllBooks());
   }, [dispatch]);
@@ -25,7 +37,7 @@ function Books() {
 
             <h1>Explore cookbooks</h1>
             <div className="all-books-container">
-            {booksArr.map((book) => {
+            {shuffledBookArr.map((book) => {
               return (
                 <div className="books-card" key={book.id}>
                   <NavLink to={`/books/${book.id}`}>

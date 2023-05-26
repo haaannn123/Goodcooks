@@ -29,11 +29,17 @@ const AddToShelfModal = ({ bookId }) => {
   };
 
   return (
-    <div>
-      <h1>Choose a shelf for this book</h1>
+    <div className="add-book-to-shelf-modal">
       <p className="error">{backendError}</p>
+      <h1>Choose Shelf</h1>
       {Object.values(userBookshelves).map((shelf) => {
-        return <button onClick={() => handleClick(shelf.name, shelf.id)}>{shelf.name}</button>;
+        return (
+          <button
+            key={shelf.id}
+            className="shelf-buttons"
+            onClick={() => handleClick(shelf.name, shelf.id)}
+          >{shelf.name}</button>
+        );
       })}
     </div>
   );

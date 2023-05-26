@@ -1,7 +1,7 @@
 .entire-books-container{
     display: flex;
     flex-direction: column;
-    /* padding: 0rem 23rem 0rem 23rem; */
+    padding: 0rem 10rem 0rem 10rem;
     color: rgba(0, 0, 0, 0.815)
 }
 

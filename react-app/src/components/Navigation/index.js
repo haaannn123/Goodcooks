@@ -30,6 +30,7 @@ function Navigation({ isLoaded }) {
               onClick={() => handleClick()}>
               Create a book!
             </button>
+            <NavLink to="/review/list">My books</NavLink>
             <ProfileButton user={user} />
           </>
         ) : (

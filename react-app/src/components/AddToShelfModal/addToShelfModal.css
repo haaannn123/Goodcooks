@@ -1,3 +1,27 @@
 .error {
     color: red
 }
+
+.add-book-to-shelf-modal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0rem 2rem 2rem 2rem;
+    font-family: Copernicus,"Libre Baskerville",Georgia,serif;
+    gap: .75rem;
+}
+
+.shelf-buttons{
+    font-size: 18px;
+    border: none;
+    background-color: rgb(101, 119, 101);
+    font-family: "Merriweather", Georgia, "Times New Roman", serif;
+    border-radius: 10px;
+    color: rgba(0, 0, 0, 0.829);
+    width: 100%;
+}
+
+.shelf-buttons:hover{
+    background-color: rgb(77, 90, 77);
+}

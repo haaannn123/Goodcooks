@@ -1,0 +1,65 @@
+.book-details-page{
+    display: flex;
+    padding: 5rem 10rem;
+    font-family: Copernicus,"Libre Baskerville",Georgia,serif;
+}
+
+.cook-book-img{
+    width: 200px;
+    height: 500px;
+    object-fit: fill;
+    box-shadow: 0px 0px 10px rgb(178, 178, 178);
+}
+
+.book-img-add-to-shelf{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    height: 400px;
+    gap: 1rem;
+}
+
+/* .book-description{
+    font: 400 1.6rem/1.4375 "Proxima Nova",Montserrat,Arial,sans-serif;
+} */
+
+.cook-book-info{
+    display: flex;
+    flex-direction: column;
+    padding-left: 2rem;
+    width: 70%;
+    color: rgba(0, 0, 0, 0.875)
+}
+
+.book-price-button{
+    width: 100%;
+    border-radius: 20px;
+    color: black;
+    background-color: white;
+    border: 2px solid rgb(101, 119, 101);
+    height: 50px;
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.824);
+}
+
+
+.book-description{
+    font-size: 18px;
+}
+
+.add-to-shelf-button{
+    border-radius: 20px;
+    color: white;
+    background-color: rgb(101, 119, 101);
+    width: 100%;
+    border: none;
+    height: 50px;
+    font-size: 18px;
+}
+
+.add-to-shelf-button:hover{
+    cursor: pointer;
+    background-color: rgb(77, 92, 77);
+}
