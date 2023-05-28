@@ -61,6 +61,12 @@
     color: rgb(207, 194, 156)
 }
 
+@media screen and (min-width: 1439px){
+    .entire-books-container{
+        padding: 0rem 24rem;
+    }
+}
+
 @media screen and (max-width:1440px){
     .entire-books-container{
         padding: 0rem 9rem 0rem 9rem;

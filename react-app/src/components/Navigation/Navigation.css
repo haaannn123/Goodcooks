@@ -110,6 +110,14 @@ body{
 }
 
 
+@media screen and (min-width:1439px){
+  .navbar-container{
+    padding: .5rem 24rem;
+    width: 60%
+
+  }
+}
+
 @media screen and (max-width:1440px){
   .navbar-container{
     width: 80%;
