@@ -68,3 +68,10 @@
     cursor: pointer;
     background-color: rgb(77, 92, 77);
 }
+
+
+@media screen and (min-width: 1439px){
+    .book-details-page{
+        padding: 10rem 25rem;
+    }
+}

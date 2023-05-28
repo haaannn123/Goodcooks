@@ -10,12 +10,24 @@
   border-radius: 4%;
   gap: 1rem;
   padding: 0.5rem 0.5rem 1rem 0.5rem;
-  position: absolute;
+  position: relative;
   top: 50%;
   left: 50%;
   transform: translate(47%, -55%);
-
 }
+
+.log-in-box-button,
+  .sign-up-box-button {
+    height: 50px;
+    width: 240px;
+    font-size: 14px;
+    background-color: rgb(101, 119, 101);
+    color: white;
+    font-weight: 520;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+  }
 
 .log-in-box-button:hover,
 .sign-up-box-button:hover {
@@ -50,36 +62,17 @@
   color: rgb(18, 19, 18);
 }
 
+@media screen and (min-width: 1439px){
+  .account-box{
+    transform: translate(70%, -150%);
+  }
+}
+
 @media screen and (max-width: 1440px) {
   .account-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 300px;
-    margin: 14px 6px 0 0;
-    border: 1px solid #cbcbcb;
-    font-family: "Merriweather", Georgia, "Times New Roman", serif;
-    background-color: white;
-    border-radius: 4%;
-    gap: 1rem;
-    padding: 0.5rem 0.5rem 1rem 0.5rem;
-    position: absolute;
-    top: 50%;
-    left: 50%;
     transform: translate(47%, -55%);
   }
-  .log-in-box-button,
-  .sign-up-box-button {
-    height: 50px;
-    width: 240px;
-    font-size: 14px;
-    background-color: rgb(101, 119, 101);
-    color: white;
-    font-weight: 520;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-  }
+
   .discover-header {
     font-size: 20px;
   }

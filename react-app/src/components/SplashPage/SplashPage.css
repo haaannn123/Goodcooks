@@ -1,5 +1,6 @@
 .login-container{
     z-index: 6;
+    margin-top: 76px;
 }
 
 .splash-page-image {
@@ -10,20 +11,12 @@
     z-index: 1;
 }
 
-.testing{
+/* .testing{
     display: flex;
     padding: 0rem 5rem 5rem 9rem;
     gap: 1rem;
-}
+} */
 
 .splash-page-info{
     width: 30%
-}
-
-
-@media screen and (max-width:1440px){
-    .login-container{
-        margin-top: 76px;
-
-    }
 }
