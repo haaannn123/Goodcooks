@@ -4,7 +4,8 @@
     flex-direction: column;
     flex-wrap: wrap;
     margin-top: 100px;
-    color: rgba(0, 0, 0, 0.815)
+    color: rgba(0, 0, 0, 0.815);
+    padding: 0rem 9rem 0rem 9rem;
 }
 
 .no-books-container{
@@ -37,6 +38,13 @@
 .user-buttons:hover{
     background-color: rgb(101, 119, 101);
     color: white;
+}
+
+
+@media screen and (min-width: 1439px){
+    .user-cook-book-page{
+        padding: 0rem 24rem;
+    }
 }
 
 @media screen and (max-width:1440px){

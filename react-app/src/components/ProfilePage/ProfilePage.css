@@ -119,6 +119,16 @@
   justify-content: space-evenly;
 }
 
+
+.shelves-of-user{
+  font-size: 20px;
+  padding: 1rem;
+}
+
+.shelves-of-user:hover{
+  color:rgba(197, 174, 174, 0.91)
+}
+
 /* EditShelf.js */
 
 .edit-shelves-header{

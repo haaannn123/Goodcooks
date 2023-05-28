@@ -58,7 +58,9 @@ const BookShelf = ({ firstName, lastName }) => {
 
           {bookshelvesArr.map((bookshelf) => {
             return (
-                <div onClick={() => displayShelf(bookshelf.name, bookshelf.id)}>{bookshelf.name}</div>
+                <div
+                  className="shelves-of-user"
+                  onClick={() => displayShelf(bookshelf.name, bookshelf.id)}>{bookshelf.name}</div>
             );
           })}
 
