@@ -145,7 +145,6 @@ function BookForm(){
             <button type="submit" className="create-book-button-submit">Add book</button>
             </div>
         </form>
-        <Footer />
         </>
     )
 
