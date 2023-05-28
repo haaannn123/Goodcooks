@@ -1,10 +1,43 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+
 .navbar-container {
-  padding: 1rem 10rem 1rem 10rem;
+  margin: none;
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid rgb(203, 203, 203);
+  background-color: rgb(255, 255, 255);
+  position: fixed;
+  top: 0;
+  z-index: 999;
+}
+
+.home-link {
+  text-decoration: none;
+}
+.great {
+  font-size: 50px;
+  font-weight: 200;
+  color: rgba(80, 72, 72, 0.91);
+  font-family: Lato, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.great .cooks {
+  font-family: Lato Bold, "Helvetica Neue Bold", Helvetica, sans-serif;
+}
+
+.navbar-sub-nav-link{
+  font-size: 17px;
+  text-decoration: none;
+  color: rgba(80, 72, 72, 0.91);
+  font-family: Lato Bold, "Helvetica Neue Bold", Helvetica, sans-serif;
+}
+
+.navbar-sub-nav-link:hover{
+  color: rgba(37, 33, 33, 0.91);
 }
 
 .navbar-profile-container {
@@ -32,43 +65,31 @@
 .navbar-profile-button {
   border: none;
   background-color: white;
+  border-radius: 10%;
 }
 
-.navbar-profile-button:hover{
-  background-color: rgb(228, 219, 175);
-}
 
-.home-link {
-  text-decoration: none;
-}
 
-.great {
-  font-size: 50px;
-  font-weight: 200;
-  color: rgba(80, 72, 72, 0.91);
-  font-family: Lato, "Helvetica Neue", Helvetica, sans-serif;
-}
 
-.great .cooks {
-  font-weight: 600;
-}
 
 /* ProfileButton.js */
 .profile-img-navbar{
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
+  transition: filter 0.3s ease;
+}
+
+.profile-img-navbar:hover{
+  filter: brightness(80%);
+  cursor: pointer;
 }
 
 .fa-user-circle{
   font-size: 30px;
 }
 
-.splash-page-image {
-  width: 100%;
-  object-fit: contain;
-  z-index: -1;
-}
+
 
 .login-landing-page-box {
   z-index: 1;
@@ -85,4 +106,13 @@
 .logout-button:hover{
   cursor: pointer;
   color: rgb(189, 191, 127)
+}
+
+
+@media screen and (max-width:1440px){
+  .navbar-container{
+    width: 80%;
+    padding: 1rem 9rem;
+  }
+
 }

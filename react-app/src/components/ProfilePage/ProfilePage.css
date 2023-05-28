@@ -1,11 +1,14 @@
 /* index.js */
 .profile-page-container{
-  padding: 1rem 23.5rem 0rem 23rem
+  padding: 1rem 23.5rem 0rem 23rem;
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
 
 .profile-info{
   display: flex;
   align-items: center;
+  gap: 1rem;
 }
 
 .profile-img{
@@ -16,14 +19,18 @@
   object-fit: cover;
 }
 
+
 .bookshelf-items{
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3rem;
 }
 
 .bookshelf-item {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  gap: 1rem;
 }
 
 .bookshelf-item > h1 {
@@ -73,6 +80,7 @@
   text-decoration: none;
   transition: 0.3s ease;
   border-radius: 10%;
+  font-family: Lato Bold, "Helvetica Neue Bold", Helvetica, sans-serif;
 }
 
 .arrow {
@@ -142,4 +150,8 @@
   .profile-page-container, .edit-shelves-container {
     padding: 1rem 2rem 0rem 2rem;
   }
+}
+
+.shelf-display-header{
+  text-decoration: underline;
 }

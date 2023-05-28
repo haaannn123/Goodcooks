@@ -55,7 +55,7 @@ const BookShelf = ({ firstName, lastName }) => {
   return (
     <div className="user-bookshelf">
       <div className="user-all-shelves">
-      
+
           {bookshelvesArr.map((bookshelf) => {
             return (
                 <div onClick={() => displayShelf(bookshelf.name, bookshelf.id)}>{bookshelf.name}</div>
@@ -68,7 +68,7 @@ const BookShelf = ({ firstName, lastName }) => {
       <div>
           {shelf && (
             <div>
-              <h2>{shelfDisplayHeader(shelf, firstName)}</h2>
+              <h2 className="shelf-display-header">{shelfDisplayHeader(shelf, firstName)}</h2>
               <DisplayBooks shelfId={shelfId} />
             </div>
           )}

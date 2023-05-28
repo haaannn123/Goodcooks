@@ -146,8 +146,53 @@ def seed_books():
         published=datetime.strptime('2022-05-03','%Y-%m-%d').date(),
         preview_img='https://i.imgur.com/au1q62H.jpg'
     )
+    book16 = Book(
+        title='The Complete Mediterranean Cookbook',
+        owner_id=2,
+        author='America\'s Test Kitchen',
+        description='This comprehensive cookbook by America\'s Test Kitchen explores the vibrant and healthy cuisine of the Mediterranean. It features over 500 recipes inspired by the flavors and ingredients of the Mediterranean region. From fresh salads and flavorful seafood dishes to hearty soups and satisfying desserts, this cookbook offers a wide range of recipes for every occasion.',
+        price=26.99,
+        published=datetime.strptime('2016-12-27','%Y-%m-%d').date(),
+        preview_img='https://i.imgur.com/D85azaO.jpg'
+    )
+    book17 = Book(
+        title='Mastering the Art of French Cooking',
+        owner_id=2,
+        author='Julia Child, Louisette Bertholle, Simone Beck',
+        description='Julia Child\'s "Mastering the Art of French Cooking" is a culinary masterpiece that has been a classic for decades. This iconic cookbook introduces readers to the techniques and recipes of French cuisine, with detailed instructions and illustrations. From classic dishes like boeuf bourguignon to delicate pastries, this book is a must-have for anyone interested in French cooking.',
+        price=34.99,
+        published=datetime.strptime('1961-10-16','%Y-%m-%d').date(),
+        preview_img='https://i.imgur.com/iS17Ecv.jpg'
+    )
+    book18 = Book(
+        title='The Oh She Glows Cookbook: Over 100 Vegan Recipes to Glow from the Inside Out',
+        owner_id=2,
+        author='Angela Liddon',
+        description='For those interested in vegan cooking, "The Oh She Glows Cookbook" is a fantastic resource. Angela Liddon shares over 100 plant-based recipes that are delicious, nourishing, and vibrant. From energizing breakfasts to satisfying main dishes and indulgent desserts, this cookbook proves that vegan food can be both healthy and flavorful.',
+        price=19.95,
+        published=datetime.strptime('2014-03-04','%Y-%m-%d').date(),
+        preview_img='https://i.imgur.com/7V2Kh7x.jpg'
+    )
+    book19 = Book(
+        title='The Complete America\'s Test Kitchen TV Show Cookbook',
+        owner_id=2,
+        author='America\'s Test Kitchen',
+        description='If you\'re a fan of the America\'s Test Kitchen TV show, this cookbook is a must-have. It features every recipe from all 21 seasons of the show, providing a wide range of dishes to choose from. With detailed instructions and helpful tips, this cookbook will help you perfect your cooking skills and expand your recipe repertoire.',
+        price=39.99,
+        published=datetime.strptime('2001-10-01','%Y-%m-%d').date(),
+        preview_img='https://i.imgur.com/BR2T4fE.jpg'
+    )
+    book20 = Book(
+        title='Vegetable Kingdom: The Abundant World of Vegan Recipes',
+        owner_id=2,
+        author='Bryant Terry',
+        description='"Vegetable Kingdom" is a cookbook that celebrates the vibrant flavors and textures of plant-based cuisine. Bryant Terry presents over 100 recipes inspired by global flavors and culinary traditions. From soulful soups and stews to refreshing salads and inventive grain dishes, this cookbook showcases the versatility and deliciousness of vegetables.',
+        price=22.49,
+        published=datetime.strptime('2020-02-11','%Y-%m-%d').date(),
+        preview_img='https://i.imgur.com/u3ilKcQ.jpg'
+    )
 
-    all_books = [book1, book2, book3, book4, book5, book6, book7, book8, book9, book10, book11, book12, book13, book14, book15]
+    all_books = [book1, book2, book3, book4, book5, book6, book7, book8, book9, book10, book11, book12, book13, book14, book15, book16, book17, book18, book19, book20]
     add_books = [db.session.add(book) for book in all_books]
 
     db.session.commit()

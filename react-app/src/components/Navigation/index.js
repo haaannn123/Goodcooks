@@ -7,11 +7,7 @@ import "./Navigation.css";
 function Navigation({ isLoaded }) {
 
   const user = useSelector((state) => state.session.user);
-  const history = useHistory();
 
-  const handleClick = () => {
-    history.push("/books/new");
-  };
 
   return (
     <div className="navbar-container">
@@ -19,18 +15,19 @@ function Navigation({ isLoaded }) {
       <NavLink
         exact to="/"
         className="home-link">
-        <div className="great">great<span className="cooks">cooks</span></div>
+        <div className="great">good<span className="cooks">cooks</span></div>
       </NavLink>
-
       {isLoaded ? (
         user ? (
           <>
             <NavLink
-              to="/books/new"
-              className="navlink">Create Book</NavLink>
-            <NavLink
               to="/review/list"
-              className="navlink">My books</NavLink>
+              className="navbar-sub-nav-link"
+            >My books</NavLink>
+            <NavLink
+              to="/books/new"
+              className="navbar-sub-nav-link"
+            >Create Book</NavLink>
             <ProfileButton user={user} />
           </>
         ) : (

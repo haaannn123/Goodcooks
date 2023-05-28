@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useHistory } from "react-router-dom"
 import { thunkCreateBook } from "../../store/books";
 import "./BookForm.css"
+import Footer from "../Footer";
 
 function BookForm(){
     const dispatch = useDispatch();
@@ -63,9 +64,10 @@ function BookForm(){
     }
 
     return (
+        <>
         <form onSubmit={handleSubmit} className="create-book-form-container">
             <div className="create-book-form">
-            <h1>Don't see your favorite cookbook? Add it!</h1>
+            <h1>Add a cookbook!</h1>
             {errors.title ? <p className="errors">{errors.title}</p>: null}
             <div className="create-book-input">
             <label>Title</label>
@@ -143,6 +145,8 @@ function BookForm(){
             <button type="submit" className="create-book-button-submit">Add book</button>
             </div>
         </form>
+        <Footer />
+        </>
     )
 
 }

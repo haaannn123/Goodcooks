@@ -1,8 +1,10 @@
 .entire-books-container{
     display: flex;
     flex-direction: column;
-    padding: 0rem 10rem 0rem 10rem;
-    color: rgba(0, 0, 0, 0.815)
+    margin-top: 100px;
+    margin-bottom: 100px;
+    color: rgba(0, 0, 0, 0.815);
+    background-image: url(https://i.imgur.com/tnumd3v.jpg);
 }
 
 .all-books-container{
@@ -17,9 +19,18 @@
     flex-wrap: wrap;
 }
 
+
+.books-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .books-card{
     display: flex;
 }
+
+
 
 .bookcover-img{
     width: 120px;
@@ -30,10 +41,12 @@
 
 .bookcover-img:hover {
   transform: scale(1.05);
+  z-index: -1;
 }
 
 .currently-reading-container{
     display: flex;
+    flex-wrap: wrap;
     gap: 3rem;
 }
 .navlink{
@@ -46,4 +59,10 @@
 .navlink:hover{
     text-decoration: underline;
     color: rgb(207, 194, 156)
+}
+
+@media screen and (max-width:1440px){
+    .entire-books-container{
+        padding: 0rem 9rem 0rem 9rem;
+    }
 }

@@ -1,5 +1,8 @@
+
+
 .create-book-form-container{
     padding: 0rem 20rem 1rem 20rem;
+    margin-top: 100px;
 }
 
 .create-book-form{
@@ -9,7 +12,8 @@
     padding: 50px 90px 50px 90px;
     font-family: "Merriweather", Georgia, "Times New Roman", serif;
     color: rgba(0, 0, 0, 0.885);
-    border: 1px solid rgb(174, 174, 174)
+    border: 1px solid rgb(174, 174, 174);
+    background-color: white;
 }
 
 .create-book-input{

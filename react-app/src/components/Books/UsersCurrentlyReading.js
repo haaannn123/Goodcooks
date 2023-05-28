@@ -29,7 +29,7 @@ const UsersCurrentlyReading = () => {
   return (
     <div className="currently-reading-container">
       {Object.values(usersBooks).length > 0 ? (
-        Object.values(usersBooks).map((book) => (
+        Object.values(usersBooks).slice(0, 7).map((book) => (
           <NavLink key={book.id} to={`/books/${book.id}`}>
             <img
               src={book.preview_img}
@@ -46,3 +46,4 @@ const UsersCurrentlyReading = () => {
 };
 
 export default UsersCurrentlyReading;
+

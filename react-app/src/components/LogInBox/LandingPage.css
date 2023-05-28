@@ -1,4 +1,57 @@
-.account-box{
+.account-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  margin: 14px 6px 0 0;
+  border: 1px solid #cbcbcb;
+  font-family: "Merriweather", Georgia, "Times New Roman", serif;
+  background-color: white;
+  border-radius: 4%;
+  gap: 1rem;
+  padding: 0.5rem 0.5rem 1rem 0.5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(47%, -55%);
+
+}
+
+.log-in-box-button:hover,
+.sign-up-box-button:hover {
+  background-color: rgb(79, 91, 79);
+}
+
+.discover-header {
+  font-size: 15px;
+}
+
+.legal-message {
+  font-size: 12px;
+  color: rgb(181, 181, 181);
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgb(234, 234, 234);
+}
+
+.demo-input {
+  display: flex;
+  gap: 0.2rem;
+}
+
+.demo-user-button {
+  border: none;
+  cursor: pointer;
+  color: rgb(79, 89, 81);
+}
+
+.demo-user-button:hover {
+  text-decoration: underline;
+  color: rgb(18, 19, 18);
+}
+
+@media screen and (max-width: 1440px) {
+  .account-box {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -9,15 +62,16 @@
     background-color: white;
     border-radius: 4%;
     gap: 1rem;
-    padding: 1rem 3rem 1rem 3rem;
-    background-color: white;
+    padding: 0.5rem 0.5rem 1rem 0.5rem;
     position: absolute;
-    margin-right: 15rem;
-}
-
-.log-in-box-button, .sign-up-box-button{
+    top: 50%;
+    left: 50%;
+    transform: translate(47%, -55%);
+  }
+  .log-in-box-button,
+  .sign-up-box-button {
     height: 50px;
-    width: 290px;
+    width: 240px;
     font-size: 14px;
     background-color: rgb(101, 119, 101);
     color: white;
@@ -25,29 +79,11 @@
     border-radius: 5px;
     border: none;
     cursor: pointer;
-}
-
-.log-in-box-button:hover, .sign-up-box-button:hover{
-    background-color: rgb(79, 91, 79)
-
-}
-.legal-message{
-    font-size: 12px;
-    color: rgb(181, 181, 181);
-}
-
-.demo-input{
-    display: flex;
-    gap: .2rem;
-}
-
-.demo-user-button{
-    border: none;
-    cursor: pointer;
-    color: rgb(53, 60, 55)
-}
-
-.demo-user-button:hover{
-    text-decoration: underline;
-    color: rgb(90, 101, 93)
+  }
+  .discover-header {
+    font-size: 20px;
+  }
+  .legal-message {
+    padding: 1rem 1rem 1rem 1.5rem;
+  }
 }

@@ -3,13 +3,16 @@ import { NavLink } from "react-router-dom";
 import BookShelf from "./BookShelf";
 import AddToShelfButton from "./AddNewShelf";
 import "./ProfilePage.css";
+import Footer from "../Footer";
 
 const ProfilePage = () => {
   const user = useSelector((state) => state.session.user);
 
   if (!user) return null;
 
+
   return (
+    <>
     <div className="profile-page-container">
       <div className="profile-info">
         {user.profile_img ? (
@@ -25,11 +28,13 @@ const ProfilePage = () => {
       <div className="user-bookshelf-info">
         <h2>{user.first_name.toUpperCase()}'S LIBRARY</h2>
         <NavLink to="/bookshelves/edit" className="see-all-button">
-          See all <span className="arrow">&gt;</span>
+          See All <span className="arrow"><i class="fa-solid fa-chevron-right"></i></span>
         </NavLink>
       </div>
       <BookShelf firstName={user.first_name} lastName={user.last_name} />
     </div>
+    <Footer />
+    </>
   );
 };
 export default ProfilePage;

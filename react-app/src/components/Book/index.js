@@ -6,10 +6,9 @@ import { useModal } from "../../context/Modal";
 import { thunkGetBookById } from "../../store/books";
 import { dateParser } from "../../helper_functions/dateParser";
 import OpenModalButton from "../OpenModalButton";
-import BookDelete from "../BookDelete";
 import AddToShelfModal from "../AddToShelfModal";
 import { thunkGetUserBookShelf } from "../../store/bookshelf";
-import RemoveFromShelf from "../RemoveFromShelves";
+import Footer from "../Footer";
 
 const Book = () => {
   const { bookId }  = useParams();
@@ -31,6 +30,7 @@ const Book = () => {
   }, [dispatch, bookId]);
 
   return (
+    <>
     <div className="book-details-page">
       <div className="book-img-add-to-shelf">
       <img
@@ -53,6 +53,8 @@ const Book = () => {
         <p className="book-description">{book.description}</p>
       </div>
     </div>
+    <Footer />
+    </>
   );
 };
 

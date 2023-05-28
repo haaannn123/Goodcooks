@@ -3,7 +3,6 @@ import OpenModalButton from "../OpenModalButton";
 import LoginFormModal from "../LoginFormModal";
 import SignupFormModal from "../SignupFormModal";
 import DemoUserButton from "./DemoUserButton";
-
 import "./LandingPage.css";
 
 function AccountBox() {
@@ -27,7 +26,7 @@ function AccountBox() {
   const closeMenu = () => setShowMenu(false);
   return (
     <div className="account-box">
-      <h2>Discover & cook more</h2>
+      <h2 className="discover-header">Discover & cook more</h2>
       <OpenModalButton
         buttonText="Sign in"
         onItemClick={closeMenu}
