@@ -12,7 +12,7 @@ const SplashPage = () => {
         <div className="login-container">
           <img className="splash-page-image" src="https://i.imgur.com/7Ws3Wif.png" alt="splash-page" />
           <AccountBox />
-          {/* <div className="testing">
+          <div className="testing">
             <div className="splash-page-info">
               <h2>About Goodcooks</h2>
               <p>
@@ -32,7 +32,7 @@ const SplashPage = () => {
                 Goodcooks is here to make your culinary exploration a delightful and social experience.
               </p>
             </div>
-          </div> */}
+          </div>
         </div>
       )}
     </div>

@@ -11,11 +11,15 @@
     z-index: 1;
 }
 
-/* .testing{
+.testing{
     display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 0rem 5rem 5rem 9rem;
-    gap: 1rem;
-} */
+    gap: .05rem;
+    margin-top: -300px;
+    font-family: Copernicus,"Libre Baskerville",Georgia,serif;
+}
 
 .splash-page-info{
     width: 30%
