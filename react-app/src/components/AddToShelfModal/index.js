@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { thunkAddBookToShelf } from "../../store/bookshelf_items";
 import { thunkGetUserBookShelf } from "../../store/bookshelf";
 import { useModal } from "../../context/Modal";
-import RemoveFromShelves from "../RemoveFromShelves";
 import "./addToShelfModal.css";
 
 const AddToShelfModal = ({ bookId }) => {
@@ -24,7 +23,6 @@ const AddToShelfModal = ({ bookId }) => {
         closeModal();
       })
       .catch(() => {
-        // Prevents closing modal if any errors
       });
   };
 
