@@ -5,6 +5,12 @@
   margin-bottom: 100px;
 }
 
+.edit-shelves-container{
+  margin-top: 100px;
+  padding: 0rem 24rem;
+}
+
+
 .profile-info{
   display: flex;
   align-items: center;
@@ -44,7 +50,11 @@
 
 .add{
   border: 1px solid olive;
-  background-color: white
+  background-color: white;
+  padding: 5px 9px;
+  width: 100px;
+  font-family: Copernicus,"Libre Baskerville",Georgia,serif;
+  border-radius: 3px;
 }
 
 .add-shelf-container{
@@ -52,7 +62,7 @@
   display: flex;
   justify-content: space-evenly;
   padding: 1rem;
-  background-color: rgba(80, 72, 72, 0.91);
+  background-color: rgba(110, 129, 110, 0.91);
 }
 
 .add-shelf-error{
@@ -63,7 +73,25 @@
 .edit-shelves-buttons{
   display: flex;
   justify-content: space-between;
+  border-bottom: 1px solid gray;
+  align-items: center;
+  font-family: Copernicus,"Libre Baskerville",Georgia,serif;
+  font-size: 20px;
+}
 
+.buttons-of-shelf{
+  display: flex;
+  gap: .5rem;
+}
+
+.input-rename{
+  border-radius: 5px;
+  background-color: white;
+  padding: 5px;
+}
+
+.edit-shelves-each-shelf{
+  padding: .5rem 1rem;
 }
 .add-shelf-input{
   background-color: rgb(231, 231, 231);
@@ -141,6 +169,7 @@
 .button{
   background-color: rgb(101, 119, 101);
   color: white;
+  border-radius: 5px;;
 }
 
 

@@ -33,7 +33,9 @@ const AddToShelfModal = ({ bookId }) => {
       return `read`;
     } else if (shelf === "to_read") {
       return `want to read`;
-  };
+  } else {
+    return shelf
+  }
 }
 
   return (

@@ -31,14 +31,15 @@ const EditShelf = () => {
       <AddNewShelf />
       {bookshelvesArr.map((bookshelf) => {
         return (
-
           <div className="edit-shelves-buttons">
-            <div>{bookshelf.name}</div>
+
+            <div className="edit-shelves-each-shelf">{bookshelf.name}</div>
 
             {bookshelf.name === "currently_reading" || bookshelf.name === "to_read" || bookshelf.name === "read" ? null : (
-              <div>
+              <div className="buttons-of-shelf">
                     <input
                         type="text"
+                        className="input-rename"
                         defaultValue={bookshelf.name}
                         onChange={(e) => setChangeShelfName(e.target.value)}
                         name="name"
