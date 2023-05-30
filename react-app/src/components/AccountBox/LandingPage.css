@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   width: 300px;
   margin: 14px 6px 0 0;
   border: 1px solid #cbcbcb;
@@ -43,7 +44,10 @@
   color: rgb(181, 181, 181);
   display: flex;
   align-items: center;
+  justify-content: center;
   border-bottom: 1px solid rgb(234, 234, 234);
+  padding: 0rem 2rem 1rem 2rem;
+  margin-left: 11px;
 }
 
 .demo-input {
