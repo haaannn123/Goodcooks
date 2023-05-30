@@ -8,10 +8,7 @@ Goodcooks allows you to connect and share your culinary journeys with your frien
 
 ## Live Link: https://greatcooks-social-app.onrender.com
 
-## Goodcooks was created with the following languages and frameworks:
-
-
-
+# Goodcooks was created with the following languages and frameworks:
 
 
 
