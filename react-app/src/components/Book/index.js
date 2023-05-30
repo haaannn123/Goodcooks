@@ -44,7 +44,7 @@ const Book = () => {
           onItemClick={closeModal}
           modalComponent={<AddToShelfModal bookId={bookId}/>}
       />
-      <button className="book-price-button">Kindle ${book.price.toFixed(2)}</button>
+      <button className="book-price-button">Kindle ${book.price}</button>
       </div>
       <div className="cook-book-info">
         <h1>{book.title}</h1>
