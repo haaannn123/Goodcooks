@@ -7,7 +7,7 @@ const Footer = () => {
     <div className="footer-container">
       <h2 className="footer-header">Connect with me</h2>
       <a
-        href="https://www.linkedin.com/in/christian-oviedo-6a1586242/"
+        href="https://www.linkedin.com/in/rick-astley-978941125/"
         target="_blank"
         rel="noopener noreferrer"
         className="linkedin-link"
