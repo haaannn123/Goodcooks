@@ -10,6 +10,14 @@
   padding: 0rem 24rem;
 }
 
+.delete-shelf-modal{
+  padding: 2rem;
+}
+
+.delete-shelf-buttons{
+  display: flex;
+  gap: 1rem;
+}
 
 .profile-info{
   display: flex;

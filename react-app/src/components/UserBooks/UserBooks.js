@@ -7,7 +7,7 @@ import OpenModalButton from "../OpenModalButton";
 import BookDelete from "../BookDelete";
 import BookFormUpdate from "../BookFormUpdate";
 import { useModal } from "../../context/Modal";
-import Footer from "../Footer";
+import { NavLink } from "react-router-dom";
 
 const UserBooks = () => {
   const dispatch = useDispatch();
@@ -29,11 +29,14 @@ const UserBooks = () => {
         {userBooks.length > 0 ? (
           userBooks.map((book) => (
             <div key={book.id} className="book-and-buttons">
+              <>
+              <NavLink to={`/books/${book.id}`}>
               <img
                 className="bookcover-img"
                 src={book.preview_img}
                 alt="book-cover"
               />
+              </NavLink>
               <OpenModalButton
                 buttonText="Delete"
                 onItemClick={closeModal}
@@ -46,6 +49,7 @@ const UserBooks = () => {
                 className="user-buttons"
                 modalComponent={<BookFormUpdate bookId={book.id} />}
               />
+              </>
             </div>
           ))
         ) : (

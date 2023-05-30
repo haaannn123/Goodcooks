@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { thunkGetBookshelfItemBooks } from "../../store/bookshelf_items";
 import RemoveFromShelves from "../RemoveFromShelves";
+import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
 
 const DisplayBooks = ({ shelfId }) => {
   const dispatch = useDispatch();
@@ -20,11 +21,13 @@ const DisplayBooks = ({ shelfId }) => {
       {bookArr.length > 0 ? bookArr.map((book) => {
         return (
           <div className="bookshelf-item">
+            <NavLink to={`/books/${book.id}`}>
               <img
                 className="bookcover-img"
                 src={book.preview_img}
                 alt=""
               />
+              </NavLink>
             <RemoveFromShelves shelfId={shelfId} bookId={book.id}/>
           </div>
         );

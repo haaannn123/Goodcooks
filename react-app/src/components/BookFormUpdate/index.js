@@ -85,7 +85,7 @@ function BookFormUpdate({bookId}) {
   return (
     <form onSubmit={handleSubmit} className="update-book-form">
       <h1>Don't see a book? Add a book!</h1>
-      {errors.title ? <p>{errors.title}</p> : null}
+      {errors.title ? <p className="errors">{errors.title}</p> : null}
       <label>Title</label>
       <input
         type="text"
@@ -95,7 +95,7 @@ function BookFormUpdate({bookId}) {
         name="title"
       />
       <label>Written By</label>
-      {errors.author ? <p>{errors.author}</p> : null}
+      {errors.author ? <p className="errors">{errors.author}</p> : null}
       <input
         type="text"
         className="create-book-inputs"
@@ -105,7 +105,7 @@ function BookFormUpdate({bookId}) {
       />
 
       <label>Description</label>
-      {errors.description ? <p>{errors.description}</p> : null}
+      {errors.description ? <p className="errors">{errors.description}</p> : null}
       <textarea
         type="textbox"
         className="create-book-inputs"
@@ -114,7 +114,7 @@ function BookFormUpdate({bookId}) {
         name="description"
       />
       <label>Price</label>
-      {errors.price ? <p>{errors.price}</p> : null}
+      {errors.price ? <p className="errors">{errors.price}</p> : null}
       <input
         name="price"
         type="number"
@@ -124,7 +124,7 @@ function BookFormUpdate({bookId}) {
       />
 
       <label>Published</label>
-      {errors.published ? <p>{errors.published}</p> : null}
+      {errors.published ? <p className="errors">{errors.published}</p> : null}
       <input
         name="published"
         type="date"
@@ -134,7 +134,7 @@ function BookFormUpdate({bookId}) {
       />
 
       <label>Image Preview</label>
-      {errors.image ? <p>{errors.image}</p> : null}
+      {errors.image ? <p className="errors">{errors.image}</p> : null}
       <input
         name="image"
         type="text"

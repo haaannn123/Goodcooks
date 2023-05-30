@@ -52,6 +52,7 @@
 
 .book-description{
     font-size: 18px;
+    word-break: break-word;
 }
 
 .add-to-shelf-button{
