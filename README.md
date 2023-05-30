@@ -4,6 +4,8 @@ Welcome to Goodcooks, the perfect destination for all your culinary adventures! 
 
 Goodcooks allows you to connect and share your culinary journeys with your friends. Inspired by the concept of Goodreads, the renowned social media platform for book lovers, Goodcooks provides a similar space where you can connect with fellow food enthusiasts, exchange cookbook recommendations, and keep your friends updated on your latest culinary endeavors. So whether you're seeking new recipes, yearning to expand your cookbook collection, or simply looking to connect with like-minded food lovers, Goodcooks is here to make your culinary exploration a delightful and social experience.
 
+<img src="https://i.imgur.com/50VLe3z.png"/>
+
 ## Live Link: https://greatcooks-social-app.onrender.com
 
 # Flask React Project
