@@ -86,6 +86,7 @@ export const thunkCreateBook = (book) => async (dispatch) => {
   if (res.ok) {
     const new_book = await res.json();
     dispatch(actionPostBook(new_book));
+    dispatch(thunkGetAllBooks())
   }
 };
 
