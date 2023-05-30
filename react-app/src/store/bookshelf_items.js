@@ -91,7 +91,7 @@ const bookshelfItemReducer = (state = initialState, action) => {
     case ADD_TO_SHELF: {
       newState = { ...state };
       newState.bookshelfItems = action.bookshelfItem;
-      newState.error = null; // Clears the error when successful
+      newState.error = null;
       return newState;
     }
     case ADD_TO_SHELF_ERROR: {
