@@ -26,17 +26,27 @@ const AddToShelfModal = ({ bookId }) => {
       });
   };
 
+  const shelfDisplayHeader = (shelf) => {
+    if (shelf === "currently_reading") {
+      return `currently reading`;
+    } else if (shelf === "read") {
+      return `read`;
+    } else if (shelf === "to_read") {
+      return `want to read`;
+  };
+}
+
   return (
     <div className="add-book-to-shelf-modal">
+      <h1 className="add-to-shelf-header">Choose Shelf</h1>
       <p className="error">{backendError}</p>
-      <h1>Choose Shelf</h1>
       {Object.values(userBookshelves).map((shelf) => {
         return (
           <button
             key={shelf.id}
             className="shelf-buttons"
             onClick={() => handleClick(shelf.name, shelf.id)}
-          >{shelf.name}</button>
+          >{shelfDisplayHeader(shelf.name)}</button>
         );
       })}
     </div>
