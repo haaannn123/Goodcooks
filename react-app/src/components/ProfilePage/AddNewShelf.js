@@ -15,7 +15,6 @@ const AddNewShelf = () => {
 
         let err = {};
 
-        // Trim the shelf name to remove leading and trailing spaces
         const trimmedShelf = shelf.trim();
 
         if (!trimmedShelf.length) {
