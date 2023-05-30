@@ -1,3 +1,34 @@
+# Goodcooks
+
+Welcome to Goodcooks, the perfect destination for all your culinary adventures! My interactive platform is designed to provide users with a delightful experience as they dive into the world of cookbooks. At Goodcooks, you'll find a wide selection of captivating cookbooks just waiting to be explored. And if you happen to miss your favorite cookbook, don't worry! You have the power to contribute and expand the collection by adding it to the list.
+
+Goodcooks allows you to connect and share your culinary journeys with your friends. Inspired by the concept of Goodreads, the renowned social media platform for book lovers, Goodcooks provides a similar space where you can connect with fellow food enthusiasts, exchange cookbook recommendations, and keep your friends updated on your latest culinary endeavors. So whether you're seeking new recipes, yearning to expand your cookbook collection, or simply looking to connect with like-minded food lovers, Goodcooks is here to make your culinary exploration a delightful and social experience.
+
+<img src="https://i.imgur.com/50VLe3z.png"/>
+
+## Live Link: https://greatcooks-social-app.onrender.com
+
+# Goodcooks was created with the following languages and frameworks:
+
+
+
+
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)
+![Python](https://img.shields.io/badge/Python-%233776AB.svg?style=for-the-badge&logo=python&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white)
+![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-%23FCA121.svg?style=for-the-badge&logo=sqlalchemy&logoColor=white)
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+
+
+
+
+
+
+
+
 # Flask React Project
 
 This is the starter for the Flask React project.
