@@ -6,7 +6,7 @@ import LoginFormPage from "./components/LoginFormPage";
 import { authenticate } from "./store/session";
 import Navigation from "./components/Navigation";
 import Books from "./components/Books";
-import Book from "./components/Book";
+import Book from "./components/BookDetails";
 import BookForm from "./components/BookForm";
 import BookFormUpdate from "./components/BookFormUpdate";
 import ProfilePage from "./components/ProfilePage";
