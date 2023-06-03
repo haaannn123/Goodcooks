@@ -10,6 +10,7 @@ from .api.auth_routes import auth_routes
 from .api.book_routes import book_routes
 from .api.bookshelf_routes import bookshelf_routes
 from .api.bookshelf_item_routes import bookshelf_item_routes
+from .api.review_routes import review_routes
 from .seeds import seed_commands
 from .config import Config
 
@@ -34,6 +35,7 @@ app.register_blueprint(auth_routes, url_prefix='/api/auth')
 app.register_blueprint(book_routes, url_prefix='/api/books')
 app.register_blueprint(bookshelf_routes, url_prefix='/api/bookshelves')
 app.register_blueprint(bookshelf_item_routes, url_prefix='/api/bookshelf_item')
+app.register_blueprint(review_routes, url_prefix='/api/reviews')
 
 db.init_app(app)
 Migrate(app, db)
