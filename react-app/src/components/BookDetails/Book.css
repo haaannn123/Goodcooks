@@ -20,6 +20,8 @@
     width: 30%;
     height: 400px;
     gap: 1rem;
+    position: sticky;
+    top: 0;
 }
 
 .bookshelf-item{
@@ -68,6 +70,22 @@
 .add-to-shelf-button:hover{
     cursor: pointer;
     background-color: rgb(77, 92, 77);
+}
+
+.stars-container{
+    display: flex;
+}
+
+
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 100,
+  'GRAD' 0,
+  'opsz' 48;
+  font-size: 50px;
 }
 
 
