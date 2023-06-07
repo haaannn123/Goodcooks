@@ -9,8 +9,6 @@ Goodcooks allows you to connect and share your culinary journeys with your frien
 <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZGIyZGQyY2M3MDZiNDE1ODZhZGQyMDdjMjE1YjVmYmQ4NGE4M2MyOSZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/9Pu7lsHfpbkY7r6iAO/giphy.gif" width=100%/>
 </div>
 
-
-
 ## Live Link: https://greatcooks-social-app.onrender.com
 
 ## Goodcooks was created with the following languages and frameworks:
@@ -31,6 +29,7 @@ Goodcooks allows you to connect and share your culinary journeys with your frien
     </a> 
  </div>
 
+---
 
 # Flask React Project
 
