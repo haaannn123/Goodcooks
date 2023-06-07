@@ -9,10 +9,6 @@ Goodcooks allows you to connect and share your culinary journeys with your frien
 ## Live Link: https://greatcooks-social-app.onrender.com
 
 # Goodcooks was created with the following languages and frameworks:
-
-
-
-
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 ![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)
@@ -23,10 +19,12 @@ Goodcooks allows you to connect and share your culinary journeys with your frien
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 
 
-
-
-
-
+## Connect with me! 
+<div id="">
+    <a href="https://www.linkedin.com/in/han-nguyen-developer/">
+      <img src="https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge"/>
+    </a> 
+ </div>
 
 
 # Flask React Project
