@@ -76,8 +76,7 @@ This is the starter for the Flask React project.
 
 ---
 
-# MVP Feature List
-Greatcooks, a social media app, is a website for users to share their favorite cookbooks. Users can add more books that they don't see, rate the book, and keep an overall status of their book for others to see!
+# Features List
 
 ### 1. New account creation, log in, log out, and guest/demo login
 * New Users can sign up or use demo login
