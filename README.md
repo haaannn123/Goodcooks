@@ -73,3 +73,26 @@ This is the starter for the Flask React project.
    ```
 
 7. To run the React App in development, checkout the [README](./react-app/README.md) inside the `react-app` directory.
+
+---
+
+# MVP Feature List
+Greatcooks, a social media app, is a website for users to share their favorite cookbooks. Users can add more books that they don't see, rate the book, and keep an overall status of their book for others to see!
+
+### 1. New account creation, log in, log out, and guest/demo login
+* New Users can sign up or use demo login
+* Users can sign in and sign out
+* Users can't use certain features without logging in(like adding the book to their bookshelf)
+* Upon Login users are directed to their homepage
+* Upon Logout users are directed to the splash page
+
+### 2. Hosting on Render
+
+### 3. BOOK
+* Logged-in users can create books that they don't already see on the website. 
+* Logged in users can delete books that they've created. 
+* Logged in users can view a list of all books of other users. 
+
+### 4. BOOKSHELF
+* Logged-in users can create bookshelf items within their bookshelves as well as add and remove books.
+* Logged-in users can see each other's bookshelves. 
