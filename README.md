@@ -5,8 +5,8 @@ Welcome to Goodcooks, the perfect destination for all your culinary adventures! 
 Goodcooks allows you to connect and share your culinary journeys with your friends. Inspired by the concept of Goodreads, the renowned social media platform for book lovers, Goodcooks provides a similar space where you can connect with fellow food enthusiasts, exchange cookbook recommendations, and keep your friends updated on your latest culinary endeavors. So whether you're seeking new recipes, yearning to expand your cookbook collection, or simply looking to connect with like-minded food lovers, Goodcooks is here to make your culinary exploration a delightful and social experience.
 
 <div align=center>
-<img   src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzBiZDI1YTE2YmUzNzYzMDRjN2JhNDc1MTYwNmFlMDJhY2FlZTdhMCZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/I9RRbJuGa7fgkaRzzf/giphy.gif" width=100%/>
-<img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZGIyZGQyY2M3MDZiNDE1ODZhZGQyMDdjMjE1YjVmYmQ4NGE4M2MyOSZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/9Pu7lsHfpbkY7r6iAO/giphy.gif" width=100%/>
+<img   src="[https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzBiZDI1YTE2YmUzNzYzMDRjN2JhNDc1MTYwNmFlMDJhY2FlZTdhMCZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/I9RRbJuGa7fgkaRzzf/giphy.gif](https://i.imgur.com/G5cBrlo.png)" width=100%/>
+<img src="[https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZGIyZGQyY2M3MDZiNDE1ODZhZGQyMDdjMjE1YjVmYmQ4NGE4M2MyOSZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/9Pu7lsHfpbkY7r6iAO/giphy.gif](https://i.imgur.com/0zdbxp3.png)" width=100%/>
 </div>
 
 ## Live Link: https://greatcooks-social-app.onrender.com
