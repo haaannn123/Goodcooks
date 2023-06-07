@@ -29,9 +29,7 @@ const BookShelf = ({ firstName, lastName }) => {
 
     if (currentReadingShelf) {
       setShelf(currentReadingShelf.name);
-      console.log('CURRENTLY READING NAME', currentReadingShelf.name)
       setShelfId(currentReadingShelf.id);
-      console.log('CURRENTLY READING ID', currentReadingShelf.id)
     }
   }, [bookshelves]);
 

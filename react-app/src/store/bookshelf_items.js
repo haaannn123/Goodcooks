@@ -57,7 +57,6 @@ export const thunkAddBookToShelf = (bookId, bookshelfId) => async (dispatch) => 
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ bookshelf_id: bookshelfId }),
   });
-  console.log(res.ok);
   if (res.ok) {
     const book = await res.json();
     dispatch(actionAddToShelf(book));

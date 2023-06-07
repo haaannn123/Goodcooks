@@ -14,7 +14,6 @@ function BookFormUpdate({bookId}) {
 
 
   const book = useSelector((state) => state.booksReducer.book);
-  console.log("BOOK", book)
 
   useEffect(() => {
     dispatch(thunkGetBookById(bookId))

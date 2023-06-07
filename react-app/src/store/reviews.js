@@ -16,7 +16,7 @@ export const thunkGetBookReviews = (bookId) => async (dispatch) => {
 
 const initialState = {bookReviews: {}}
 
-const productReviewsReducer = (state = initialState, action) => {
+const bookReviewsReducer = (state = initialState, action) => {
     let newState;
     switch (action.type) {
         case GET_REVIEW_BY_BOOK_ID:
@@ -29,4 +29,4 @@ const productReviewsReducer = (state = initialState, action) => {
 }
 
 
-export default productReviewsReducer
+export default bookReviewsReducer

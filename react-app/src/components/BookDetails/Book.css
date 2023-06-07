@@ -1,8 +1,7 @@
 .book-details-page{
     display: flex;
-    padding: 5rem 10rem;
     font-family: Copernicus,"Libre Baskerville",Georgia,serif;
-    margin-top: 100px;
+    margin-top: 0px;
 }
 
 .cook-book-img{
@@ -17,11 +16,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 30%;
+    width: 40%;
     height: 400px;
-    gap: 1rem;
+    gap: .5rem;
     position: sticky;
-    top: 0;
+    top: 150px;
 }
 
 .bookshelf-item{
@@ -35,7 +34,7 @@
 .cook-book-info{
     display: flex;
     flex-direction: column;
-    padding-left: 2rem;
+    padding-left: 4rem;
     width: 70%;
     color: rgba(0, 0, 0, 0.875)
 }
@@ -46,7 +45,7 @@
     color: black;
     background-color: white;
     border: 2px solid rgb(101, 119, 101);
-    height: 50px;
+    height: 80px;
     font-size: 18px;
     color: rgba(0, 0, 0, 0.824);
 }
@@ -63,7 +62,7 @@
     background-color: rgb(101, 119, 101);
     width: 100%;
     border: none;
-    height: 50px;
+    height: 100px;
     font-size: 18px;
 }
 

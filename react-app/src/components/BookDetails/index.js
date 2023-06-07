@@ -7,9 +7,11 @@ import { dateParser } from "../../helper_functions/dateParser";
 import OpenModalButton from "../OpenModalButton";
 import AddToShelfModal from "../AddToShelfModal";
 import { thunkGetUserBookShelf } from "../../store/bookshelf";
+import Reviews from './Reviews'
 import Footer from "../Footer";
 import "./Book.css";
 import "./Reviews.css";
+import { thunkGetBookReviews } from "../../store/reviews";
 
 const Book = () => {
   const { bookId } = useParams();
@@ -27,6 +29,7 @@ const Book = () => {
   useEffect(() => {
     dispatch(thunkGetBookById(bookId));
     dispatch(thunkGetUserBookShelf());
+    dispatch(thunkGetBookReviews(bookId))
   }, [dispatch, bookId]);
 
   return (
@@ -54,6 +57,9 @@ const Book = () => {
           <h1>{book.title}</h1>
           <h2>By {book.author}</h2>
           <h4>First Published {formattedPublishedDate}</h4>
+          <div className="rating-details">
+              <Reviews />
+          </div>
           <p className="book-description">{book.description}</p>
         </div>
       </div>

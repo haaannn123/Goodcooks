@@ -4,10 +4,10 @@ from app.models import Review, User, db
 
 review_routes = Blueprint('reviews', __name__)
 
-@review_routes.route('/product/<int:product_id>')
-def get_reviews_by_product_id(product_id):
-    product_reviews = Review.query.filter_by(product_id=product_id).all()
-    reviews = [review.to_dict() for review in product_reviews]
+@review_routes.route('/books/<int:book_id>')
+def get_book_reviews(book_id):
+    book_reviews = Review.query.filter_by(book_id=book_id).all()
+    reviews = [review.to_dict() for review in book_reviews]
 
     for review in reviews:
         userId = review['user_id']
@@ -16,4 +16,3 @@ def get_reviews_by_product_id(product_id):
         review['User_info'] = review_user
 
     return reviews
-
