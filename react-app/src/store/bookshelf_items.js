@@ -57,16 +57,17 @@ export const thunkAddBookToShelf = (bookId, bookshelfId) => async (dispatch) => 
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ bookshelf_id: bookshelfId }),
   });
-  console.log(res.ok);
   if (res.ok) {
     const book = await res.json();
     dispatch(actionAddToShelf(book));
+    dispatch(thunkGetBookshelfItemBooks(bookshelfId))
     dispatch(actionAddToShelfError(null))
-  } else {
-    const error = await res.text();
-    dispatch(actionAddToShelfError(error));
-    throw new Error()
   }
+  // else {
+  //   const error = await res.text();
+  //   dispatch(actionAddToShelfError(error));
+  //   throw new Error()
+  // }
 };
 
 export const thunkRemoveShelfItem = (bookshelfId, bookId) => async (dispatch) => {

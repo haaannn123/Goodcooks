@@ -8,14 +8,12 @@ const UsersCurrentlyReading = () => {
   const dispatch = useDispatch();
 
   const userBookShelf = Object.values(useSelector((state) => state.bookshelvesReducer.bookshelves));
-  console.log("HEY BOOKSHELVES OF USER", userBookShelf)
   const usersBooks = useSelector((state) => state.bookshelfItemReducer.bookshelfItems);
 
 
   useEffect(() => {
     dispatch(thunkGetUserBookShelf())
       .then((actionGetUserBookShelf ) => {
-        console.log('ACTION:', actionGetUserBookShelf)
         let id;
         Object.values(actionGetUserBookShelf).forEach((shelf) => {
             if (shelf.name === 'currently_reading'){
@@ -46,4 +44,3 @@ const UsersCurrentlyReading = () => {
 };
 
 export default UsersCurrentlyReading;
-

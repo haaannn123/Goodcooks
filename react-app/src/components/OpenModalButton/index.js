@@ -11,7 +11,6 @@ function OpenModalButton({
   const { setModalContent, setOnModalClose } = useModal();
 
   const onClick = () => {
-    console.log('CLICK')
     if (onModalClose) setOnModalClose(onModalClose);
     setModalContent(modalComponent);
     if (onButtonClick) onButtonClick();

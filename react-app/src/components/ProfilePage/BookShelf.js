@@ -29,9 +29,7 @@ const BookShelf = ({ firstName, lastName }) => {
 
     if (currentReadingShelf) {
       setShelf(currentReadingShelf.name);
-      console.log('CURRENTLY READING NAME', currentReadingShelf.name)
       setShelfId(currentReadingShelf.id);
-      console.log('CURRENTLY READING ID', currentReadingShelf.id)
     }
   }, [bookshelves]);
 
@@ -52,6 +50,7 @@ const BookShelf = ({ firstName, lastName }) => {
     }
   };
 
+
   return (
     <div className="user-bookshelf">
       <div className="user-all-shelves">
@@ -66,7 +65,9 @@ const BookShelf = ({ firstName, lastName }) => {
 
 
       </div>
-
+      <div className="divider">
+            <hr className="silver-line"/>
+      </div>
       <div>
           {shelf && (
             <div>

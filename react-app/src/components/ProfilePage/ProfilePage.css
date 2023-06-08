@@ -3,6 +3,7 @@
   padding: 1rem 23.5rem 0rem 23rem;
   margin-top: 100px;
   margin-bottom: 100px;
+  font-family: Copernicus,"Libre Baskerville",Georgia,serif;
 }
 
 .edit-shelves-container{
@@ -22,9 +23,20 @@
 .profile-info{
   display: flex;
   align-items: center;
-  gap: 1rem;
+  margin-bottom: 1rem;
 }
 
+.names-names{
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
+  justify-content: center;
+}
+
+.username{
+  color: rgb(97, 97, 97);
+  margin-top: -15px;
+}
 .profile-img{
   border: 1px solid gray;
   border-radius: 50%;
@@ -200,5 +212,5 @@
 }
 
 .shelf-display-header{
-  text-decoration: underline;
+  font-family: Copernicus,"Libre Baskerville",Georgia,serif;
 }

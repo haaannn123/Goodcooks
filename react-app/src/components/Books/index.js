@@ -32,16 +32,20 @@ function Books() {
     <div>
       {user ? (
         <div className="entire-books-container">
-
           <div className="books-header">
-            <h1>Currently Reading</h1>
+            <h1 className="books-heading">Currently Reading</h1>
             <NavLink to="/user" className="see-all-button">
             See All <span className="arrow"><i class="fa-solid fa-chevron-right"></i></span>
             </NavLink>
           </div>
               <UsersCurrentlyReading />
-
-            <h1>Explore cookbooks</h1>
+              <hr className="gray-line" />
+            <div className='books-header'>
+              <h1 className="books-heading">Explore cookbooks</h1>
+              <NavLink to="/user" className="see-all-button">
+              See All <span className="arrow"><i class="fa-solid fa-chevron-right"></i></span>
+              </NavLink>
+            </div>
             <div className="all-books-container">
             {shuffledBookArr.map((book) => {
               return (

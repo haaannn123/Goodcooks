@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import { useHistory, NavLink} from "react-router-dom";
 import ProfileButton from "./ProfileButton";
 import "./Navigation.css";
-
+import SearchBar from "../SearchBar";
 
 function Navigation({ isLoaded }) {
 
@@ -20,6 +20,7 @@ function Navigation({ isLoaded }) {
       {isLoaded ? (
         user ? (
           <>
+          <SearchBar />
             <NavLink
               to="/review/list"
               className="navbar-sub-nav-link"

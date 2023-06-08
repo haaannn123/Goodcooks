@@ -1,0 +1,27 @@
+.star-container-render{
+    display: flex;
+    gap: 1rem;
+    font-size: 30px;
+}
+
+.reviews-container{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.image-for-reviews{
+    height: 22px;
+    width: 22px;
+    border-radius: 50%;
+}
+
+#special-star{
+    font-size: 15px;
+}
+
+.review-user-container{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
