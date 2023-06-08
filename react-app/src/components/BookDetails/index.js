@@ -65,13 +65,42 @@ const Book = () => {
 
   }
 
+  const [showMenu, setShowMenu] = useState(false);
+  const ulRef = useRef();
+
+  useEffect(() => {
+    if (!showMenu) return;
+
+    const closeMenu = (e) => {
+      if (!ulRef.current.contains(e.target)) {
+        setShowMenu(false);
+      }
+    };
+
+    document.addEventListener("click", closeMenu);
+
+    return () => document.removeEventListener("click", closeMenu);
+  }, [showMenu]);
+
+  const closeMenu = () => setShowMenu(false);
+
   return (
     <>
       <div className="book-details-page">
         <div className="book-img-add-to-shelf">
           <img className="cook-book-img" src={book.preview_img} alt="cookbook" />
-          <WantToReadButton bookId={book.id} bookShelfItem={bookShelfItem} shelfId={shelfId}/>
-          <button className="book-price-button">Kindle ${book.price}</button>
+          <div className="add-to-shelf-container">
+            <WantToReadButton bookId={book.id} bookShelfItem={bookShelfItem} shelfId={shelfId}/>
+            <OpenModalButton
+              buttonText={<i class="fa-solid fa-chevron-down"></i>}
+              className="test-dropdown"
+              onItemClick={closeMenu}
+              modalComponent={<AddToShelfModal/>}/>
+          </div>
+          <div className="add-to-shelf-container">
+            <button className="book-price-button">Kindle ${book.price}</button>
+            <button className="test-dropdown-two"><i class="fa-solid fa-chevron-down"></i></button>
+          </div>
           <div className="stars-container">
             <span class="material-symbols-outlined">star</span>
             <span class="material-symbols-outlined">star</span>
