@@ -40,7 +40,6 @@ const AddToShelfModal = ({ bookId }) => {
 
   return (
     <div className="add-book-to-shelf-modal">
-      <p className="error">{backendError}</p>
       <h1 className="add-to-shelf-header">Choose Shelf</h1>
       {Object.values(userBookshelves).map((shelf) => {
         return (

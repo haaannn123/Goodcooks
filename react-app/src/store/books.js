@@ -100,7 +100,7 @@ export const thunkEditBook = (book, bookId) => async (dispatch) => {
     if (res.ok){
         const edited_book = await res.json();
         dispatch(actionUpdateBook(edited_book))
-        dispatch(thunkGetBookById(bookId))
+        dispatch(thunkGetAllBooks())
     }
 }
 

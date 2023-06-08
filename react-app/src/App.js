@@ -14,6 +14,7 @@ import EditShelf from "./components/ProfilePage/EditShelf";
 import SplashPage from "./components/SplashPage";
 import UserBooks from "./components/UserBooks/UserBooks";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   const dispatch = useDispatch();
@@ -26,6 +27,7 @@ function App() {
 
   return (
     <>
+    <ScrollToTop />
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>

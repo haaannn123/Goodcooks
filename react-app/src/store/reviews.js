@@ -5,12 +5,22 @@ export const actionGetBookReviews = (reviews) => ({
     reviews
 })
 
+const normalizingReviewsData = (reviews) => {
+    let normalizedData = {};
+
+    reviews.forEach(review => {
+        normalizedData[review.id] = review;
+    });
+    return normalizedData;
+}
+
 export const thunkGetBookReviews = (bookId) => async (dispatch) => {
     const response = await fetch(`/api/reviews/books/${bookId}`)
 
     if (response.ok) {
         const reviews = await response.json()
-        dispatch(actionGetBookReviews(reviews))
+        const normalizedData = normalizingReviewsData(reviews)
+        dispatch(actionGetBookReviews(normalizedData))
     }
 }
 
