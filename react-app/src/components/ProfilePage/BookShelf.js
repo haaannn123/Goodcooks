@@ -50,6 +50,7 @@ const BookShelf = ({ firstName, lastName }) => {
     }
   };
 
+
   return (
     <div className="user-bookshelf">
       <div className="user-all-shelves">
@@ -64,7 +65,9 @@ const BookShelf = ({ firstName, lastName }) => {
 
 
       </div>
-
+      <div className="divider">
+            <hr className="silver-line"/>
+      </div>
       <div>
           {shelf && (
             <div>

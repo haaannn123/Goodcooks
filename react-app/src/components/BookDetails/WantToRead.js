@@ -1,8 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
 import { thunkAddBookToShelf, thunkRemoveShelfItem } from "../../store/bookshelf_items";
 import { useEffect } from "react";
+import { thunkGetUserBookShelf } from "../../store/bookshelf";
 
-const WantToReadButton = ({bookId, bookShelfItem}) => {
+const WantToReadButton = ({bookId, bookShelfItem, shelfId}) => {
     const dispatch = useDispatch();
 
     let isBookInShelf = false;
@@ -13,11 +14,15 @@ const WantToReadButton = ({bookId, bookShelfItem}) => {
         }
     }
 
+    useEffect(() => {
+      dispatch(thunkGetUserBookShelf())
+    }, dispatch)
+
     const handleClick = () => {
         if (isBookInShelf) {
-          dispatch(thunkRemoveShelfItem(3, bookId));
+          dispatch(thunkRemoveShelfItem(shelfId, bookId));
         } else {
-          dispatch(thunkAddBookToShelf(bookId, 3));
+          dispatch(thunkAddBookToShelf(bookId, shelfId));
         }
       };
 

@@ -20,11 +20,14 @@ const ProfilePage = () => {
         ) : (
           <img src="https://i.imgur.com/nqak9tT.png" alt="user-profile" className="profile-img" />
         )}
-        <h1>
-          {user.first_name.charAt(0).toUpperCase() + user.first_name.slice(1)}{" "}
-          {user.last_name.charAt(0).toUpperCase() + user.last_name.slice(1)}
-        </h1>
+        <div className="names-names">
+          <h1>{user.first_name.charAt(0).toUpperCase() + user.first_name.slice(1)}{" "}{user.last_name.charAt(0).toUpperCase() + user.last_name.slice(1)}</h1>
+          <span className="username">@ {user.username}</span>
+        </div>
       </div>
+      <div className="divider">
+            <hr className="silver-line"/>
+          </div>
       <div className="user-bookshelf-info">
         <h2>{user.first_name.toUpperCase()}'S LIBRARY</h2>
         <NavLink to="/bookshelves/edit" className="see-all-button">
@@ -32,6 +35,7 @@ const ProfilePage = () => {
         </NavLink>
       </div>
       <BookShelf firstName={user.first_name} lastName={user.last_name} />
+      
     </div>
     <Footer />
     </>

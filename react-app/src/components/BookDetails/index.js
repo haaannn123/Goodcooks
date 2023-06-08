@@ -32,6 +32,14 @@ const Book = () => {
   console.log('BOOKSHELF ITEM WORKED:', bookShelfItem)
   const reviews = Object.values(useSelector((state) => state.bookReviewsReducer.bookReviews));
 
+  const userBookshelf = useSelector(state => state.bookshelvesReducer.bookshelves)
+    let shelfId;
+    for (const key in userBookshelf){
+      if (userBookshelf[key].name === 'to_read'){
+          shelfId = userBookshelf[key].id
+      }
+    }
+
   dateParser(book.published);
   const formattedPublishedDate = new Date(book.published).toLocaleDateString(undefined, {
     year: "numeric",
@@ -43,7 +51,7 @@ const Book = () => {
     dispatch(thunkGetBookById(bookId));
     dispatch(thunkGetUserBookShelf());
     dispatch(thunkGetBookReviews(bookId));
-    dispatch(thunkGetBookshelfItemBooks(3))
+    dispatch(thunkGetBookshelfItemBooks(shelfId))
   }, [dispatch, bookId]);
 
   function averageRating(reviews) {
@@ -62,7 +70,7 @@ const Book = () => {
       <div className="book-details-page">
         <div className="book-img-add-to-shelf">
           <img className="cook-book-img" src={book.preview_img} alt="cookbook" />
-          <WantToReadButton bookId={book.id} bookShelfItem={bookShelfItem}/>
+          <WantToReadButton bookId={book.id} bookShelfItem={bookShelfItem} shelfId={shelfId}/>
           <button className="book-price-button">Kindle ${book.price}</button>
           <div className="stars-container">
             <span class="material-symbols-outlined">star</span>
@@ -76,9 +84,15 @@ const Book = () => {
         <div className="cook-book-info">
           <h1 className="book-title">{book.title}</h1>
           <span className="book-author">{book.author}</span>
-          <div className="rating-details">
+          <Link
+            to="review"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+            className="rating-details">
             <Reviews avgRating={averageRating(reviews)} numReviews={reviews.length}/>
-          </div>
+          </Link>
           <div className="description-container">
             <p className={`book-description ${isOpen ? "expanded" : ""}`}>{book.description}</p>
               <button className="show-more-button" onClick={toggle}>

@@ -28,7 +28,7 @@ const UserReviews = () => {
       };
 
     return (
-        <div>
+        <div id="review">
             <h2 className="ratings-and-reviews">Ratings & Reviews</h2>
             {Object.values(reviews).length === 0 ? (
                 <p>No reviews yet.</p>
