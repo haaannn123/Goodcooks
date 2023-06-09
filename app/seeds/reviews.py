@@ -93,7 +93,7 @@ def seed_reviews():
     )
 
 
-    all_reviews = [review2, review3, review4, review5, review6, review7, review8, review9, review10]
+    all_reviews = [review1, review2, review3, review4, review5, review6, review7, review8, review9, review10]
     add_reviews = [db.session.add(review) for review in all_reviews]
     db.session.commit()
 
