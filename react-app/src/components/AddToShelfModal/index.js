@@ -39,11 +39,11 @@ const AddToShelfModal = ({bookId, bookShelfItem }) => {
 
   const shelfDisplayHeader = (shelf) => {
     if (shelf === "currently_reading") {
-      return "currently reading";
+      return "Currently Reading";
     } else if (shelf === "read") {
-      return "read";
+      return "Finished";
     } else if (shelf === "to_read") {
-      return "want to read";
+      return "Want To Read";
     } else {
       return shelf;
     }

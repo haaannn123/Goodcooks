@@ -42,7 +42,7 @@ const BookShelf = ({ firstName, lastName }) => {
     if (shelf === "currently_reading") {
       return `${firstName.toUpperCase()} IS CURRENTLY READING`;
     } else if (shelf === "read") {
-      return `${firstName.toUpperCase()} HAS READ`;
+      return `${firstName.toUpperCase()} HAS FINISHED`;
     } else if (shelf === "to_read") {
       return `${firstName.toUpperCase()} WANTS TO READ`;
     } else {
@@ -50,6 +50,17 @@ const BookShelf = ({ firstName, lastName }) => {
     }
   };
 
+  const renderShelfNames = (shelf) => {
+    if (shelf === 'currently_reading'){
+      return 'Currently Reading'
+    } else if (shelf === 'read'){
+      return 'Has Read'
+    } else if (shelf === 'to_read'){
+      return 'Wants To Read'
+    } else {
+      return shelf
+    }
+  }
 
   return (
     <div className="user-bookshelf">
@@ -59,7 +70,7 @@ const BookShelf = ({ firstName, lastName }) => {
             return (
                 <div
                   className="shelves-of-user"
-                  onClick={() => displayShelf(bookshelf.name, bookshelf.id)}>{bookshelf.name}</div>
+                  onClick={() => displayShelf(bookshelf.name, bookshelf.id)}>{renderShelfNames(bookshelf.name)}</div>
             );
           })}
 
@@ -68,7 +79,7 @@ const BookShelf = ({ firstName, lastName }) => {
       <div className="divider">
             <hr className="silver-line"/>
       </div>
-      <div>
+      <div className="more-books">
           {shelf && (
             <div>
               <h2 className="shelf-display-header">{shelfDisplayHeader(shelf, firstName)}</h2>

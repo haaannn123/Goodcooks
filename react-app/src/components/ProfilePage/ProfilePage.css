@@ -149,8 +149,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: rgba(0, 0, 0, 0.778)
 }
 
+.more-books{
+  color: rgba(0, 0, 0, 0.778)
+}
 .empty-book{
   height: 300px;
   width: 500px;
