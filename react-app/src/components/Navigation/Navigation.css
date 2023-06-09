@@ -59,6 +59,11 @@ body{
   font-family: Lato, "Helvetica Neue", Helvetica, sans-serif;
 }
 
+.profile-demo-user-name{
+  font-family: Lato, "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: bolder;
+}
+
 .hidden {
   display: none;
 }

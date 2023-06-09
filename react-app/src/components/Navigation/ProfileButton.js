@@ -64,7 +64,7 @@ function ProfileButton({ user }) {
       <ul className={ulClassName} ref={ulRef}>
         {user ? (
           <>
-            <div>{user.first_name.toUpperCase()} {user.last_name.toUpperCase()}</div>
+            <div className="profile-demo-user-name">{user.first_name.toUpperCase()} {user.last_name.toUpperCase()}</div>
             <NavLink
               className="navlink"
               to='/user'>Profile</NavLink>
