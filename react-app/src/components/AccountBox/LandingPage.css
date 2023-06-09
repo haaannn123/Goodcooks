@@ -74,7 +74,7 @@
 
 @media screen and (max-width: 1440px) {
   .account-box {
-    transform: translate(47%, -55%);
+    transform: translate(47%, -90%);
   }
 
   .discover-header {
