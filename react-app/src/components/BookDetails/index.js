@@ -29,7 +29,7 @@ const Book = () => {
 
   const book = useSelector((state) => state.booksReducer.book);
   const bookShelfItem = useSelector(state => state.bookshelfItemReducer.bookshelfItems)
-  console.log('BOOKSHELF ITEM WORKED:', bookShelfItem)
+
   const reviews = Object.values(useSelector((state) => state.bookReviewsReducer.bookReviews));
 
   const userBookshelf = useSelector(state => state.bookshelvesReducer.bookshelves)
@@ -95,7 +95,8 @@ const Book = () => {
               buttonText={<i class="fa-solid fa-chevron-down"></i>}
               className="test-dropdown"
               onItemClick={closeMenu}
-              modalComponent={<AddToShelfModal/>}/>
+              modalComponent={<AddToShelfModal bookId={bookId} bookShelfItem={bookShelfItem} shelfId={shelfId}/>}
+            />
           </div>
           <div className="add-to-shelf-container">
             <button className="book-price-button">Kindle ${book.price}</button>

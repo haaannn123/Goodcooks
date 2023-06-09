@@ -6,7 +6,6 @@ import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
 
 const DisplayBooks = ({ shelfId }) => {
   const dispatch = useDispatch();
-  console.log('CLICKED', shelfId)
 
   const book = useSelector((state) => state.bookshelfItemReducer.bookshelfItems);
   const bookArr = Object.values(book);

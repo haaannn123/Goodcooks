@@ -8,7 +8,7 @@ const UserReviews = () => {
     const dispatch = useDispatch()
 
     const reviews = useSelector(state => state.bookReviewsReducer.bookReviews)
-    console.log('REVIEWS HERE', reviews)
+
 
     useEffect(() => {
         dispatch(thunkGetBookReviews)

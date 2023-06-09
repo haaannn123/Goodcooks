@@ -52,6 +52,7 @@ export const thunkGetBookshelfItemBooks = (shelfId) => async (dispatch) => {
 };
 
 export const thunkAddBookToShelf = (bookId, bookshelfId) => async (dispatch) => {
+
   const res = await fetch(`/api/bookshelf_item/${bookId}`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -63,11 +64,6 @@ export const thunkAddBookToShelf = (bookId, bookshelfId) => async (dispatch) => 
     dispatch(thunkGetBookshelfItemBooks(bookshelfId))
     dispatch(actionAddToShelfError(null))
   }
-  // else {
-  //   const error = await res.text();
-  //   dispatch(actionAddToShelfError(error));
-  //   throw new Error()
-  // }
 };
 
 export const thunkRemoveShelfItem = (bookshelfId, bookId) => async (dispatch) => {

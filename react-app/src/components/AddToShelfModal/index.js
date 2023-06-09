@@ -1,53 +1,71 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { thunkAddBookToShelf } from "../../store/bookshelf_items";
+import { thunkAddBookToShelf, thunkRemoveShelfItem } from "../../store/bookshelf_items";
 import { thunkGetUserBookShelf } from "../../store/bookshelf";
 import { useModal } from "../../context/Modal";
 import "./addToShelfModal.css";
+import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 
-const AddToShelfModal = ({ bookId }) => {
+const AddToShelfModal = ({bookId, bookShelfItem }) => {
   const [shelf, setShelf] = useState();
   const dispatch = useDispatch();
   const { closeModal } = useModal();
   const userBookshelves = useSelector((state) => state.bookshelvesReducer.bookshelves);
-  const backendError = useSelector((state) => state.bookshelfItemReducer.error);
+
+  let isBookInShelf = false;
+  for (const key in bookShelfItem) {
+      if (bookShelfItem[key].id === bookId) {
+          isBookInShelf = true;
+          break;
+      }
+  }
 
   useEffect(() => {
     dispatch(thunkGetUserBookShelf());
   }, [dispatch]);
 
   const handleClick = (shelfName, shelfId) => {
+
     setShelf(shelfName);
-    dispatch(thunkAddBookToShelf(bookId, shelfId))
-      .then(() => {
-        closeModal();
-      })
-      .catch(() => {
-      });
+    if (isBookInShelf) {
+      dispatch(thunkRemoveShelfItem(shelfId, bookId));
+    } else {
+      dispatch(thunkAddBookToShelf(bookId, shelfId));
+      closeModal()
+    }
   };
+
+
 
   const shelfDisplayHeader = (shelf) => {
     if (shelf === "currently_reading") {
-      return `currently reading`;
+      return "currently reading";
     } else if (shelf === "read") {
-      return `read`;
+      return "read";
     } else if (shelf === "to_read") {
-      return `want to read`;
-  } else {
-    return shelf
-  }
-}
+      return "want to read";
+    } else {
+      return shelf;
+    }
+  };
 
   return (
     <div className="add-book-to-shelf-modal">
-      <h1 className="add-to-shelf-header">Choose Shelf</h1>
       {Object.values(userBookshelves).map((shelf) => {
         return (
           <button
             key={shelf.id}
             className="shelf-buttons"
             onClick={() => handleClick(shelf.name, shelf.id)}
-          >{shelfDisplayHeader(shelf.name)}</button>
+          >
+            {isBookInShelf ? (
+              <>
+                {shelfDisplayHeader(shelf.name)} <i className="fa-solid fa-check"></i>
+              </>
+            ) : (
+              <>{shelfDisplayHeader(shelf.name)}</>
+            )}
+          </button>
         );
       })}
     </div>

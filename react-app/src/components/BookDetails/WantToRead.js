@@ -16,7 +16,7 @@ const WantToReadButton = ({bookId, bookShelfItem, shelfId}) => {
 
     useEffect(() => {
       dispatch(thunkGetUserBookShelf())
-    }, dispatch)
+    }, [dispatch])
 
     const handleClick = () => {
         if (isBookInShelf) {

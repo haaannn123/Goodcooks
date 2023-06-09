@@ -6,7 +6,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0rem 2rem 2rem 2rem;
+    padding: 2rem 2rem 2rem 2rem;
     font-family: Copernicus,"Libre Baskerville",Georgia,serif;
     gap: .75rem;
 }
@@ -21,10 +21,10 @@
     border: none;
     background-color: rgb(101, 119, 101);
     font-family: "Merriweather", Georgia, "Times New Roman", serif;
-    border-radius: 15px;
+    border-radius: 25px;
     color: rgb(255, 255, 255);
     width: 100%;
-    padding: 5px;
+    padding: .5rem;
 }
 
 .shelf-buttons:hover{
