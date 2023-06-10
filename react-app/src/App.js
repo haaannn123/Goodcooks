@@ -15,6 +15,7 @@ import SplashPage from "./components/SplashPage";
 import UserBooks from "./components/UserBooks/UserBooks";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
+import AllBooks from "./components/AllBooks";
 
 function App() {
   const dispatch = useDispatch();
@@ -37,11 +38,11 @@ function App() {
           <Route path="/login" >
             <LoginFormPage />
           </Route>
-          {/* <Route path="/signup">
-            <SignupFormPage />
-          </Route> */}
           <Route path="/books/new">
             <BookForm />
+          </Route>
+          <Route path='/books'>
+            <AllBooks />
           </Route>
           <Route path="/books/:bookId/edit">
             <BookFormUpdate />

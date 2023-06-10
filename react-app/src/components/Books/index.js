@@ -14,15 +14,17 @@ function Books() {
 
   const shuffleBooks = () => {
     const shuffledBooksArr = [...booksArr];
-    for (let i = shuffledBooksArr.length -1; i > 0; i--){
+    for (let i = shuffledBooksArr.length - 1; i > 0; i--) {
       let randomIdx = Math.floor(Math.random() * (i + 1));
-      [shuffledBooksArr[i], shuffledBooksArr[randomIdx]] = [shuffledBooksArr[randomIdx], shuffledBooksArr[i]]
+      [shuffledBooksArr[i], shuffledBooksArr[randomIdx]] = [
+        shuffledBooksArr[randomIdx],
+        shuffledBooksArr[i],
+      ];
     }
-    return shuffledBooksArr
-  }
+    return shuffledBooksArr;
+  };
 
-  const shuffledBookArr = shuffleBooks(booksArr)
-
+  const shuffledBookArr = shuffleBooks(booksArr).slice(0, 14);
 
   useEffect(() => {
     dispatch(thunkGetAllBooks());
@@ -35,18 +37,18 @@ function Books() {
           <div className="books-header">
             <h1 className="books-heading">Currently Reading</h1>
             <NavLink to="/user" className="see-all-button">
-            See All <span className="arrow"><i class="fa-solid fa-chevron-right"></i></span>
+              See All <span className="arrow"><i class="fa-solid fa-chevron-right"></i></span>
             </NavLink>
           </div>
-              <UsersCurrentlyReading />
-              <hr className="gray-line" />
-            <div className='books-header'>
-              <h1 className="books-heading">Explore cookbooks</h1>
-              <NavLink to="/user" className="see-all-button">
+          <UsersCurrentlyReading />
+          <hr className="gray-line" />
+          <div className="books-header">
+            <h1 className="books-heading">Explore cookbooks</h1>
+            <NavLink to="/books" className="see-all-button">
               See All <span className="arrow"><i class="fa-solid fa-chevron-right"></i></span>
-              </NavLink>
-            </div>
-            <div className="all-books-container">
+            </NavLink>
+          </div>
+          <div className="all-books-container">
             {shuffledBookArr.map((book) => {
               return (
                 <div className="books-card" key={book.id}>
@@ -65,7 +67,6 @@ function Books() {
       ) : null}
       <Footer />
     </div>
-
   );
 }
 
