@@ -11,7 +11,7 @@ import Reviews from "./Reviews";
 import Footer from "../Footer";
 import "./Book.css";
 import "./Reviews.css";
-import { thunkGetBookReviews } from "../../store/reviews";
+import { thunkGetBookReviews, thunkRateBook } from "../../store/reviews";
 import UserReviews from "./UserReviews";
 import WantToReadButton from "./WantToRead";
 import { thunkGetBookshelfItemBooks } from "../../store/bookshelf_items";
@@ -22,6 +22,9 @@ const Book = () => {
   const dispatch = useDispatch();
   const { closeModal } = useModal();
   const [isOpen, setIsOpen] = useState(false);
+  const [stars, setStar] = useState(null);
+  const [rating, setRating] = useState(0);
+  const [hoverNumber, setHoverNumber] = useState(0);
 
   const toggle = () => {
     setIsOpen(!isOpen);
@@ -84,6 +87,22 @@ const Book = () => {
 
   const closeMenu = () => setShowMenu(false);
 
+  const handleClick = (num) => {
+    setStar(num)
+    dispatch(thunkRateBook(bookId, hoverNumber))
+  }
+
+  const getStarClass = (number) => {
+    if (number <= hoverNumber) {
+      return "material-symbols-outlined fill";
+    }
+    if (number <= stars) {
+      return "material-symbols-outlined fill";
+    } else {
+      return "material-symbols-outlined";
+    }
+  };
+
   return (
     <>
       <div className="book-details-page">
@@ -103,11 +122,31 @@ const Book = () => {
             <button className="test-dropdown-two"><i class="fa-solid fa-chevron-down"></i></button>
           </div>
           <div className="stars-container">
-            <span class="material-symbols-outlined">star</span>
-            <span class="material-symbols-outlined">star</span>
-            <span class="material-symbols-outlined">star</span>
-            <span class="material-symbols-outlined">star</span>
-            <span class="material-symbols-outlined">star</span>
+            <span
+              onClick={() => handleClick(1)}
+              onMouseEnter={() => setHoverNumber(1)}
+              onMouseLeave={() => setHoverNumber(0)}
+              className={getStarClass(1)}>star</span>
+            <span
+              onClick={() => handleClick(2)}
+              onMouseEnter={() => setHoverNumber(2)}
+              onMouseLeave={() => setHoverNumber(0)}
+              className={getStarClass(2)}>star</span>
+            <span
+              onClick={() => handleClick(3)}
+              onMouseEnter={() => setHoverNumber(3)}
+              onMouseLeave={() => setHoverNumber(0)}
+              class={getStarClass(3)}>star</span>
+            <span
+              onClick={() => handleClick(4)}
+              onMouseEnter={() => setHoverNumber(4)}
+              onMouseLeave={() => setHoverNumber(0)}
+              class={getStarClass(4)}>star</span>
+            <span
+              onClick={() => handleClick(5)}
+              onMouseEnter={() => setHoverNumber(5)}
+              onMouseLeave={() => setHoverNumber(0)}
+              class={getStarClass(5)}>star</span>
           </div>
           Rate this book
         </div>

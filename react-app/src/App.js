@@ -41,14 +41,14 @@ function App() {
           <Route path="/books/new">
             <BookForm />
           </Route>
-          <Route path='/books'>
-            <AllBooks />
-          </Route>
           <Route path="/books/:bookId/edit">
             <BookFormUpdate />
           </Route>
           <Route path="/books/:bookId">
             <Book />
+          </Route>
+          <Route path='/books'>
+            <AllBooks />
           </Route>
           <Route path="/user">
             <ProfilePage />
