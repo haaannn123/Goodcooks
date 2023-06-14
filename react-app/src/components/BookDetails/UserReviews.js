@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { thunkGetBookReviews } from "../../store/reviews";
 import OpenModalButton from "../OpenModalButton";
 import LeaveAReview from "./LeaveAReview";
+import { dateParser } from "../../helper_functions/dateParser";
 import "./Reviews.css";
 
 const UserReviews = () => {
@@ -14,7 +15,7 @@ const UserReviews = () => {
 
   const reviews = useSelector((state) => state.bookReviewsReducer.bookReviews);
   console.log("REVIEWS", reviews);
-  const reviewsArr = Object.values(reviews);
+  const reviewsArr = Object.values(reviews).sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
   const user = useSelector((state) => state.session.user);
 
   useEffect(() => {
@@ -56,8 +57,8 @@ const UserReviews = () => {
   return (
     <div id="review">
       <h2 className="ratings-and-reviews">Ratings & Reviews</h2>
-        {!hasUserReviews && (
-      <div className="leave-a-review-container">
+      {!hasUserReviews && (
+        <div className="leave-a-review-container">
           <>
             <img src={user.profile_img} className="ratings-profile-img" alt="profile" />
             <div className="text-what-do-you-think">
@@ -71,12 +72,21 @@ const UserReviews = () => {
             />
             <hr className="grey-line" />
           </>
-      </div>
-        )}
+        </div>
+      )}
       {hasReviews ? (
         reviewsArr.map((review) => (
-          <>
-            <div key={review.id}>{renderRatings(review)}</div>
+          <div className="all-reviews-container">
+            <div className="review-stars-date-container">
+              <div key={review.id}>{renderRatings(review)}</div>
+              <div className="review-date">
+                {new Date(review.created_at).toLocaleDateString(undefined, {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}
+              </div>
+            </div>
             <p className="user-reviews-description">{review.review}</p>
             <div className="review-user-container">
               {review.User_info && (
@@ -87,8 +97,14 @@ const UserReviews = () => {
                   </span>
                 </>
               )}
+              {review.user_id === user.id ? (
+                <>
+                  <button className="edit-review-button">{<i class="fa-solid fa-pen-fancy"></i>} Edit Review</button>
+                  <button className="edit-review-button">Delete Review</button>
+                </>
+              ) : null}
             </div>
-          </>
+          </div>
         ))
       ) : (
         <p>No reviews yet</p>

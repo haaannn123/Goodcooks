@@ -21,9 +21,7 @@ import { Link } from "react-scroll";
 const Book = () => {
   const { bookId } = useParams();
   const dispatch = useDispatch();
-  const { closeModal } = useModal();
   const [isOpen, setIsOpen] = useState(false);
-
 
   const toggle = () => {
     setIsOpen(!isOpen);
@@ -48,14 +46,13 @@ const Book = () => {
     month: "long",
     day: "numeric",
   });
+
   useEffect(() => {
     dispatch(thunkGetBookById(bookId));
     dispatch(thunkGetUserBookShelf());
-  }, [dispatch, bookId]);
-
-  useEffect(() => {
     dispatch(thunkGetBookReviews(bookId));
   }, [dispatch, bookId]);
+
 
   useEffect(() => {
     if (shelfId){

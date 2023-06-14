@@ -101,6 +101,30 @@ i {
     word-break: break-word;
 }
 
+.review-stars-date-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.review-date{
+    color: rgb(133, 133, 133);
+    font-size: 15px;
+}
+
+.all-reviews-container{
+    margin-bottom: 2rem;
+}
+
+.edit-review-button{
+    border-radius: 35px;
+    color: rgb(125, 125, 125);
+    background-color: white;
+    padding: .75rem;
+    border: 1px solid lightgray;
+    font-size: 12px;
+}
+
 /*_________ STARS ____________*/
 
 .stars-container {
