@@ -37,7 +37,7 @@ function Books() {
           <div className="books-header">
             <h1 className="books-heading">Currently Reading</h1>
             <NavLink to="/user" className="see-all-button">
-              See All <span className="arrow"><i class="fa-solid fa-chevron-right"></i></span>
+              See All <span className="arrow"><i className="fa-solid fa-chevron-right"></i></span>
             </NavLink>
           </div>
           <UsersCurrentlyReading />
@@ -45,7 +45,7 @@ function Books() {
           <div className="books-header">
             <h1 className="books-heading">Explore cookbooks</h1>
             <NavLink to="/books" className="see-all-button">
-              See All <span className="arrow"><i class="fa-solid fa-chevron-right"></i></span>
+              See All <span className="arrow"><i className="fa-solid fa-chevron-right"></i></span>
             </NavLink>
           </div>
           <div className="all-books-container">

@@ -14,13 +14,13 @@ const Footer = () => {
       >
         <div className="linked-in-wrapper">
           <div className="linkedin-github-text">LinkedIn</div>
-          <i class="fa-brands fa-linkedin"></i>
+          <i className="fa-brands fa-linkedin"></i>
         </div>
       </a>
       <a href="https://github.com/haaannn123" target="_blank" rel="noopener noreferrer" className="github-link">
         <div className="github-wrapper">
           <div className="linkedin-github-text">Github</div>
-          <i class="fa-brands fa-github"></i>
+          <i className="fa-brands fa-github"></i>
         </div>
       </a>
     </div>

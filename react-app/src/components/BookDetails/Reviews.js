@@ -28,9 +28,9 @@ const Reviews = ({ avgRating, numReviews}) => {
                 <div className="star-container-render">
                     <i className="fa-solid fa-star"></i>
                     <i className="fa-solid fa-star-half-stroke"></i>
-                    <i class="fa-regular fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
+                    <i className="fa-regular fa-star"></i>
+                    <i className="fa-regular fa-star"></i>
+                    <i className="fa-regular fa-star"></i>
                 </div>
             )
         } else if (avgRating < 2.4){
@@ -38,9 +38,9 @@ const Reviews = ({ avgRating, numReviews}) => {
                 <div className="star-container-render">
                     <i className="fa-solid fa-star"></i>
                     <i className="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
+                    <i className="fa-regular fa-star"></i>
+                    <i className="fa-regular fa-star"></i>
+                    <i className="fa-regular fa-star"></i>
                 </div>
             )
         } else if (avgRating < 3){
@@ -49,8 +49,8 @@ const Reviews = ({ avgRating, numReviews}) => {
                     <i className="fa-solid fa-star"></i>
                     <i className="fa-solid fa-star"></i>
                     <i className="fa-solid fa-star-half-stroke"></i>
-                    <i class="fa-regular fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
+                    <i className="fa-regular fa-star"></i>
+                    <i className="fa-regular fa-star"></i>
                 </div>
             )
         } else if (avgRating < 3.4){
@@ -59,8 +59,8 @@ const Reviews = ({ avgRating, numReviews}) => {
                     <i className="fa-solid fa-star"></i>
                     <i className="fa-solid fa-star"></i>
                     <i className="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
+                    <i className="fa-regular fa-star"></i>
+                    <i className="fa-regular fa-star"></i>
                 </div>
             )
         } else if (avgRating < 4){
@@ -70,7 +70,7 @@ const Reviews = ({ avgRating, numReviews}) => {
                     <i className="fa-solid fa-star"></i>
                     <i className="fa-solid fa-star"></i>
                     <i className="fa-solid fa-star-half-stroke"></i>
-                    <i class="fa-regular fa-star"></i>
+                    <i className="fa-regular fa-star"></i>
                 </div>
             )
         } else if (avgRating < 4.4){
@@ -80,7 +80,7 @@ const Reviews = ({ avgRating, numReviews}) => {
                     <i className="fa-solid fa-star"></i>
                     <i className="fa-solid fa-star"></i>
                     <i className="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
+                    <i className="fa-regular fa-star"></i>
                 </div>
             )
         } else if (avgRating < 5){
@@ -117,7 +117,7 @@ const Reviews = ({ avgRating, numReviews}) => {
     }
 
     const renderReviews = (numReviews) => {
-        if (numReviews == 1){
+        if (numReviews === 1){
             return numReviews + ' rating'
         } else{
             return numReviews + ' ratings'

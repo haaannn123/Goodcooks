@@ -4,7 +4,7 @@ import { thunkAddBookToShelf, thunkRemoveShelfItem } from "../../store/bookshelf
 import { thunkGetUserBookShelf } from "../../store/bookshelf";
 import { useModal } from "../../context/Modal";
 import "./addToShelfModal.css";
-import { useParams } from "react-router-dom/cjs/react-router-dom.min";
+import { useParams } from "react-router-dom"
 
 const AddToShelfModal = ({bookId, bookShelfItem }) => {
   const [shelf, setShelf] = useState();

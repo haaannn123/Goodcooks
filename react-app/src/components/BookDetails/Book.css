@@ -1,7 +1,7 @@
 .book-details-page{
     display: flex;
     font-family: Copernicus,"Libre Baskerville",Georgia,serif;
-    color: rgba(80, 72, 72, 0.91)
+    color: rgba(80, 72, 72, 0.91);
 }
 
 .book-img-add-to-shelf{
@@ -101,7 +101,6 @@
     border: none;
     height: 2.5rem;
     font-size: 18px;
-    text-align: cneter;
 }
 .test-dropdown{
   width: 20%;
@@ -136,32 +135,7 @@
 }
 
 
-/*_________ STARS ____________*/
 
-.stars-container{
-    display: flex;
-}
-
-.material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 100,
-  'GRAD' 0,
-  'opsz' 48;
-  font-size: 50px;
-}
-.fill{
-  font-variation-settings:
-  'FILL' 1,
-  'wght' 100,
-  'GRAD' 0,
-  'opsz' 48;
-}
-
-.fa-star, .fa-star-half-stroke{
-    color: rgb(233, 174, 64);
-    font-size: 28px;
-}
 
 /*__________ MEDIA QUERIES ____________*/
 

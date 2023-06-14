@@ -5,12 +5,13 @@ from datetime import date, datetime
 
 bookshelf_item_routes = Blueprint('bookshelf_items', __name__)
 
-@bookshelf_item_routes.route('/<int:bookshelfId>')
-def bookshelf_item(bookshelfId):
+@bookshelf_item_routes.route('/<int:shelfId>')
+def bookshelf_item(shelfId):
     """
     Query for all the books in the bookshelf
     """
-    books = Book.query.join(BookShelfItem).filter(BookShelfItem.bookshelf_id == bookshelfId).all()
+    print('BACKEND SHELF ID:', shelfId)
+    books = Book.query.join(BookShelfItem).filter(BookShelfItem.bookshelf_id == shelfId).all()
     books_data = [item.to_dict() for item in books]
     return books_data
 

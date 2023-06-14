@@ -1,14 +1,14 @@
 const GET_REVIEW_BY_BOOK_ID = "reviews/GET_REVIEW_BY_BOOK_ID";
-const RATING_BOOK = "reviews/RATING_BOOK";
+const NEW_REVIEW = "reviews/NEW_REVIEW";
 
 export const actionGetBookReviews = (reviews) => ({
   type: GET_REVIEW_BY_BOOK_ID,
   reviews,
 });
 
-export const actionBookRating = (rating) => ({
-  type: RATING_BOOK,
-  rating,
+export const actionNewRating = (reviews) => ({
+  type: NEW_REVIEW,
+  reviews,
 });
 
 const normalizingReviewsData = (reviews) => {
@@ -30,22 +30,21 @@ export const thunkGetBookReviews = (bookId) => async (dispatch) => {
   }
 };
 
-export const thunkRateBook = (bookId, rating) => async (dispatch) => {
-  const res = await fetch("/api/reviews/books/rate", {
+export const thunkRateBook = (bookId, review) => async (dispatch) => {
+  const res = await fetch(`/api/reviews/books/${bookId}/new`, {
+    headers: { "Content-type": "application/json" },
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ book_id: bookId, rating }),
+    body: JSON.stringify(review),
   });
 
   if (res.ok) {
-    rating = await res.json();
-    dispatch(actionBookRating(rating));
+    const newReview = await res.json();
+    dispatch(actionNewRating(newReview));
+    dispatch(thunkGetBookReviews(bookId))
   }
 };
 
-const initialState = { bookReviews: {}, rating: {} };
+const initialState = { bookReviews: {} };
 
 const bookReviewsReducer = (state = initialState, action) => {
   let newState;
@@ -54,9 +53,9 @@ const bookReviewsReducer = (state = initialState, action) => {
       newState = { ...state };
       newState.bookReviews = action.reviews;
       return newState;
-    case RATING_BOOK:
+    case NEW_REVIEW:
       newState = { ...state };
-      newState.rating = action.rating;
+      newState.bookReviews = action.reviews;
       return newState;
     default:
       return state;

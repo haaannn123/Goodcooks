@@ -31,11 +31,11 @@ const ProfilePage = () => {
       <div className="user-bookshelf-info">
         <h2>{user.first_name.toUpperCase()}'S LIBRARY</h2>
         <NavLink to="/bookshelves/edit" className="see-all-button">
-          See All <span className="arrow"><i class="fa-solid fa-chevron-right"></i></span>
+          See All <span className="arrow"><i className="fa-solid fa-chevron-right"></i></span>
         </NavLink>
       </div>
       <BookShelf firstName={user.first_name} lastName={user.last_name} />
-      
+
     </div>
     <Footer />
     </>

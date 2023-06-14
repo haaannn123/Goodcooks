@@ -32,7 +32,7 @@ function AllBooks() {
       {user ? (
         <div>
             <div className='books-header'>
-            <NavLink to="/" className="left-arrow"><span className="arrow"><i class="fa-solid fa-chevron-left"></i></span> Back To Home
+            <NavLink to="/" className="left-arrow"><span className="arrow"><i className="fa-solid fa-chevron-left"></i></span> Back To Home
             </NavLink>
             </div>
             <div className="all-books-container">
