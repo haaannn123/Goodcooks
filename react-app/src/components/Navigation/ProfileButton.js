@@ -67,7 +67,7 @@ function ProfileButton({ user }) {
             <div className="profile-demo-user-name">{user.first_name.toUpperCase()} {user.last_name.toUpperCase()}</div>
             <NavLink
               className="navlink"
-              to='/user'>Profile</NavLink>
+              to={`/user/${user.id}`}>Profile</NavLink>
             <div>
               <button
                 className="logout-button"

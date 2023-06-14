@@ -6,15 +6,16 @@ import OpenModalButton from "../OpenModalButton";
 import LeaveAReview from "./LeaveAReview";
 import { dateParser } from "../../helper_functions/dateParser";
 import "./Reviews.css";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 const UserReviews = () => {
   const { bookId } = useParams();
   const [showMenu, setShowMenu] = useState(false);
   const ulRef = useRef();
   const dispatch = useDispatch();
+  const history = useHistory()
 
   const reviews = useSelector((state) => state.bookReviewsReducer.bookReviews);
-  console.log("REVIEWS", reviews);
   const reviewsArr = Object.values(reviews).sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
   const user = useSelector((state) => state.session.user);
 
@@ -90,12 +91,12 @@ const UserReviews = () => {
             <p className="user-reviews-description">{review.review}</p>
             <div className="review-user-container">
               {review.User_info && (
-                <>
+                <div onClick={() => history.push(`/user/${review.user_id}`)}>
                   <img src={review.User_info.profile_img} alt="profile" className="image-for-reviews" />
                   <span>
                     {review.User_info.first_name} {review.User_info.last_name}
                   </span>
-                </>
+                </div>
               )}
               {review.user_id === user.id ? (
                 <>

@@ -1,15 +1,27 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import BookShelf from "./BookShelf";
 import AddToShelfButton from "./AddNewShelf";
 import "./ProfilePage.css";
 import Footer from "../Footer";
+import { useEffect } from "react";
+import { thunkGetUser } from "../../store/user";
+import { useParams } from "react-router-dom"
 
 const ProfilePage = () => {
-  const user = useSelector((state) => state.session.user);
+  const {userId} = useParams();
+  console.log('USER ID', userId)
+  // const user = useSelector((state) => state.session.user);
+  const dispatch = useDispatch()
+  const user = useSelector(state => state.userReducer.singleUser)
+  console.log('USER', user)
+
+
+  useEffect(() => {
+    dispatch(thunkGetUser(userId))
+  }, [dispatch, userId])
 
   if (!user) return null;
-
 
   return (
     <>

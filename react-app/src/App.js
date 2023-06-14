@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Route, Switch } from "react-router-dom";
 // import SignupFormPage from "./components/SignupFormPage";
 import LoginFormPage from "./components/LoginFormPage";
-import { authenticate } from "./store/session";
+import { authenticate, thunkGetUser } from "./store/session";
 import Navigation from "./components/Navigation";
 import Books from "./components/Books";
 import Book from "./components/BookDetails";
@@ -50,7 +50,7 @@ function App() {
           <Route path='/books'>
             <AllBooks />
           </Route>
-          <Route path="/user">
+          <Route path="/user/:userId">
             <ProfilePage />
           </Route>
           <Route path='/bookshelves/edit'>
