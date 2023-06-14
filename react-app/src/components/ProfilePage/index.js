@@ -10,12 +10,8 @@ import { useParams } from "react-router-dom"
 
 const ProfilePage = () => {
   const {userId} = useParams();
-  console.log('USER ID', userId)
-  // const user = useSelector((state) => state.session.user);
   const dispatch = useDispatch()
   const user = useSelector(state => state.userReducer.singleUser)
-  console.log('USER', user)
-
 
   useEffect(() => {
     dispatch(thunkGetUser(userId))
@@ -33,7 +29,7 @@ const ProfilePage = () => {
           <img src="https://i.imgur.com/nqak9tT.png" alt="user-profile" className="profile-img" />
         )}
         <div className="names-names">
-          <h1>{user.first_name.charAt(0).toUpperCase() + user.first_name.slice(1)}{" "}{user.last_name.charAt(0).toUpperCase() + user.last_name.slice(1)}</h1>
+          <h1>{user.first_name} {user.last_name}</h1>
           <span className="username">@ {user.username}</span>
         </div>
       </div>

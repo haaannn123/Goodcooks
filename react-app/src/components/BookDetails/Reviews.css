@@ -14,6 +14,7 @@
     height: 22px;
     width: 22px;
     border-radius: 50%;
+    padding-right: .5rem;
 }
 
 #special-star{
@@ -40,6 +41,17 @@
     gap: .5rem;
 }
 
+.user-user{
+    display: flex;
+    align-items: center;
+}
+.user-user:hover{
+    text-decoration: underline;
+    cursor: pointer;
+    filter: brightness(80%);
+}
+
+
 i {
     font-style: italic;
 }
@@ -60,7 +72,7 @@ i {
 
 .write-a-review-button:hover{
     background-color: rgb(85, 77, 77);
-
+    cursor: pointer;
 }
 
 .grey-line{

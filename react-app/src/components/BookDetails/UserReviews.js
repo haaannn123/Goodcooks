@@ -91,11 +91,11 @@ const UserReviews = () => {
             <p className="user-reviews-description">{review.review}</p>
             <div className="review-user-container">
               {review.User_info && (
-                <div onClick={() => history.push(`/user/${review.user_id}`)}>
+                <div
+                  className="user-user"
+                  onClick={() => history.push(`/user/${review.user_id}`)}>
                   <img src={review.User_info.profile_img} alt="profile" className="image-for-reviews" />
-                  <span>
-                    {review.User_info.first_name} {review.User_info.last_name}
-                  </span>
+                  <span>{review.User_info.first_name} {review.User_info.last_name}</span>
                 </div>
               )}
               {review.user_id === user.id ? (
