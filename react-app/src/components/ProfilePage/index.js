@@ -37,7 +37,7 @@ const ProfilePage = () => {
             <hr className="silver-line"/>
           </div>
       <div className="user-bookshelf-info">
-        <h2>{user.first_name.toUpperCase()}'S LIBRARY</h2>
+        <h2>{user.first_name}'S LIBRARY</h2>
         <NavLink to="/bookshelves/edit" className="see-all-button">
           See All <span className="arrow"><i className="fa-solid fa-chevron-right"></i></span>
         </NavLink>

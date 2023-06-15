@@ -1,22 +1,36 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { thunkEditReview} from "../../store/reviews";
+import { thunkEditReview, thunkGetBookReviews} from "../../store/reviews";
 import { useModal } from "../../context/Modal";
 
-const EditReviewModal = ({reviewId}) => { 
+const EditReviewModal = ({reviewId, star, prevReview, bookId}) => { 
+  console.log('STAR:', star)
+  console.log('PRV REVIEW:', prevReview)
   const dispatch = useDispatch();
-  const [stars, setStar] = useState();
+  const [stars, setStar] = useState(star);
   const [hoverNumber, setHoverNumber] = useState(0);
-  const [review, setReview] = useState()
+  const [review, setReview] = useState(prevReview)
   const [errors, setErrors] = useState({});
   const {closeModal} = useModal()
-
-  const previousReviews = useSelector(state => state.bookReviewsReducer)
-  console.log('PREV:', previousReviews)
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    let err = {};
+    if (review.length < 30) {
+      err.review = "Please write at least 30 characters";
+    }
+
+    if (Object.keys(err).length) {
+      return setErrors(err);
+    }
+    const newReview = {
+      rating: stars,
+      review: review,
+    };
+
+    dispatch(thunkEditReview(reviewId, newReview, bookId));
+    closeModal()
   };
 
   const getStarClass = (number) => {
@@ -38,8 +52,6 @@ const EditReviewModal = ({reviewId}) => {
     <form onSubmit={handleSubmit} className="leave-a-review-container">
       <p className="errors">{errors.review}</p>
       <div className="review-label">What did you think?</div>
-      <div>POO</div>
-      <div>IS THIS WORKING?!?!?!</div>
       <div className="stars-container">
         <span
           onClick={() => handleClick(1)}

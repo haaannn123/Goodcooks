@@ -59,3 +59,14 @@ def update_user_review(review_id):
         db.session.commit()
         return review.to_dict()
     return {'MESSAGE': "Update review didn't work"}
+
+@review_routes.route('/<int:id>', methods=['DELETE'])
+def delete_review(id):
+    review = Review.query.get(id)
+    if (not review):
+        return ('No Review Found'), 404
+
+    db.session.delete(review)
+    db.session.commit()
+
+    return {'Review Successfully Deleted': id}

@@ -40,13 +40,13 @@ const BookShelf = ({ firstName, lastName }) => {
 
   const shelfDisplayHeader = (shelf, firstName ) => {
     if (shelf === "currently_reading") {
-      return `${firstName.toUpperCase()} IS CURRENTLY READING`;
+      return `${firstName} IS CURRENTLY READING`;
     } else if (shelf === "read") {
-      return `${firstName.toUpperCase()} HAS FINISHED`;
+      return `${firstName} HAS FINISHED`;
     } else if (shelf === "to_read") {
-      return `${firstName.toUpperCase()} WANTS TO READ`;
+      return `${firstName} WANTS TO READ`;
     } else {
-      return `${firstName.toUpperCase()}'S ${shelf.toUpperCase()}`;
+      return `${firstName}'S ${shelf.toUpperCase()}`;
     }
   };
 
