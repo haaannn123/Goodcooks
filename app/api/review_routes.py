@@ -47,16 +47,15 @@ def new_review(book_id):
         return new_review.to_dict()
     return form.errors
 
-# @review_routes.route('/books/rate', methods=['POST'])
-# def add_star_rating():
-#     user_id = session.get('_user_id')
-#     book_id = request.json.get('book_id')
-#     rating = request.json.get('rating')
-#     rating = Review(
-#         user_id = user_id,
-#         book_id = book_id,
-#         rating = rating
-#     )
-#     db.session.add(rating)
-#     db.session.commit()
-#     return rating.to_dict()
+@review_routes.route('/<int:review_id>/update', methods=['PUT'])
+def update_user_review(review_id):
+    review = Review.query.get(review_id)
+    data = request.get_json()
+
+    if (review):
+        review.rating = data["rating"]
+        review.review = data["review"]
+
+        db.session.commit()
+        return review.to_dict()
+    return {'MESSAGE': "Update review didn't work"}

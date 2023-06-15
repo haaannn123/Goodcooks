@@ -36,6 +36,7 @@ function Books() {
         <div className="entire-books-container">
           <div className="books-header">
             <h1 className="books-heading">Currently Reading</h1>
+            <div>HELLO THIS IS WORKING</div>
             <NavLink to={`/user/${user.id}`} className="see-all-button">
               See All <span className="arrow"><i className="fa-solid fa-chevron-right"></i></span>
             </NavLink>

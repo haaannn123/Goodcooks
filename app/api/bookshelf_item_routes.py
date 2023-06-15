@@ -10,7 +10,6 @@ def bookshelf_item(shelfId):
     """
     Query for all the books in the bookshelf
     """
-    print('BACKEND SHELF ID:', shelfId)
     books = Book.query.join(BookShelfItem).filter(BookShelfItem.bookshelf_id == shelfId).all()
     books_data = [item.to_dict() for item in books]
     return books_data

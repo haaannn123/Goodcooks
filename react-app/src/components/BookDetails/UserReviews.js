@@ -7,6 +7,7 @@ import LeaveAReview from "./LeaveAReview";
 import { dateParser } from "../../helper_functions/dateParser";
 import "./Reviews.css";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import EditReviewModal from "../EditReviewModal";
 
 const UserReviews = () => {
   const { bookId } = useParams();
@@ -100,7 +101,13 @@ const UserReviews = () => {
               )}
               {review.user_id === user.id ? (
                 <>
-                  <button className="edit-review-button">{<i class="fa-solid fa-pen-fancy"></i>} Edit Review</button>
+                  <OpenModalButton
+                      buttonText={'Edit Review'}
+                      onItemClick={closeMenu}
+                      className='edit-review-button'
+                      modalComponent={<EditReviewModal reviewId={review.id} star={review.rating} prevReview={review.review}/>}
+                  />
+                  <button className="edit-review-button">{} Edit Review</button>
                   <button className="edit-review-button">Delete Review</button>
                 </>
               ) : null}
