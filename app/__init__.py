@@ -37,7 +37,7 @@ app.register_blueprint(book_routes, url_prefix='/api/books')
 app.register_blueprint(bookshelf_routes, url_prefix='/api/bookshelves')
 app.register_blueprint(bookshelf_item_routes, url_prefix='/api/bookshelf_item')
 app.register_blueprint(review_routes, url_prefix='/api/reviews')
-app.register_blueprint(follows_routes, url_prefix='/api/follows')
+# app.register_blueprint(follows_routes, url_prefix='/api/follows')
 
 
 db.init_app(app)

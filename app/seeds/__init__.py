@@ -20,7 +20,7 @@ def seed():
         # command, which will  truncate all tables prefixed with
         # the schema name (see comment in users.py undo_users function).
         # Make sure to add all your other model's undo functions below
-        undo_follows()
+        # undo_follows()
         undo_reviews()
         undo_bookshelf_items()
         undo_bookshelf()
@@ -31,7 +31,7 @@ def seed():
     seed_bookshelf()
     seed_bookshelf_items()
     seed_reviews()
-    seed_follows()
+    # seed_follows()
 
 
     # Add other seed functions here
