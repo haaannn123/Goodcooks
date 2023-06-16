@@ -21,21 +21,21 @@ class User(db.Model, UserMixin):
     books = db.relationship("Book", back_populates='owner', cascade='all, delete-orphan')
     bookshelf = db.relationship('BookShelf', back_populates='user',cascade="all, delete-orphan" )
     reviews = db.relationship('Review', back_populates='user', cascade="all, delete-orphan")
-    # followers = db.relationship(
-    #     'User', 
-    #     secondary='follows', 
-    #     primaryjoin=follows.columns.followed == id, 
-    #     secondaryjoin=follows.columns.follower == id, 
-    #     back_populates='following'
-    # )
+    followers = db.relationship(
+        'User', 
+        secondary='follows', 
+        primaryjoin=follows.columns.followed == id, 
+        secondaryjoin=follows.columns.follower == id, 
+        back_populates='following'
+    )
 
-    # following  = db.relationship(
-    #     'User', 
-    #     secondary='follows', 
-    #     primaryjoin=follows.c.follower == id, 
-    #     secondaryjoin=follows.c.followed == id, 
-    #     back_populates="followers"
-    # )
+    following  = db.relationship(
+        'User', 
+        secondary='follows', 
+        primaryjoin=follows.c.follower == id, 
+        secondaryjoin=follows.c.followed == id, 
+        back_populates="followers"
+    )
 
     @property
     def password(self):
