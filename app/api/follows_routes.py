@@ -4,15 +4,15 @@ from app.models import User, db
 
 follows_routes = Blueprint('follows', __name__)
 
-@follows_routes.route('/')
-def all_current_users_following():
-    """
-    Query for all the users the current user is following
-    """
-    current_user = session.get('_user_id')
-    following_users = current_user.following
-    following_users_list = [user.to_dict() for user in following_users]
-    return {'following_users': following_users_list}
+# @follows_routes.route('/')
+# def all_current_users_following():
+#     """
+#     Query for all the users the current user is following
+#     """
+#     current_user = session.get('_user_id')
+#     following_users = current_user.following
+#     following_users_list = [user.to_dict() for user in following_users]
+#     return {'following_users': following_users_list}
 
 
 @follows_routes.route('/<int:user_id>')

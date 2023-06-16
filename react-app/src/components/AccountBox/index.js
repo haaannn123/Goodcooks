@@ -26,22 +26,27 @@ function AccountBox() {
   const closeMenu = () => setShowMenu(false);
   return (
     <div className="account-box">
-      <h2 className="discover-header">Discover & cook more</h2>
+      <h2 className="discover-header">Discover & Cook more</h2>
       <OpenModalButton
         buttonText="Sign in"
         onItemClick={closeMenu}
         className="log-in-box-button"
-        modalComponent={<LoginFormModal />} />
+        modalComponent={<LoginFormModal />}
+      />
       <OpenModalButton
         buttonText="Register"
         className="sign-up-box-button"
         onItemClick={closeMenu}
-        modalComponent={<SignupFormModal />} />
-        <div className="legal-message">By creating an account, you agree to the Greatcooks Terms of Service and Privacy Policy.</div>
+        modalComponent={<SignupFormModal />}
+      />
+      <div className="legal-message">
+        By creating an account, you agree to the Greatcooks Terms of Service and Privacy Policy.
+      </div>
       <div className="demo-input">
-        Sign in as a  <DemoUserButton />
+        Sign in as a <DemoUserButton />
       </div>
     </div>
   );
+  
 }
 export default AccountBox;

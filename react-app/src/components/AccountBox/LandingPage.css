@@ -6,7 +6,7 @@
   width: 300px;
   margin: 14px 6px 0 0;
   border: 1px solid #cbcbcb;
-  font-family: "Merriweather", Georgia, "Times New Roman", serif;
+  font-family: Lato, "Helvetica Neue", Helvetica, sans-serif;
   background-color: white;
   border-radius: 4%;
   gap: 1rem;
@@ -36,7 +36,8 @@
 }
 
 .discover-header {
-  font-size: 15px;
+  font-size: 25px;
+  color: rgba(80, 72, 72, 0.91);
 }
 
 .legal-message {
@@ -45,25 +46,26 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-bottom: 1px solid rgb(234, 234, 234);
   padding: 0rem 2rem 1rem 2rem;
   margin-left: 11px;
 }
 
+
 .demo-input {
   display: flex;
   gap: 0.2rem;
+  font-size: 20px;
 }
 
 .demo-user-button {
   border: none;
   cursor: pointer;
-  color: rgb(79, 89, 81);
+  color: rgb(138, 155, 141);
 }
 
 .demo-user-button:hover {
   text-decoration: underline;
-  color: rgb(18, 19, 18);
+  color: rgb(35, 39, 36);
 }
 
 @media screen and (min-width: 1439px){
@@ -75,10 +77,6 @@
 @media screen and (max-width: 1440px) {
   .account-box {
     transform: translate(47%, -90%);
-  }
-
-  .discover-header {
-    font-size: 20px;
   }
   .legal-message {
     padding: 1rem 1rem 1rem 1.5rem;

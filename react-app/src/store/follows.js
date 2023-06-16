@@ -1,5 +1,11 @@
 const FOLLOW_USER = 'follows/FOLLOW_USER';
 const UNFOLLOW_USER = 'follows/UNFOLLOW_USER';
+const IS_CURR_USER_FOLLOWING = 'follows/IS_CURR_USER_FOLLOWING';
+
+export const actionIsFollowing = (user) => ({
+  type: IS_CURR_USER_FOLLOWING,
+  user
+})
 
 export const actionFollowUser = (userId) => ({
     type: FOLLOW_USER,
@@ -11,8 +17,17 @@ export const actionUnfollowUser = (userId) => ({
     userId
 })
 
+export const thunkIsFollowing = (userTwo) => async (dispatch) => {
+    const res = await fetch(`/api/follows/${userTwo}`)
+
+    if (res.ok){
+      const data = res.json()
+      dispatch(actionIsFollowing(data))
+    }
+
+}
+
 export const thunkFollowUser = (userOne, userTwo) => async (dispatch) => {
-  try {
     const res = await fetch(`/api/follows/${userOne}/${userTwo}`, {
       headers: { 'Content-Type': "application/json" },
       method: 'POST',
@@ -22,9 +37,6 @@ export const thunkFollowUser = (userOne, userTwo) => async (dispatch) => {
       const data = await res.json();
       dispatch(actionFollowUser(data));
     }
-  } catch (error) {
-    console.log(error);
-  }
 };
 
 export const thunkUnfollowUser = (userOne, userTwo) => async (dispatch) => {
@@ -52,6 +64,10 @@ const followsReducer = (state = initialState, action) => {
             newState = {...state}
             delete newState.following[action.userId]
             delete newState.followingUsers[action.userId]
+            return newState;
+        case IS_CURR_USER_FOLLOWING:
+            newState = {...state}
+            newState.following = action.user
             return newState;
         default: 
             return state;

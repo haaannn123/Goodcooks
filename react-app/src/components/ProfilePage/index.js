@@ -12,18 +12,17 @@ import { useParams } from "react-router-dom"
 const ProfilePage = () => {
   const {userId} = useParams();
   const dispatch = useDispatch();
-  const [isFollowing, setIsFollowing] = useState(false);
   const user = useSelector(state => state.userReducer.singleUser)
   const currentUser = useSelector(state => state.session.user.id)
-  const followingUsers = useSelector(state => state.followsReducer.followingUsers)
+
 
   useEffect(() => {
     dispatch(thunkGetUser(userId))
-    setIsFollowing(!!followingUsers[userId]); 
   }, [dispatch, userId])
 
   const handleClick = (userId) => {
     dispatch(thunkFollowUser(userId, currentUser))
+    
   }
 
   if (!user) return null;
