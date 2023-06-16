@@ -4,4 +4,5 @@ from .books import Book
 from .bookshelf_item import BookShelfItem
 from .bookshelves import BookShelf
 from .reviews import Review
+from .follows import follows
 from .db import environment, SCHEMA
