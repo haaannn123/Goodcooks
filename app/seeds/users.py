@@ -20,9 +20,18 @@ def seed_users():
         email='hnguyen@aa.io',
         password='Onecooldog123'
         )
+    bflood = User(
+        profile_img="https://i.imgur.com/pjS1da6.jpg",
+        first_name="Brennan",
+        last_name="Flood",
+        username='BFlood',
+        email='bflood@aa.io',
+        password='Onecooldog123'
+        )
 
     db.session.add(demo)
     db.session.add(han)
+    db.session.add(bflood)
     db.session.commit()
 
 

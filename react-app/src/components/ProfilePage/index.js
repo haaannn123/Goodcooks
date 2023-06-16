@@ -4,18 +4,27 @@ import BookShelf from "./BookShelf";
 import AddToShelfButton from "./AddNewShelf";
 import "./ProfilePage.css";
 import Footer from "../Footer";
-import { useEffect } from "react";
+import { useEffect , useState } from "react";
 import { thunkGetUser } from "../../store/user";
+import {thunkFollowUser} from '../../store/follows'
 import { useParams } from "react-router-dom"
 
 const ProfilePage = () => {
   const {userId} = useParams();
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
+  const [isFollowing, setIsFollowing] = useState(false);
   const user = useSelector(state => state.userReducer.singleUser)
+  const currentUser = useSelector(state => state.session.user.id)
+  const followingUsers = useSelector(state => state.followsReducer.followingUsers)
 
   useEffect(() => {
     dispatch(thunkGetUser(userId))
+    setIsFollowing(!!followingUsers[userId]); 
   }, [dispatch, userId])
+
+  const handleClick = (userId) => {
+    dispatch(thunkFollowUser(userId, currentUser))
+  }
 
   if (!user) return null;
 
@@ -31,6 +40,7 @@ const ProfilePage = () => {
         <div className="names-names">
           <h1>{user.first_name} {user.last_name}</h1>
           <span className="username">@ {user.username}</span>
+          <button onClick={() => handleClick(user.id)}>Follow</button>
         </div>
       </div>
       <div className="divider">

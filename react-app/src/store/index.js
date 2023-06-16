@@ -5,6 +5,7 @@ import booksReducer from './books';
 import bookshelvesReducer from './bookshelf';
 import bookshelfItemReducer from './bookshelf_items';
 import bookReviewsReducer from './reviews';
+import followsReducer from './follows';
 import userReducer from './user';
 
 const rootReducer = combineReducers({
@@ -13,7 +14,8 @@ const rootReducer = combineReducers({
   bookshelvesReducer,
   bookshelfItemReducer,
   bookReviewsReducer,
-  userReducer
+  userReducer,
+  followsReducer
 });
 
 let enhancer;
