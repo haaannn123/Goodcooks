@@ -1,5 +1,3 @@
-import { thunkGetUserBookShelf } from "./bookshelf";
-
 const GET_BOOKSHELF_ITEMS_BOOKS = "bookshelf_item/item/GET_BOOKSHELF_ITEMS_BOOKS";
 const ADD_TO_SHELF = "bookshelf_item/ADD_TO_SHELF";
 const ADD_TO_SHELF_ERROR = "bookshelf_item/ADD_TO_SHELF_ERROR";

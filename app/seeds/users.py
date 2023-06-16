@@ -21,7 +21,7 @@ def seed_users():
         password='Onecooldog123'
         )
     bflood = User(
-        profile_img="https://i.imgur.com/pjS1da6.jpg",
+        profile_img="https://i.imgur.com/nqak9tT.png",
         first_name="Brennan",
         last_name="Flood",
         username='BFlood',

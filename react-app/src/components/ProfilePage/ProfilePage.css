@@ -29,8 +29,8 @@
 .names-names{
   display: flex;
   flex-direction: column;
-  margin-left: 1rem;
   justify-content: center;
+  margin-left: 1.5rem;;
 }
 
 .username{
@@ -207,6 +207,13 @@
   background-color: rgb(101, 119, 101);
   color: white;
   border-radius: 5px;;
+}
+
+.follow-button{
+  border-radius: 10px;
+  background-color: brown;
+  color: white;
+  margin-left: 100px;
 }
 
 

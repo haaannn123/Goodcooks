@@ -2,16 +2,14 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { thunkGetUserBookShelf } from "../../store/bookshelf";
 import DisplayBooks from "./DisplayBooks";
-import AddToShelfButton from "./AddNewShelf";
-import DeleteShelfButton from "./DeleteShelfButton";
 
 const BookShelf = ({ firstName, lastName }) => {
+  console.log('FIRST NAME:', firstName)
   const dispatch = useDispatch();
   const [shelf, setShelf] = useState();
   const [shelfId, setShelfId] = useState();
   const bookshelves = useSelector((state) => state.bookshelvesReducer.bookshelves);
   const bookshelvesArr = Object.values(bookshelves);
-
 
   useEffect(() => {
     dispatch(thunkGetUserBookShelf());

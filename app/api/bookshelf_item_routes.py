@@ -24,7 +24,6 @@ def add_to_shelf(bookId):
 
     #Check if book exists in data
     existing_book = BookShelfItem.query.filter_by(bookshelf_id=bookshelf_id,book_id=bookId).first()
-    print("\n", existing_book, "\n")
     if existing_book:
         return ("Book already belongs to this shelf"), 400
     new_bookshelf_item = BookShelfItem(
