@@ -1,76 +1,52 @@
 .footer-container {
-    background-color: #f9f8f4;;
-    padding-bottom: 1rem;
+    /* position: relative; */
+    background-color: #f9f8f4;
     gap: 1rem;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    width: 100%;
-    bottom: 0;
-}
-
-.footer-header {
-    display: flex;
     justify-content: center;
-    padding-top: 1em;
+    flex-direction: row;
+    align-items: center;
+    height: 12vh;
+    width: 100%;
+    /* top: 10000px; */
+    margin-top: auto;
+
 }
 
-.github-wrapper {
-    display: flex;
-    gap: .4em;
-}
-
-.linked-in-wrapper {
-    display: flex;
-    gap: .4em;
-}
-
-.single-name {
-    font-weight: bold;
-    font-size: 15px;
-}
-
-.linkedin-github-text {
-    font-size: 13px;
-}
-
-.linkedin-link {
+/* .linkedin-link {
     display: flex;
     text-decoration: none;
-    background-color: rgb(44, 138, 232);
+    background-color: rgba(137, 145, 153, 0.773);
     color: white;
-    height: 30px;
-    width: 100px;
+    height: 39px;
+    width: 39px;
     align-items: center;
     justify-content: center;
     border-radius: 20px;
-    font-size: 1.3em;
 }
 
 .github-link {
     display: flex;
     text-decoration: none;
-    background-color: rgb(27, 27, 27);
+    background-color: rgba(137, 145, 153, 0.773);
     color: white;
-    height: 30px;
-    width: 100px;
+    height: 39px;
+    width: 39px;
     align-items: center;
     justify-content: center;
-    border-radius: 20px;
+    border-radius: 50%;
     font-size: 1.3em;
-}
+} */
 
 .links-wrapper {
     display: flex;
     flex-direction: column;
-    row-gap: .5em;
+    /* row-gap: .5em; */
 }
 
-.fa-brands.fa-github {
-    font-size: 15px;
-  }
+.fa-brands {
+    font-size: 35px;
+    color: rgba(137, 145, 153, 0.773);
+    border-radius: 50%;
 
-  .fa-brands.fa-linkedin {
-    font-size: 15px;
-  }
+}

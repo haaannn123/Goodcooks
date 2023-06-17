@@ -20,7 +20,7 @@ function LoginFormModal() {
       setErrors(data);
     } else {
       closeModal()
-      history.push('/books')
+      history.push('/')
     }
   };
 

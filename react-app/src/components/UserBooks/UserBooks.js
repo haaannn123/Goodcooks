@@ -23,7 +23,7 @@ const UserBooks = () => {
 
   return (
     <>
-    <div className="user-cook-book-page">
+    <div className="user-cook-book-page page">
       <h1>Edit your books</h1>
       <div className="my-books-container">
         {userBooks.length > 0 ? (

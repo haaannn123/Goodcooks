@@ -9,21 +9,23 @@ function DemoUserButton() {
   const history = useHistory();
   const { closeModal } = useModal();
 
-  const demoUser = () => {
-    dispatch(login("demo@aa.io", "Onecooldog123"))
-      .then(closeModal)
-      .then(history.push("/"))
-      .catch(async (res) => {
-        const data = await res.json();
-        if (data && data.errors) {
-          setErrors(["The provided credentials were invalid."]);
-        }
-      });
+  const demoUser = async () => {
+    console.log("demo user useEffect")
+    const data = await dispatch(login("demo@aa.io", "Onecooldog123"))
+      // .then(closeModal)
+     
+
+    if (data) {
+      setErrors(data)
+    } else {
+      closeModal();
+      history.push("/")
+    }
   };
 
   return (
     <>
-      <div className="demo-user-button" onClick={demoUser}>  Demo user</div>
+      <div className="demo-user-button" onClick={demoUser}>Sign in Demo user</div>
     </>
   );
 }
