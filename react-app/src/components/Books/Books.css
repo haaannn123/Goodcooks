@@ -63,6 +63,9 @@
     gap: 3rem;
 }
 .navlink{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
     text-decoration: none;
     cursor: pointer;
     color: black;

@@ -76,7 +76,11 @@ body{
   border-radius: 10%;
 }
 
-
+.fa-user{
+  font-weight: 600;
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.501)
+}
 
 
 
@@ -97,7 +101,14 @@ body{
   font-size: 30px;
 }
 
-
+.tiny-line{
+  border: none;
+  height: 1px;
+  border-bottom: 1px solid rgb(229, 229, 229);
+  margin: 0;
+  /* background-image: linear-gradient(to right, rgba(211,211,211,0) 0%, rgba(211,211,211,1) 10%, rgba(211,211,211,1) 80%, rgba(211,211,211,0) 100%); */
+  width: 100%;
+}
 
 .login-landing-page-box {
   z-index: 1;
