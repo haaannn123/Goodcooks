@@ -1,7 +1,8 @@
 .book-details-page{
     display: flex;
-    font-family: Copernicus,"Libre Baskerville",Georgia,serif;
     color: rgba(80, 72, 72, 0.91);
+    margin-top: -100px;
+    font-family: Lato Bold, "Helvetica Neue Bold", Helvetica, sans-serif;
 }
 
 .book-img-add-to-shelf{
@@ -14,24 +15,34 @@
     height: 600px;
     top: 0px;
     padding-top: 70px;
-    width: 50%;
+    width: 60%;
+    margin-top: -100px;
 }
 
 
 .cook-book-img{
-    width: 200px;
-    height: 340px;
+    width: 250px;
+    height: 390px;
     object-fit: fill;
     box-shadow: 0px 0px 10px rgb(178, 178, 178);
 }
 
+.book-description{
+  font-family: Lato Bold, "Helvetica Neue Bold", Helvetica, sans-serif;
+  font-weight: 200;
+}
+
 .book-title{
-    font-weight: 600;
+    font-family: Lato Bold, "Helvetica Neue Bold", Helvetica, sans-serif;
+    color: rgba(56, 50, 50, 0.91);
+    font-size: 50px;
 }
 
 .book-author{
-    font-weight: 400;
     font-size: 23px;
+    font-family: Lato Bold, "Helvetica Neue Bold", Helvetica, sans-serif;
+    font-weight: 100;
+    color: rgba(56, 50, 50, 0.91)
 }
 
 .book-display{
@@ -44,7 +55,11 @@
     padding-left: 4rem;
     width: 70%;
     color: rgba(38, 34, 34, 0.969);
-    margin-top: 100px;
+    margin-top: 10px;
+}
+
+.rating-details:hover{
+  cursor: pointer;
 }
 
 .book-price-button{
@@ -60,10 +75,11 @@
 }
 
 .book-published{
-    color: rgb(119, 119, 119)
+    color: rgb(144, 144, 144)
 }
 
 .book-description {
+  margin-top: -2px;
   max-height: 100px;
   overflow: hidden;
   transition: transform 0.2s ease-in-out;
@@ -77,9 +93,12 @@
 .show-more-button {
   display: block;
   margin-top: 10px;
-  font-family: Copernicus,"Libre Baskerville",Georgia,serif;
   background-color: transparent;
   border: none;
+}
+
+.show-more-button:hover{
+  cursor: pointer;
 }
 .silver-line {
     border: none;
@@ -90,7 +109,6 @@
 
 .add-to-shelf-container{
   width: 70%
-
 }
 
 .add-to-shelf-button{

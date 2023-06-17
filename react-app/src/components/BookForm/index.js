@@ -65,7 +65,7 @@ function BookForm(){
 
     return (
         <>
-        <form onSubmit={handleSubmit} className="create-book-form-container">
+        <form onSubmit={handleSubmit} className="create-book-form-container page">
             <div className="create-book-form">
             <h1>Add a cookbook!</h1>
             {errors.title ? <p className="errors">{errors.title}</p>: null}

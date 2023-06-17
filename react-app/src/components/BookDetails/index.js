@@ -91,7 +91,7 @@ const Book = () => {
 
   return (
     <>
-      <div className="book-details-page">
+      <div className="book-details-page page">
         <div className="book-img-add-to-shelf">
           <img className="cook-book-img" src={book.preview_img} alt="cookbook" />
           <div className="add-to-shelf-container">
@@ -137,7 +137,6 @@ const Book = () => {
           <UserReviews />
         </div>
       </div>
-      <Footer />
     </>
   );
 };

@@ -16,6 +16,7 @@ import UserBooks from "./components/UserBooks/UserBooks";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import AllBooks from "./components/AllBooks";
+import ProtectedRoute from "./components/auth/ProtectedRoute";
 
 function App() {
   const dispatch = useDispatch();
@@ -32,36 +33,37 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
-          <Route path="/review/list">
+          <ProtectedRoute path="/review/list">
             <UserBooks />
-          </Route>
-          <Route path="/login" >
-            <LoginFormPage />
-          </Route>
-          <Route path="/books/new">
+          </ProtectedRoute>
+          <ProtectedRoute path="/books/new">
             <BookForm />
-          </Route>
-          <Route path="/books/:bookId/edit">
+          </ProtectedRoute>
+          <ProtectedRoute path="/books/:bookId/edit">
             <BookFormUpdate />
-          </Route>
-          <Route path="/books/:bookId">
+          </ProtectedRoute>
+          <ProtectedRoute path="/books/:bookId">
             <Book />
-          </Route>
-          <Route path='/books'>
-            <AllBooks />
-          </Route>
-          <Route path="/user/:userId">
+          </ProtectedRoute>
+          <ProtectedRoute path="/user/:userId">
             <ProfilePage />
-          </Route>
-          <Route path='/bookshelves/edit'>
+          </ProtectedRoute>
+          <ProtectedRoute path='/bookshelves/edit'>
               <EditShelf />
-          </Route>
-          <Route path="/">
+          </ProtectedRoute>
+          <ProtectedRoute path="/books">
+            <AllBooks/>
+          </ProtectedRoute> 
+          <Route path="/login">
             <SplashPage />
-            <Books />
           </Route>
+          <ProtectedRoute path="/">
+            <Books />
+          </ProtectedRoute>
+          
         </Switch>
       )}
+      <Footer />
     </>
   );
 }

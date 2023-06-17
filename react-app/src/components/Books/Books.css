@@ -1,12 +1,11 @@
 .entire-books-container{
     display: flex;
     flex-direction: column;
-    margin-top: 100px;
+    margin-top: -30px;
     margin-bottom: 100px;
     color: rgba(0, 0, 0, 0.726);
-    background-image: url(https://i.imgur.com/tnumd3v.jpg);
-    font-family: 'Noto Sans KR', sans-serif;
-
+    /* background-image: url(https://i.imgur.com/tnumd3v.jpg); */
+    font-family: Lato, "Helvetica Neue", Helvetica, sans-serif;
 }
 
 .all-books-container{
@@ -17,8 +16,10 @@
 
 .gray-line {
     border: none;
+    /* border-top: 1px solid silver; */
     height: 1px;
-    background-image: linear-gradient(to right, rgba(211,211,211,0) 0%, rgba(211,211,211,1) 20%, rgba(211,211,211,1) 80%, rgba(211,211,211,0) 100%);
+    /* background-image: ; */
+    background-image: linear-gradient(to right, rgba(211,211,211,0) 0%, rgba(211,211,211,1) 10%, rgba(211,211,211,1) 80%, rgba(211,211,211,0) 100%);
     width: 100%;
     margin-top: 40px;
   }
@@ -66,7 +67,7 @@
     cursor: pointer;
     color: black;
     font-size: 20px;
-    font-family: Lato Bold, "Helvetica Neue Bold", Helvetica, sans-serif;
+    font-family: Lato, "Helvetica Neue", Helvetica, sans-serif;
 }
 
 .navlink:hover{

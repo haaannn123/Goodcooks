@@ -26,6 +26,7 @@ function AccountBox() {
   const closeMenu = () => setShowMenu(false);
   return (
     <div className="account-box">
+      <div className="inner-account-box">
       <h2 className="discover-header">Discover & Cook more</h2>
       <OpenModalButton
         buttonText="Sign in"
@@ -42,8 +43,10 @@ function AccountBox() {
       <div className="legal-message">
         By creating an account, you agree to the Greatcooks Terms of Service and Privacy Policy.
       </div>
+      <hr className="thin-line" />
       <div className="demo-input">
-        Sign in as a <DemoUserButton />
+        <DemoUserButton />
+      </div>
       </div>
     </div>
   );

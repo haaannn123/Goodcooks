@@ -28,7 +28,7 @@ function AllBooks() {
 
   return (
     <>
-    <div className="all-books-parent-container">
+    <div className="all-books-parent-container page">
       {user ? (
         <div>
             <div className='books-header'>
@@ -53,7 +53,6 @@ function AllBooks() {
         </div>
       ) : null}
     </div>
-    <Footer />
     </>
   );
 }

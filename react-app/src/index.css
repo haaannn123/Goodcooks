@@ -1,1 +1,27 @@
 /* TODO Add site wide styles */
+
+.page {
+    background-image: url(https://i.imgur.com/tnumd3v.jpg);
+    padding-bottom: 20px;
+    margin-top: 110px;
+    padding-top: 20px;
+}
+
+/* h1{
+    margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+} */
+
+/* #root {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+} */
+
+body {
+    background-color: #f9f8f4;;
+}

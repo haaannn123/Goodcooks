@@ -41,7 +41,7 @@ const ProfilePage = () => {
 
   return (
     <>
-    <div className="profile-page-container">
+    <div className="profile-page-container page">
       <div className="profile-info">
         {user.profile_img ? (
           <img src={user.profile_img} alt="user-profile" className="profile-img" />
@@ -66,7 +66,6 @@ const ProfilePage = () => {
       </div>
       <BookShelf firstName={user.first_name} lastName={user.last_name} />
     </div>
-    <Footer />
     </>
   );
 };

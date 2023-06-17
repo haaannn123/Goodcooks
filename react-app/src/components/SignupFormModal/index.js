@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { useModal } from "../../context/Modal";
 import { signUp } from "../../store/session";
 import "./SignupForm.css";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 function SignupFormModal() {
   const dispatch = useDispatch();
@@ -14,6 +15,7 @@ function SignupFormModal() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errors, setErrors] = useState([]);
   const { closeModal } = useModal();
+  const history = useHistory()
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,6 +25,7 @@ function SignupFormModal() {
         setErrors(data);
       } else {
         closeModal();
+        history.push("/")
       }
     } else {
       setErrors(["Confirm Password field must be the same as the Password field"]);

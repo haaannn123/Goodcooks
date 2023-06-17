@@ -11,7 +11,6 @@ function Navigation({ isLoaded }) {
 
   return (
     <div className="navbar-container">
-
       <NavLink
         exact to="/"
         className="home-link">

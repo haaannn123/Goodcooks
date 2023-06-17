@@ -1,6 +1,11 @@
+.splash-page-container{
+    height: 70vh;
+    margin-top: 14vh;
+}
+
 .login-container{
     z-index: 6;
-    margin-top: 76px;
+    /* margin-top: 76px; */
 }
 
 .splash-page-image {

@@ -39,7 +39,25 @@ def seed_bookshelf():
         created_at=date.today(),
         updated_at=date.today()
     )
-    all_bookshelf = [bookshelf1, bookshelf2, bookshelf3, bookshelf4, bookshelf5, bookshelf6]
+    bookshelf7 = BookShelf(
+        user_id=3,
+        name="currently_reading",
+        created_at=date.today(),
+        updated_at=date.today()
+    )
+    bookshelf8 = BookShelf(
+        user_id=3,
+        name="read",
+        created_at=date.today(),
+        updated_at=date.today()
+    )
+    bookshelf9 = BookShelf(
+        user_id=3,
+        name="to_read",
+        created_at=date.today(),
+        updated_at=date.today()
+    )
+    all_bookshelf = [bookshelf1, bookshelf2, bookshelf3, bookshelf4, bookshelf5, bookshelf6, bookshelf7, bookshelf8, bookshelf9]
     add_bookshelf = [db.session.add(bookshelf) for bookshelf in all_bookshelf]
     db.session.commit()
 

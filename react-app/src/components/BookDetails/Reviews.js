@@ -128,8 +128,8 @@ const Reviews = ({ avgRating, numReviews}) => {
   return (
     <div className="reviews-container">
       <div>{renderStars(avgRating)}</div>
-      <h1>{avgRating}</h1>
-      <span>{renderReviews(numReviews)}</span>
+      <h1 className="avg-rating">{avgRating}</h1>
+      <span className="rating-rating">{renderReviews(numReviews)}</span>
     </div >
   );
 };
