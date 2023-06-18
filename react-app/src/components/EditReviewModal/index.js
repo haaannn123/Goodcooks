@@ -4,8 +4,6 @@ import { thunkEditReview, thunkGetBookReviews} from "../../store/reviews";
 import { useModal } from "../../context/Modal";
 
 const EditReviewModal = ({reviewId, star, prevReview, bookId}) => { 
-  console.log('STAR:', star)
-  console.log('PRV REVIEW:', prevReview)
   const dispatch = useDispatch();
   const [stars, setStar] = useState(star);
   const [hoverNumber, setHoverNumber] = useState(0);
