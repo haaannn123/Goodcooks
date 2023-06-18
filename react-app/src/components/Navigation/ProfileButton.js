@@ -67,7 +67,7 @@ function ProfileButton({ user }) {
             <div className="profile-demo-user-name">Hello, {user.first_name}</div>
             <NavLink
               className="navlink"
-              to={`/user/${user.id}`}><i class="fa-regular fa-user"></i> Profile</NavLink>
+              to={`/user/${user.id}`}><i className="fa-regular fa-user"></i> Profile</NavLink>
               <hr className="tiny-line"/>
             <div>
               <button

@@ -79,7 +79,7 @@ const UserReviews = () => {
       )}
       {hasReviews ? (
         reviewsArr.map((review) => (
-          <div className="all-reviews-container">
+          <div key={review.id} className="all-reviews-container">
             <div className="review-stars-date-container">
               <div key={review.id}>{renderRatings(review)}</div>
               <div className="review-date">
@@ -103,13 +103,13 @@ const UserReviews = () => {
               {review.user_id === user.id ? (
                 <>
                   <OpenModalButton
-                      buttonText={<span><i class="fas fa-pen-nib"></i> Edit Review</span>}
+                      buttonText={<span><i className="fas fa-pen-nib"></i> Edit Review</span>}
                       onItemClick={closeMenu}
                       className='edit-review-button'
                       modalComponent={<EditReviewModal reviewId={review.id} star={review.rating} prevReview={review.review} bookId={bookId}/>}
                   />
                   <OpenModalButton
-                      buttonText={<span><i class="fa-regular fa-trash-can"></i> Delete Review</span>}
+                      buttonText={<span><i className="fa-regular fa-trash-can"></i> Delete Review</span>}
                       onItemClick={closeMenu}
                       className='edit-review-button'
                       modalComponent={<DeleteReview reviewId={review.id} star={review.rating} prevReview={review.review} bookId={bookId}/>}
