@@ -1,17 +1,15 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
-import { useModal } from "../../context/Modal";
 import { thunkGetBookById } from "../../store/books";
 import { dateParser } from "../../helper_functions/dateParser";
 import OpenModalButton from "../OpenModalButton";
 import AddToShelfModal from "../AddToShelfModal";
 import { thunkGetUserBookShelf } from "../../store/bookshelf";
 import Reviews from "./Reviews";
-import Footer from "../Footer";
 import "./Book.css";
 import "./Reviews.css";
-import { thunkGetBookReviews, thunkRateBook } from "../../store/reviews";
+import { thunkGetBookReviews} from "../../store/reviews";
 import UserReviews from "./UserReviews";
 import WantToReadButton from "./WantToRead";
 import { thunkGetBookshelfItemBooks } from "../../store/bookshelf_items";
@@ -19,8 +17,9 @@ import { Link } from "react-scroll";
 
 
 const Book = () => {
-  const { bookId } = useParams();
   const dispatch = useDispatch();
+  const { bookId } = useParams();
+  const bookIdParsed = parseInt(bookId)
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => {
@@ -29,10 +28,9 @@ const Book = () => {
 
   const book = useSelector((state) => state.booksReducer.book);
   const bookShelfItem = useSelector((state) => state.bookshelfItemReducer.bookshelfItems);
-
   const reviews = Object.values(useSelector((state) => state.bookReviewsReducer.bookReviews));
-
   const userBookshelf = useSelector((state) => state.bookshelvesReducer.bookshelves);
+
   let shelfId;
   for (const key in userBookshelf) {
     if (userBookshelf[key].name === "to_read") {
@@ -48,10 +46,10 @@ const Book = () => {
   });
 
   useEffect(() => {
-    dispatch(thunkGetBookById(bookId));
+    dispatch(thunkGetBookById(bookIdParsed));
     dispatch(thunkGetUserBookShelf());
-    dispatch(thunkGetBookReviews(bookId));
-  }, [dispatch, bookId]);
+    dispatch(thunkGetBookReviews(bookIdParsed));
+  }, [dispatch, bookIdParsed]);
 
 
   useEffect(() => {
@@ -95,12 +93,12 @@ const Book = () => {
         <div className="book-img-add-to-shelf">
           <img className="cook-book-img" src={book.preview_img} alt="cookbook" />
           <div className="add-to-shelf-container">
-            <WantToReadButton bookId={book.id} bookShelfItem={bookShelfItem} shelfId={shelfId} />
+            <WantToReadButton bookId={bookIdParsed} bookShelfItem={bookShelfItem} shelfId={shelfId} />
             <OpenModalButton
               buttonText={<i className="fa-solid fa-chevron-down"></i>}
               className="test-dropdown"
               onItemClick={closeMenu}
-              modalComponent={<AddToShelfModal bookId={bookId} bookShelfItem={bookShelfItem} shelfId={shelfId} />}
+              modalComponent={<AddToShelfModal bookId={bookIdParsed} bookShelfItem={bookShelfItem} shelfId={shelfId} />}
             />
           </div>
           <div className="add-to-shelf-container">

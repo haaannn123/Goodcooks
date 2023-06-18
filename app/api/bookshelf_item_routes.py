@@ -1,6 +1,6 @@
 from flask import Blueprint, jsonify, request, session
 from flask_login import login_required
-from app.models import BookShelfItem, db, Book
+from app.models import BookShelfItem, db, Book, BookShelf
 from datetime import date, datetime
 
 bookshelf_item_routes = Blueprint('bookshelf_items', __name__)
@@ -13,6 +13,26 @@ def bookshelf_item(shelfId):
     books = Book.query.join(BookShelfItem).filter(BookShelfItem.bookshelf_id == shelfId).all()
     books_data = [item.to_dict() for item in books]
     return books_data
+
+@bookshelf_item_routes.route('/want_to_read/<int:bookId>')
+def book_in_want_to_read_shelf(bookId):
+    """
+    Check if a book exists in the specified bookshelf
+    """
+    current_user_id = session.get('_user_id')
+    if current_user_id is None:
+        return "Not authenticated"
+    bookshelves = BookShelf.query.filter_by(user_id=current_user_id, name="Your Bookshelf Name").all()
+    
+    
+    bookshelf_item_exists = BookShelfItem.query.join(BookShelf).filter(
+        BookShelf.id.in_([shelf.id for shelf in bookshelves]),
+        BookShelfItem.book_id == bookId
+    ).count() > 0
+    
+    print("\n\n",bookshelf_item_exists, "\n\n" )
+
+    return str(bookshelf_item_exists)
 
 
 @bookshelf_item_routes.route('/<int:bookId>', methods=['POST'])

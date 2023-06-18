@@ -31,9 +31,8 @@ function AllBooks() {
     <div className="all-books-parent-container page">
       {user ? (
         <div>
-            <div className='books-header'>
-            <NavLink to="/" className="left-arrow"><span className="arrow"><i className="fa-solid fa-chevron-left"></i></span> Back To Home
-            </NavLink>
+            <div className='books-header-header'>
+            <NavLink to="/" className="left-arrow"><span className="arrow"><span className="material-symbols-outlined left-chevron">chevron_left</span></span> Back</NavLink>
             </div>
             <div className="all-books-container">
             {shuffledBookArr.map((book) => {

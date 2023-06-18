@@ -4,7 +4,6 @@ import { useEffect } from "react";
 import { thunkGetAllBooks } from "../../store/books";
 import { NavLink } from "react-router-dom";
 import UsersCurrentlyReading from "./UsersCurrentlyReading";
-import Footer from "../Footer";
 
 function Books() {
   const dispatch = useDispatch();
@@ -37,7 +36,7 @@ function Books() {
           <div className="books-header">
             <h1 className="books-heading">Currently Reading</h1>
             <NavLink to={`/user/${user.id}`} className="see-all-button">
-              See All <span className="arrow"><span class="material-symbols-outlined">chevron_right</span></span>
+              See All <span className="arrow"><span className="material-symbols-outlined">chevron_right</span></span>
             </NavLink>
           </div>
           <UsersCurrentlyReading />
@@ -45,7 +44,7 @@ function Books() {
           <div className="books-header">
             <h1 className="books-heading">Explore cookbooks</h1>
             <NavLink to="/books" className="see-all-button">
-              See All <span className="arrow"><span class="material-symbols-outlined">chevron_right</span></span>
+              See All <span className="arrow"><span className="material-symbols-outlined">chevron_right</span></span>
             </NavLink>
           </div>
           <div className="all-books-container">

@@ -3,6 +3,23 @@
     padding: 0rem 9rem 2rem 9rem;
 }
 
-.books-header{
-    padding: 1rem 0rem;
+.left-arrow{
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+}
+
+
+.material-symbols-outlined .leftchevron {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 100,
+    'GRAD' 0,
+    'opsz' 48;
+    font-size: 50px;
+  }
+
+.books-header-header{
+    display: flex;
+    align-items: center;
 }

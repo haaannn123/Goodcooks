@@ -57,14 +57,7 @@ const AddToShelfModal = ({bookId, bookShelfItem }) => {
             key={shelf.id}
             className="shelf-buttons"
             onClick={() => handleClick(shelf.name, shelf.id)}
-          >
-            {isBookInShelf ? (
-              <>
-                {shelfDisplayHeader(shelf.name)} <i className="fa-solid fa-check"></i>
-              </>
-            ) : (
-              <>{shelfDisplayHeader(shelf.name)}</>
-            )}
+          >{shelfDisplayHeader(shelf.name)}
           </button>
         );
       })}

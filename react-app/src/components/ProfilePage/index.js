@@ -50,7 +50,7 @@ const ProfilePage = () => {
 
           <h2 className="username-library">{user.first_name}'s Library</h2>
           {currentUser.id === user.id ? (<NavLink to="/bookshelves/edit" className="see-all-button">
-            See All <span className="arrow"><span class="material-symbols-outlined">chevron_right</span></span>
+            See All <span className="arrow"><span className="material-symbols-outlined">chevron_right</span></span>
           </NavLink>) : null}
         </div>
       <BookShelf firstName={user.first_name} lastName={user.last_name} />
