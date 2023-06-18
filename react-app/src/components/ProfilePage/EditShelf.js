@@ -32,9 +32,7 @@ const EditShelf = () => {
       {bookshelvesArr.map((bookshelf) => {
         return (
           <div className="edit-shelves-buttons">
-
             <div className="edit-shelves-each-shelf">{bookshelf.name}</div>
-
             {bookshelf.name === "currently_reading" || bookshelf.name === "to_read" || bookshelf.name === "read" ? null : (
               <div className="buttons-of-shelf">
                     <input
