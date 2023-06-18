@@ -34,16 +34,18 @@
 
 .book-title{
   font-family: Lato Bold, "Helvetica Neue Bold", Helvetica, sans-serif;
-    color: rgba(56, 50, 50, 0.91);
-    font-size: 50px;
+  color: rgba(56, 50, 50, 0.91);
+  font-size: 50px;
 }
 
 .book-author{
     font-size: 23px;
     font-family: Lato Bold, "Helvetica Neue Bold", Helvetica, sans-serif;
     font-weight: 100;
-    color: rgba(56, 50, 50, 0.91)
+    color: rgba(56, 50, 50, 0.91);
+    margin-top: -10px
 }
+
 
 .book-display{
     display: flex;
@@ -55,7 +57,7 @@
     padding-left: 4rem;
     width: 70%;
     color: rgba(38, 34, 34, 0.969);
-    margin-top: 10px;
+  
 }
 
 .rating-details:hover{
@@ -83,11 +85,11 @@
   max-height: 100px;
   overflow: hidden;
   transition: transform 0.2s ease-in-out;
+  line-height: 30px;
 }
 
 .book-description.expanded {
   max-height: none;
-  /* overflow: visible; */
 }
 
 .show-more-button {
