@@ -102,7 +102,7 @@
 }
 .silver-line {
     border: none;
-    border-top: 1px solid silver;
+    border-top: 1px solid rgb(205, 205, 205);
     margin: 0;
     padding: 0;
   }

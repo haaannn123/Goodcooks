@@ -33,13 +33,14 @@ const DisplayBooks = ({ shelfId }) => {
           </div>
         );
       }) :
-      <>
+      <div className="empty-books-display">
         <p>To add cookbooks to this shelf, click on any book and click on the "Add to shelf" button</p>
+        <h2>No books</h2>
         <img
           className="empty-book"
           src="https://i.imgur.com/lTpmNhy.png"
           alt="empty book"/>
-      </>
+      </div>
       }
     </div>
   );
