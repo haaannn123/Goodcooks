@@ -79,7 +79,6 @@
   background-color: white;
   padding: 5px 9px;
   width: 100px;
-  font-family: Copernicus,"Libre Baskerville",Georgia,serif;
   border-radius: 3px;
 }
 
@@ -101,7 +100,6 @@
   justify-content: space-between;
   border-bottom: 1px solid gray;
   align-items: center;
-  font-family: Copernicus,"Libre Baskerville",Georgia,serif;
   font-size: 20px;
 }
 
@@ -218,6 +216,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.edit-shelves-container{
+  font-family: Lato, "Helvetica Neue", Helvetica, sans-serif;
+  margin-top: 150px;
 }
 
 
