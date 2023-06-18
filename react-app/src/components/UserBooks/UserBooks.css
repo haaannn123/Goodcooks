@@ -6,6 +6,12 @@
     margin-top: 100px;
     color: rgba(0, 0, 0, 0.815);
     padding: 0rem 9rem 0rem 9rem;
+    font-family: Lato, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.user-edit-your-books{
+    font-family: Lato Bold, "Helvetica Neue Bold", Helvetica, sans-serif;
+    font-weight: 200;
 }
 
 .no-books-container{

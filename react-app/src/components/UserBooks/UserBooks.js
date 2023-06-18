@@ -24,7 +24,7 @@ const UserBooks = () => {
   return (
     <>
     <div className="user-cook-book-page page">
-      <h1>Edit your books</h1>
+      <h1 className="user-edit-your-books">Edit your books</h1>
       <div className="my-books-container">
         {userBooks.length > 0 ? (
           userBooks.map((book) => (
