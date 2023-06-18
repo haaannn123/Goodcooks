@@ -73,12 +73,11 @@ def sign_up():
         db.session.commit()
 
         #Creates a new bookshelf
-        bookshelves = ["currently_reading"]
+        bookshelves = ["currently_reading", "to_read", "read"]
         for shelf_name in bookshelves:
             bookshelf = BookShelf(
                 user_id=user.id,
                 name=shelf_name)
-            print("bookshelf LOOK HERE!!", bookshelf)
             db.session.add(bookshelf)
             db.session.commit()
 

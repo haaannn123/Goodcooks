@@ -24,8 +24,8 @@ def add_shelf():
     """
     form = BookshelfForm()
     user_id = session.get('_user_id')
-    print('CURRENT USER ID:', user_id)
     form['csrf_token'].data = request.cookies['csrf_token']
+
     if form.validate_on_submit():
         new_shelf = BookShelf(
             user_id = user_id,
@@ -44,7 +44,6 @@ def update_shelf(shelfId):
     """
     shelf = BookShelf.query.get(shelfId)
     data = request.get_json()
-    print("DATA HERE!!", data)
 
     if shelf:
         shelf.name = data['name']

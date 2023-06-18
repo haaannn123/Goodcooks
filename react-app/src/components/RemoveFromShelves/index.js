@@ -10,8 +10,6 @@ const RemoveFromShelves = ({shelfId, bookId}) => {
 
     const user = useSelector(state => state.userReducer.singleUser)
     const currentUser = useSelector(state => state.session.user)
-    console.log('user:', user)
-    console.log('currentUser:', currentUser)
 
     useEffect(() => {
         dispatch(thunkGetUser(userId))

@@ -27,7 +27,7 @@ def seed_reviews():
         user_id=1,
         book_id=3,
         review="The Joy of Cooking is a classic for a reason. It's my go-to guide whenever I want to explore new recipes. Highly comprehensive and reliable.",
-        rating=4.5,
+        rating=4,
         created_at=date.today(),
         updated_at=date.today()
     )
@@ -36,7 +36,7 @@ def seed_reviews():
         user_id=2,
         book_id=4,
         review="Cooking for Geeks is a fascinating read. It combines science and cooking in a fun way. The recipes are unique and push the boundaries of traditional cooking.",
-        rating=4.5,
+        rating=4,
         created_at=date.today(),
         updated_at=date.today()
     )
@@ -63,7 +63,7 @@ def seed_reviews():
         user_id=2,
         book_id=7,
         review="Bread Baking for Beginners helped me overcome my fear of baking bread. The instructions are clear, and the recipes turn out amazing. I'm now a confident bread baker!",
-        rating=4.5,
+        rating=4,
         created_at=date.today(),
         updated_at=date.today()
     )
@@ -81,7 +81,9 @@ def seed_reviews():
         user_id=1,
         book_id=9,
         review="Cravings is a fun and relatable cookbook. Chrissy Teigen's recipes are flavorful and accessible. It's like cooking with a friend in the kitchen!",
-        rating=4.5
+        rating=4,
+        created_at=date.today(),
+        updated_at=date.today()
     )
     review10 = Review(
         user_id=2,

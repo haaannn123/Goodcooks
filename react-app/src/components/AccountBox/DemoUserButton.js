@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { login } from "../../store/session";
 import { useModal } from "../../context/Modal";
 import { useHistory } from "react-router-dom";
+
 function DemoUserButton() {
   const [errors, setErrors] = useState();
   const dispatch = useDispatch();
@@ -10,7 +11,6 @@ function DemoUserButton() {
   const { closeModal } = useModal();
 
   const demoUser = async () => {
-    console.log("demo user useEffect")
     const data = await dispatch(login("demo@aa.io", "Onecooldog123"))
       // .then(closeModal)
      

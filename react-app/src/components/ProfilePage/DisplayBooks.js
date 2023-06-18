@@ -5,7 +5,6 @@ import RemoveFromShelves from "../RemoveFromShelves";
 import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
 
 const DisplayBooks = ({ shelfId }) => {
-  console.log('DISPLAY BOOKS', shelfId)
   const dispatch = useDispatch();
 
   const book = useSelector((state) => state.bookshelfItemReducer.bookshelfItems);
