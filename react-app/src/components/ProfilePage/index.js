@@ -10,6 +10,8 @@ const ProfilePage = () => {
   const {userId} = useParams();
   const dispatch = useDispatch();
   const user = useSelector(state => state.userReducer.singleUser)
+  const currentUser = useSelector(state => state.session.user)
+
   const isFollowing = useSelector(state => state.followsReducer.isFollowing.is_following)
 
   useEffect(() => {
@@ -39,16 +41,17 @@ const ProfilePage = () => {
               <h1 className="profile-page-user">{user.first_name} {user.last_name}</h1>
               <span className="username">@ {user.username}</span>
           </div>
-          <button className="follow-button" onClick={() => handleClick()}>{isFollowing ? "Unfollow": "Follow"}</button>
+          {currentUser.id !== user.id ? (<button className="follow-button" onClick={() => handleClick()}>{isFollowing ? "Unfollow": "Follow"}</button>) : null}
         </div>
         <div className="divider">
               <hr className="silver-line"/>
             </div>
         <div className="user-bookshelf-info">
+
           <h2 className="username-library">{user.first_name}'s Library</h2>
-          <NavLink to="/bookshelves/edit" className="see-all-button">
+          {currentUser.id === user.id ? (<NavLink to="/bookshelves/edit" className="see-all-button">
             See All <span className="arrow"><span class="material-symbols-outlined">chevron_right</span></span>
-          </NavLink>
+          </NavLink>) : null}
         </div>
       <BookShelf firstName={user.first_name} lastName={user.last_name} />
     </div>
