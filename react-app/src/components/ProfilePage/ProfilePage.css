@@ -226,10 +226,12 @@
 }
 
 .follow-button{
-  border-radius: 10px;
-  background-color: brown;
-  color: white;
-  margin-left: 100px;
+  border-radius: 20px;
+  border: 2px solid rgb(101, 119, 101);
+  background-color: white;
+  color: black;
+  padding: .5rem;
+  margin-left: 10px;
 }
 
 
