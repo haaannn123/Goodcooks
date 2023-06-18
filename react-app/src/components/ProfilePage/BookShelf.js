@@ -4,10 +4,10 @@ import { thunkGetUserBookShelf } from "../../store/bookshelf";
 import DisplayBooks from "./DisplayBooks";
 
 const BookShelf = ({ firstName, lastName }) => {
-  console.log('FIRST NAME:', firstName)
   const dispatch = useDispatch();
   const [shelf, setShelf] = useState();
   const [shelfId, setShelfId] = useState();
+  const user = useSelector(state => state.userReducer.singleUser)
   const bookshelves = useSelector((state) => state.bookshelvesReducer.bookshelves);
   const bookshelvesArr = Object.values(bookshelves);
 

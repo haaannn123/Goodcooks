@@ -1,9 +1,7 @@
 /* index.js */
 .profile-page-container{
   padding: 1rem 23.5rem 0rem 23rem;
-  /* margin-top: 100px; */
-  /* margin-bottom: 100px; */
-  font-family: Copernicus,"Libre Baskerville",Georgia,serif;
+  font-family: Lato, "Helvetica Neue", Helvetica, sans-serif;
 }
 
 .edit-shelves-container{
@@ -26,6 +24,10 @@
   margin-bottom: 1rem;
 }
 
+.profile-page-user{
+  font-size: 40px;
+}
+
 .names-names{
   display: flex;
   flex-direction: column;
@@ -38,11 +40,15 @@
   margin-top: -15px;
 }
 .profile-img{
-  border: 1px solid gray;
+  border: 1px solid rgb(223, 223, 223);
   border-radius: 50%;
   height: 100px;
   width: 100px;
   object-fit: cover;
+}
+
+.username-library{
+  font-size: 30px;
 }
 
 
