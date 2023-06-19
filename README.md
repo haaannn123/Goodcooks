@@ -1,6 +1,6 @@
 # Goodcooks
 
-Goodcooks is a full-stack clone of Goodreads. 
+Goodcooks is a full-stack clone of Goodreads using React & Redux for the front end and Python & Flask for the back end. It allows users to keep track of their favorite cookbooks as well as see what their friends are cooking. 
 
 <div align=center>
 <img src="https://i.imgur.com/G5cBrlo.png" width=100%/>
