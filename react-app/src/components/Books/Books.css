@@ -1,7 +1,7 @@
 .entire-books-container{
     display: flex;
     flex-direction: column;
-    margin-top: -30px;
+    margin-top: -10px;
     margin-bottom: 100px;
     color: rgba(0, 0, 0, 0.726);
     /* background-image: url(https://i.imgur.com/tnumd3v.jpg); */
