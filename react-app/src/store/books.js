@@ -114,7 +114,15 @@ export const thunkDeleteBook = (bookId) => async (dispatch) => {
     }
 }
 
+export const thunkGetSearchResults = (query) => async (dispatch) => {
+  const response = await fetch (`/api/search/${query}`);
 
+  if (response.ok){
+      const searchResults = await response.json();
+      const normalizedData = normalizingBooksData(searchResults)
+      dispatch(actionGetAllBooks(normalizedData));
+  }
+}
 
 const dateParser = (date) => {
   let newDate = new Date(date);

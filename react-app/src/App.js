@@ -17,6 +17,7 @@ import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import AllBooks from "./components/AllBooks";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
+import SearchResults from "./components/SearchResults";
 
 function App() {
   const dispatch = useDispatch();
@@ -54,6 +55,9 @@ function App() {
           <ProtectedRoute path="/books">
             <AllBooks/>
           </ProtectedRoute> 
+          <ProtectedRoute path="/search/:search_terms">
+            <SearchResults />
+          </ProtectedRoute>
           <Route path="/login">
             <SplashPage />
           </Route>

@@ -22,6 +22,22 @@ def books():
             book['owner_info'] = owner.to_dict()['username']
     return response
 
+@book_routes.route('/', methods=["POST"])
+def search_books():
+    data = request.get_json()
+    query = data["query"]
+    results = []
+    print("\n\nQUERY: ", query, "\n\n")
+    
+    if query:
+        # Query books from the database
+        books = Book.query.all()
+        
+        # Perform a simple case-insensitive search based on the query string
+        results = [book.to_dict() for book in books if query.lower() in book.title.lower()]
+
+    return jsonify(results)
+
 
 @book_routes.route('/<int:id>')
 def book(id):
