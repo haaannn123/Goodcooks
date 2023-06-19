@@ -9,6 +9,7 @@ from .api.user_routes import user_routes
 from .api.auth_routes import auth_routes
 from .api.book_routes import book_routes
 from .api.bookshelf_routes import bookshelf_routes
+from .api.search_routes import search_routes
 from .api.bookshelf_item_routes import bookshelf_item_routes
 from .api.follows_routes import follows_routes
 from .api.review_routes import review_routes
@@ -38,7 +39,7 @@ app.register_blueprint(bookshelf_routes, url_prefix='/api/bookshelves')
 app.register_blueprint(bookshelf_item_routes, url_prefix='/api/bookshelf_item')
 app.register_blueprint(review_routes, url_prefix='/api/reviews')
 app.register_blueprint(follows_routes, url_prefix='/api/follows')
-
+app.register_blueprint(search_routes, url_prefix='/api/search')
 
 db.init_app(app)
 Migrate(app, db)

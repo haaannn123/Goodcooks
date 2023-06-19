@@ -1,0 +1,10 @@
+.search-results-container{
+    margin-top: 150px;
+    padding: 0rem 9rem 0rem 9rem;
+    font-family: Lato, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.search-results{
+    display: flex;
+    gap: 1rem;
+}

@@ -1,22 +1,26 @@
 import React, { useState } from 'react';
 import './SearchBar.css';
 import { useHistory } from "react-router-dom"
+import { useDispatch, useSelector } from 'react-redux';
+import { thunkGetSearchResults } from '../../store/books';
 
 function SearchBar() {
   const [query, setQuery] = useState('');
   const history = useHistory();
+  const dispatch = useDispatch();
 
+  const results = useSelector(state => state.resultsReducer.results)
+  
   const handleInputChange = (event) => {
     setQuery(event.target.value);
   }
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Perform search functionality with the query variable
     if(!query){
       return
     }
-    setQuery('')
+    dispatch(thunkGetSearchResults(query))
     history.push(`/search/${query}`)
   }
 
