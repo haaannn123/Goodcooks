@@ -28,6 +28,7 @@ function AccountBox() {
     <div className="account-box">
       <div className="inner-account-box">
       <h2 className="discover-header">Discover & Cook more</h2>
+      <h4 className="account-box-call-to-action">Sign in to get started!</h4>
       <OpenModalButton
         buttonText="Sign in"
         onItemClick={closeMenu}

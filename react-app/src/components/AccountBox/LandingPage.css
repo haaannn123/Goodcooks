@@ -6,7 +6,7 @@
   border: 1px solid #cbcbcb;
   width: 300px;
   border-radius: 10px;
-  padding: 1rem 5rem;
+  padding: 1rem 3rem;
   font-family: Lato, "Helvetica Neue", Helvetica, sans-serif;
 }
 
@@ -43,10 +43,22 @@
 }
 
 .discover-header {
-  font-size: 30px;
+  font-size: 31px;
   color: rgba(80, 72, 72, 0.91);
   width: 100%;
   display: flex;
+  justify-content: center;
+  margin-bottom: 0px;
+}
+
+.account-box-call-to-action{
+  font-size: 20px;
+  margin: 5px;
+  /* padding: 0px; */
+  color: black;
+  width: 100%;
+  display: flex;
+  /* border: 1px solid red; */
   justify-content: center;
 }
 
