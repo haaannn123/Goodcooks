@@ -1,32 +1,7 @@
 .splash-page-container{
-    height: 70vh;
-    margin-top: 14vh;
+    margin-top: 90px;
 }
 
-.login-container{
-    z-index: 6;
-    /* margin-top: 76px; */
-}
-
-.splash-page-image {
-    margin-bottom: 100px;
-    max-width: 100%;
+.splash-page-image{
     width: 100%;
-    height: 100%;
-    z-index: 1;
-    object-fit: cover;
-}
-
-.testing{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0rem 5rem 5rem 9rem;
-    gap: .05rem;
-    margin-top: -300px;
-    font-family: Copernicus,"Libre Baskerville",Georgia,serif;
-}
-
-.splash-page-info{
-    width: 30%
 }
