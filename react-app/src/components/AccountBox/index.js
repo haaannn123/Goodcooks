@@ -40,7 +40,12 @@ function AccountBox() {
         onItemClick={closeMenu}
         modalComponent={<SignupFormModal />}
       />
-      <hr className="thin-line" />
+      <div class="divider-account-box">
+        <div class="thin-line"></div>
+        <div> or </div>
+        <div class="thin-line"></div>
+      </div>
+
       <div className="demo-input">
         <DemoUserButton />
       </div>
