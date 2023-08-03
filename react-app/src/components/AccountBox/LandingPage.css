@@ -1,5 +1,4 @@
 .account-box{
-  position: absolute;
   top: 75%;
   right: 27%;
   background-color: white;
@@ -78,17 +77,19 @@
   color: rgb(35, 39, 36);
 }
 
-@media screen and (min-width: 1439px){
+/* for screens that are smaller than 1439px */
+@media screen and (max-width: 1440px){
   .account-box{
-    transform: translate(70%, -150%);
+    transform: translate(0%, -50%);
+    margin-left: 9rem
   }
 }
 
-@media screen and (max-width: 1440px) {
-  .account-box {
-    transform: translate(47%, -90%);
-  }
-  .legal-message {
-    padding: 1rem 1rem 1rem 1.5rem;
+/*for macbook screens*/
+ @media screen and (min-width: 1441px){
+  .account-box{
+    transform: translate(0%, -55%);
+    margin-left: 24rem;
   }
 }
+

@@ -19,7 +19,7 @@ const SearchResults = () => {
                     searchResult.map(book => {
                         return (
                             <div key={book.id}>
-                                <NavLink to={`/products/${book.id}`}>
+                                <NavLink to={`/books/${book.id}`}>
                                     <img
                                         src = {book.preview_img}
                                         alt = ''

@@ -40,9 +40,6 @@ function AccountBox() {
         onItemClick={closeMenu}
         modalComponent={<SignupFormModal />}
       />
-      <div className="legal-message">
-        By creating an account, you agree to the Greatcooks Terms of Service and Privacy Policy.
-      </div>
       <hr className="thin-line" />
       <div className="demo-input">
         <DemoUserButton />
