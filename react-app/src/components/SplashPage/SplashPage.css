@@ -5,3 +5,25 @@
 .splash-page-image{
     width: 100%;
 }
+
+.splash-page-description{
+    width: 23%;
+    margin-left: 9rem;
+}
+
+.splash-page-description-two{
+    width: 23%;
+}
+
+.splash-page-description-container{
+    display: flex;
+    gap: 1rem;
+    font-family: Lato, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.splash-page-books{
+    background-color: rgb(228, 209, 184);
+    width: 46%;
+    margin-left: 9rem;
+    border-radius: 10px;
+}
