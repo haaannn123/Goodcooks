@@ -25,7 +25,7 @@ function DemoUserButton() {
 
   return (
     <>
-      <div className="demo-user-button" onClick={demoUser}>Sign in Demo user</div>
+      <div className="demo-user-button" onClick={demoUser}>Sign in as Demo user</div>
     </>
   );
 }

@@ -10,7 +10,7 @@
     width: 100%;
     /* top: 10000px; */
     margin-top: auto;
-
+    z-index: 1;
 }
 
 /* .linkedin-link {

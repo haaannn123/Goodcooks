@@ -5,3 +5,46 @@
 .splash-page-image{
     width: 100%;
 }
+
+.splash-page-description{
+    width: 23%;
+    margin-left: 9rem;
+}
+
+.splash-page-description-two{
+    width: 23%;
+}
+
+.splash-page-description-container{
+    display: flex;
+    gap: 1rem;
+    font-family: Lato, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.splash-page-books{
+    background-color: rgb(228, 209, 184);
+    width: 44%;
+    margin-left: 9rem;
+    border-radius: 10px;
+    display: flex;
+    gap: 3rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    align-items: center;
+}
+
+.splash-page-books-child{
+    display: flex;
+    flex-direction: column;
+}
+
+.splash-page-book-cover{
+    width: 100px;
+    height: 140px;
+    object-fit: fill;
+}
+
+.just-ken{
+    display: flex;
+    gap: 1rem;
+}

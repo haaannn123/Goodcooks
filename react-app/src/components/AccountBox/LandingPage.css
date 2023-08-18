@@ -1,11 +1,12 @@
 .account-box{
+  position: fixed;
   top: 75%;
   right: 27%;
   background-color: white;
   border: 1px solid #cbcbcb;
   width: 300px;
   border-radius: 10px;
-  padding: 1rem .5rem;
+  padding: 1rem 3rem;
   font-family: Lato, "Helvetica Neue", Helvetica, sans-serif;
 }
 
@@ -17,10 +18,16 @@
   gap: .75rem;
 }
 
+.divider-account-box{
+  display: flex;
+  width: 100%;
+  gap: 10px
+}
+
 .log-in-box-button,
   .sign-up-box-button {
     height: 50px;
-    width: 240px;
+    width: 100%;
     font-size: 14px;
     background-color: rgb(101, 119, 101);
     color: white;
@@ -36,8 +43,22 @@
 }
 
 .discover-header {
-  font-size: 25px;
+  font-size: 30px;
   color: rgba(80, 72, 72, 0.91);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0px;
+}
+
+.account-box-call-to-action{
+  font-size: 20px;
+  margin: 5px;
+  color: black;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-weight: 400;
 }
 
 .legal-message {
@@ -60,16 +81,23 @@
 .demo-user-button {
   border: none;
   cursor: pointer;
-  color: rgb(64, 73, 66);
+  color: rgb(0, 0, 0);
 }
 
 .thin-line {
-  border: none;
-  border-top: 1px solid rgba(226, 226, 226, 0.52);
+  display: flex;
+  align-items: center;
   margin: 0;
   padding: 0;
   width: 80%;
-  background-image: linear-gradient(to right, rgba(211,211,211,0) 0%, rgba(211,211,211,1) 20%, rgba(211,211,211,1) 80%, rgba(211,211,211,0) 100%);
+}
+
+.thin-line::before,
+.thin-line::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background-color: rgba(211, 211, 211, 1); 
 }
 
 .demo-user-button:hover {
@@ -78,10 +106,18 @@
 }
 
 /* for screens that are smaller than 1439px */
-@media screen and (max-width: 1440px){
+@media screen and (max-width: 1440px) and (max-height: 680px){
   .account-box{
-    transform: translate(0%, -50%);
-    margin-left: 9rem
+    transform: translate(0%, -80%);
+    margin-right: -12rem
+  }
+}
+
+/* for screens that are smaller than 1439px and height greater than 680px */
+@media screen and (max-width: 1440px) and (min-height: 681px) {
+  .account-box{
+    transform: translate(0%, -80%);
+    margin-right: -10rem
   }
 }
 
