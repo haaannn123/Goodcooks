@@ -30,7 +30,6 @@
     gap: 11rem;
     padding-bottom: 1rem;
     padding-left: 1rem;
-
 }
 
 .splash-page-books-child{
@@ -40,5 +39,6 @@
 
 .splash-page-book-cover{
     width: 100px;
-    height: 120px;
+    height: 140px;
+    object-fit: fill;
 }
