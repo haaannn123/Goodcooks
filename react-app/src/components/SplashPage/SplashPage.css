@@ -27,9 +27,10 @@
     margin-left: 9rem;
     border-radius: 10px;
     display: flex;
-    gap: 11rem;
+    gap: 3rem;
     padding-bottom: 1rem;
     padding-left: 1rem;
+    align-items: center;
 }
 
 .splash-page-books-child{
@@ -41,4 +42,9 @@
     width: 100px;
     height: 140px;
     object-fit: fill;
+}
+
+.just-ken{
+    display: flex;
+    gap: 1rem;
 }

@@ -34,6 +34,7 @@ const SplashPage = () => {
             <div className="splash-page-books">
                 <div className="splash-page-books-child">
                   <h3>Because Brian liked:</h3>
+                  <div className="just-ken">
                   {books.map((obj) => {
                       if (obj.author === "Joshua Weissman"){
                         return (
@@ -41,7 +42,23 @@ const SplashPage = () => {
                         )
                       }
                   })}
+                  {books.map((obj) => {
+                      if (obj.author === "Samin Nosrat"){
+                        return (
+                          <img src={obj.preview_img} alt="book" className="splash-page-book-cover"/>
+                        )
+                      }
+                  })}
+                  {books.map((obj) => {
+                      if (obj.author === "Chrissy Teigen"){
+                        return (
+                          <img src={obj.preview_img} alt="book" className="splash-page-book-cover"/>
+                        )
+                      }
+                  })}
+                  </div>
                 </div>
+                <i class="fa-solid fa-right-long"></i>
                 <div className="splash-page-books-child">
                 <h3>He discovered:</h3>
                   {books.map((obj) => {
