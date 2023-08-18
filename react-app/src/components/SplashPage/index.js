@@ -8,7 +8,7 @@ const SplashPage = () => {
   const dispatch = useDispatch()
   const user = useSelector((state) => state.session.user);
   const books = Object.values(useSelector(state => state.booksReducer.books))
-  console.log(books)
+  console.log("BOOKS HERE!!!---->",books)
 
   useEffect(() => {
     dispatch(thunkGetAllBooks())
@@ -31,10 +31,28 @@ const SplashPage = () => {
               </div>
           </div>
           <AccountBox />
-          <div className="splash-page-books">
-                <h3>Because Brian liked:</h3>
-                
-              </div>
+            <div className="splash-page-books">
+                <div className="splash-page-books-child">
+                  <h3>Because Brian liked:</h3>
+                  {books.map((obj) => {
+                      if (obj.author === "Joshua Weissman"){
+                        return (
+                          <img src={obj.preview_img} alt="book" className="splash-page-book-cover"/>
+                        )
+                      }
+                  })}
+                </div>
+                <div className="splash-page-books-child">
+                <h3>He discovered:</h3>
+                  {books.map((obj) => {
+                      if (obj.author === "Andrew Rea"){
+                        return (
+                          <img src={obj.preview_img} alt="book" className="splash-page-book-cover"/>
+                        )
+                      }
+                  })}
+                  </div>
+            </div>
           </div>
       )}
     </div>

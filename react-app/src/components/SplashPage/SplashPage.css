@@ -23,7 +23,22 @@
 
 .splash-page-books{
     background-color: rgb(228, 209, 184);
-    width: 46%;
+    width: 44%;
     margin-left: 9rem;
     border-radius: 10px;
+    display: flex;
+    gap: 11rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+
+}
+
+.splash-page-books-child{
+    display: flex;
+    flex-direction: column;
+}
+
+.splash-page-book-cover{
+    width: 100px;
+    height: 120px;
 }
