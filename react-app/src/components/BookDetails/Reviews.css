@@ -154,6 +154,7 @@ i {
 
 .edit-review-button:hover{
     color: rgb(56, 56, 56);
+    text-decoration: underline;
 }
 
 /*_________ STARS ____________*/
