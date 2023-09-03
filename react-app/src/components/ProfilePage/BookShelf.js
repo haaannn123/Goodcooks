@@ -7,7 +7,6 @@ const BookShelf = ({ firstName, lastName }) => {
   const dispatch = useDispatch();
   const [shelf, setShelf] = useState();
   const [shelfId, setShelfId] = useState();
-  const user = useSelector(state => state.userReducer.singleUser)
   const bookshelves = useSelector((state) => state.bookshelvesReducer.bookshelves);
   const bookshelvesArr = Object.values(bookshelves);
 
