@@ -152,6 +152,10 @@ i {
     font-size: 12px;
 }
 
+.edit-review-button:hover{
+    color: rgb(56, 56, 56);
+}
+
 /*_________ STARS ____________*/
 
 .stars-container {
