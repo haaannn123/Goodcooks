@@ -105,11 +105,11 @@
   color: rgb(35, 39, 36);
 }
 
-/* for screens that are smaller than 1439px */
+/* for screens that are smaller than 1439px and height smaller than 680px */
 @media screen and (max-width: 1440px) and (max-height: 680px){
   .account-box{
     transform: translate(0%, -80%);
-    margin-right: -12rem
+    margin-right: -13rem
   }
 }
 
@@ -117,15 +117,32 @@
 @media screen and (max-width: 1440px) and (min-height: 681px) {
   .account-box{
     transform: translate(0%, -80%);
-    margin-right: -10rem
+    margin-right: -13rem
   }
 }
 
+/* for screens that are larger than 1441px and height smaller than 680px */
+@media screen and (min-width: 1441px) and (max-height: 680px) {
+  .account-box{
+    transform: translate(0%, -80%);
+    margin-right: -15rem
+  }
+}
+
+/* for screens that are larger than 1441px and height greater than 680px */
+@media screen and (min-width: 1441px) and (min-height: 681px){
+  .account-box{
+    transform: translate(0%, -100%);
+    margin-right: -15rem;
+  }
+}
+
+
 /*for macbook screens*/
- @media screen and (min-width: 1441px){
+ /* @media screen and (min-width: 1441px){
   .account-box{
     transform: translate(0%, -55%);
     margin-left: 24rem;
   }
-}
+} */
 
