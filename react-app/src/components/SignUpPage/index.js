@@ -2,40 +2,42 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useModal } from "../../context/Modal";
 import { signUp } from "../../store/session";
-import "./SignupForm.css";
+import "./SignUpPage.css";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
-function SignupFormModal() {
-  const dispatch = useDispatch();
-  const [email, setEmail] = useState("");
-  const [first_name, setFirstName] = useState('');
-  const [last_name, setLastname] = useState("");
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  const [errors, setErrors] = useState([]);
-  const { closeModal } = useModal();
-  const history = useHistory()
+function SignUpPage(){
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (password === confirmPassword) {
-      const data = await dispatch(signUp(first_name, last_name, username, email, password));
-      if (data) {
-        setErrors(data);
+    const dispatch = useDispatch();
+    const [email, setEmail] = useState("");
+    const [first_name, setFirstName] = useState('');
+    const [last_name, setLastname] = useState("");
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
+    const [errors, setErrors] = useState([]);
+    const { closeModal } = useModal();
+    const history = useHistory()
+  
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+      if (password === confirmPassword) {
+        const data = await dispatch(signUp(first_name, last_name, username, email, password));
+        if (data) {
+          setErrors(data);
+        } else {
+          closeModal();
+          history.push("/")
+        }
       } else {
-        closeModal();
-        history.push("/")
+        setErrors(["Confirm Password field must be the same as the Password field"]);
       }
-    } else {
-      setErrors(["Confirm Password field must be the same as the Password field"]);
-    }
-  };
+    };
 
-  return (
-    <div className="sign-up-form-container">
-      <h1>Sign up for Greatcooks</h1>
-        <form onSubmit={handleSubmit}>
+
+    return(
+        <div className="sign-up-form-container">
+        <form  className="sign-up-form" onSubmit={handleSubmit}>
+        <h1>Sign up for Greatcooks</h1>
           <div className="errors" >
             {errors.map((error, idx) => (
 				<p key={idx}>{error}</p>
@@ -94,7 +96,8 @@ function SignupFormModal() {
       </div>
         </form>
     </div>
-  );
+    )
+
 }
 
-export default SignupFormModal;
+export default SignUpPage;

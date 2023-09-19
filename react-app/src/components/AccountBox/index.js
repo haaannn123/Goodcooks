@@ -1,13 +1,18 @@
 import { useState, useRef, useEffect } from "react";
 import OpenModalButton from "../OpenModalButton";
 import LoginFormModal from "../LoginFormModal";
-import SignupFormModal from "../SignupFormModal";
 import DemoUserButton from "./DemoUserButton";
 import "./LandingPage.css";
+import { useHistory } from "react-router-dom";
 
 function AccountBox() {
   const [showMenu, setShowMenu] = useState(false);
   const ulRef = useRef();
+  const history = useHistory();
+
+  const handleClick = () =>{
+    history.push('/signup')
+  }
 
   useEffect(() => {
     if (!showMenu) return;
@@ -35,12 +40,9 @@ function AccountBox() {
         className="log-in-box-button"
         modalComponent={<LoginFormModal />}
       />
-      <OpenModalButton
-        buttonText="Register"
-        className="sign-up-box-button"
-        onItemClick={closeMenu}
-        modalComponent={<SignupFormModal />}
-      />
+      <button 
+      onClick={()=> handleClick()}
+      className="log-in-box-button">Sign Up</button>
       <div class="divider-account-box">
         <div class="thin-line"></div>
         <div> or </div>
