@@ -1,0 +1,18 @@
+.delete-review-container{
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.delete-review-submit{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.delete-review-title{
+    margin: 0px;
+    padding: 0px;
+}

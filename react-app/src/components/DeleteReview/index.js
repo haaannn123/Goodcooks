@@ -1,6 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { useModal } from '../../context/Modal'
 import { thunkDeleteReview } from '../../store/reviews';
+import './DeleteReview.css'
 
 const DeleteReview = ({reviewId, bookId}) => {
     const dispatch = useDispatch();
