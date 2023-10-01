@@ -34,7 +34,7 @@ function Books() {
       {user ? (
         <div className="entire-books-container">
           <div className="books-header">
-            <h1 className="user-edit-your-books">Currently Reading</h1>
+            <h1 className="user-edit-your-books">Currently reading</h1>
             <NavLink to={`/user/${user.id}`} className="see-all-button">
               See All <span className="arrow"><span className="material-symbols-outlined">chevron_right</span></span>
             </NavLink>
